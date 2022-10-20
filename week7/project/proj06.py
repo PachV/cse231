@@ -30,8 +30,7 @@ def open_file():
 
     else:
         print("\nError opening file. Please try again.")
-        return open_file()                            # with no "data"
-                           # i figured this out while testing func loops
+        return open_file()
 
 
 def read_file(fp) -> tuple: 
