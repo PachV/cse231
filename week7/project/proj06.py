@@ -190,6 +190,7 @@ def main():
         weapon = input("Enter weapon: ")
         rarity = int(input("Enter rarity "))
         returned = get_characters_by_criteria(list_of_tuples, element, weapon, rarity)
+        display_characters(returned)
 
         
     
