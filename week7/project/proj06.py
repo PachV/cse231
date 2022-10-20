@@ -122,7 +122,11 @@ def get_region_list(master_list) -> list:
 
 def sort_characters(list_of_tuples):
     '''Docstring'''
-    pass
+    print()
+
+
+
+
 
 def display_characters(list_of_tuples):
     '''Docstring'''
@@ -154,6 +158,16 @@ def main():
             if reg == None:
                 reg = "N/A"
             print(f"{char:20s}{ele:10s}{wea:10s}{rar:<10d}{reg:25s}") 
+    
+    elif usr_option == "3":
+        criteria = input(CRITERIA_INPUT)
+        value = input("Enter value: ")
+    
+
+
+
+
+
 
 # DO NOT CHANGE THESE TWO LINES
 #These two lines allow this program to be imported into other code
