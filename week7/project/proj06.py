@@ -30,8 +30,7 @@ def open_file():
 
     else:
         print("\nError opening file. Please try again.")
-        return open_file() #somehow this works xdddd, it loops to the func
-                           # with no "data"
+        return open_file()                            # with no "data"
                            # i figured this out while testing func loops
 
 
@@ -125,7 +124,7 @@ def sort_characters(list_of_tuples):
 
 def display_characters(list_of_tuples):
     '''
-    intakes a list that is already operated in other funcs, and reformat
+    intakes a list that is already operated by other funcs, and reformat
     them to make them look nice to the end user
     '''
     print("{:21s}{:10s}{:10s}{:<10s}{:25s}".format("\nCharacter", "Element", "Weapon","Rarity", "Region"))
