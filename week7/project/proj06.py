@@ -163,6 +163,7 @@ def main():
 
 
 
+
     if usr_option == "1":
         print("\nRegions:")
         print(get_region_list(list_of_tuples))
