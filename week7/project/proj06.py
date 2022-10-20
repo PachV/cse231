@@ -1,6 +1,4 @@
 #https://www.cse.msu.edu/~cse231/Online/Projects/Project06/
-
-
     
 import csv
 from operator import itemgetter
@@ -103,8 +101,6 @@ def get_characters_by_criterion(list_of_tuples: list, criteria: str or int, valu
 
 
 
-def get_characters_by_criteria(master_list: tuple, element: str, weapon: str, rarity:int): #3
-    '''Docstring'''
 
 
 
@@ -133,10 +129,6 @@ def sort_characters(list_of_tuples):
     sorted_clean = sorted(sotred_clean, key=itemgetter(3),reverse=True)
     return sorted_clean
 
-
-
-
-
 def display_characters(list_of_tuples):
     '''Docstring'''
     print("{:20s}{:10s}{:10s}{:<10s}{:25s}".format("Character", "Element", "Weapon","Rarity", "Region"))
@@ -152,7 +144,28 @@ def get_option():
     print(MENU)
     optionz = input("")
     return optionz
+
+def get_characters_by_criteria(master_list: tuple, element: str, weapon: str, rarity:int): #3
+    '''Docstring'''
+
+    match = []
+    for i in master_list:
+        # print(i)
+        if i[1].lower() == element.lower():
+            if i[2].lower() == weapon.lower():
+                if i[3] == rarity:
+                    match.append(i)
+    return match
+
+
+
+
     
+
+
+
+
+
 def main():
     file_pointer = open_file()
     bad_list_of_tuples = read_file(file_pointer)
@@ -160,9 +173,6 @@ def main():
     usr_option = get_option()
     # print(list_of_tuples)
     list_of_tuples = sort_characters(bad_list_of_tuples)
-
-
-
 
     if usr_option == "1":
         print("\nRegions:")
@@ -176,8 +186,11 @@ def main():
 
     
     elif usr_option == "3":
-        criteria = input(CRITERIA_INPUT)
-        value = input("Enter value: ")
+        element = input("Enter element: ")
+        weapon = input("Enter weapon: ")
+        rarity = int(input("Enter rarity "))
+        returned = get_characters_by_criteria(list_of_tuples, element, weapon, rarity)
+
         
     
 
