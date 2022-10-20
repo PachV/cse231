@@ -3,12 +3,6 @@
 import csv
 from operator import itemgetter
 
-NAME = 0
-ELEMENT = 1
-WEAPON = 2
-RARITY = 3
-REGION = 4
-
 MENU = "\nWelcome to Genshin Impact Character Directory\n\
         Choose one of below options:\n\
         1. Get all available regions\n\
@@ -19,7 +13,7 @@ MENU = "\nWelcome to Genshin Impact Character Directory\n\
 
 INVALID_INPUT = "\nInvalid input"
 
-CRITERIA_INPUT = "\nChoose the following criteria\n\
+CRITERIA_INPUT = "Choose the following criteria\n\
                  1. Element\n\
                  2. Weapon\n\
                  3. Rarity\n\
@@ -31,14 +25,14 @@ ROW_FORMAT = "{:20s}{:10s}{:10s}{:<10d}{:25s}"
 
 def open_file():
     '''Docstring'''
-    while True:
-        to_open = input("Enter file name: ")
-        if to_open == "data_small" or to_open == "data":
-            return open(f"{to_open}.csv", "r")
+    to_open = input("Enter file name: ")
+    if to_open == "data_small.csv" or to_open == "data.csv":
+        return open(f"{to_open}", "r")
 
-        else:
-            print("uhhh no man no file do r you`")
-            continue
+    else:
+        print("\nError opening file. Please try again.")
+        return open_file() # somehow this worked xdddd
+
 
 def read_file(fp) -> tuple: # tuples version
     '''Docstring'''
@@ -57,24 +51,6 @@ def read_file(fp) -> tuple: # tuples version
         new_list = tuple(new_list)
         output.append(new_list)
     return output
-
-
-def read_to_list(fp) -> list: # lists version just in case
-    first_line = fp.readline()
-    output = []
-    for i in fp:
-        i = i.strip().split(",")
-        
-        cara, rar, ele,wea,reg = i
-        if reg == "":
-            reg = None
-        rar = int(rar)
-
-        new_list = [cara, ele, wea,rar,reg]
-        output.append(new_list)
-    return output
-
-
 
 def get_characters_by_criterion(list_of_tuples: list, criteria: str or int, value: str or int) -> list: # 2
     '''Docstring'''
@@ -98,11 +74,6 @@ def get_characters_by_criterion(list_of_tuples: list, criteria: str or int, valu
 
 
     return(match)
-
-
-
-
-
 
 def get_region_list(master_list) -> list:
     '''Docstring'''
@@ -131,19 +102,18 @@ def sort_characters(list_of_tuples):
 
 def display_characters(list_of_tuples):
     '''Docstring'''
-    print("{:20s}{:10s}{:10s}{:<10s}{:25s}".format("Character", "Element", "Weapon","Rarity", "Region"))
+    print("{:21s}{:10s}{:10s}{:<10s}{:25s}".format("\nCharacter", "Element", "Weapon","Rarity", "Region"))
     for i in range(len(list_of_tuples)):
         char,ele,wea,rar,reg = list_of_tuples[i]
         if reg == None:
             reg = "N/A"
         print(f"{char:20s}{ele:10s}{wea:10s}{rar:<10d}{reg:25s}") 
     
-
 def get_option():
     '''Docstring'''
     print(MENU)
     optionz = input("")
-    return optionz
+    return optionz # the main function will do the matching
 
 def get_characters_by_criteria(master_list: tuple, element: str, weapon: str, rarity:int): #3
     '''Docstring'''
@@ -157,47 +127,60 @@ def get_characters_by_criteria(master_list: tuple, element: str, weapon: str, ra
                     match.append(i)
     return match
 
-
-
-
-    
-
-
-
-
-
 def main():
     file_pointer = open_file()
     bad_list_of_tuples = read_file(file_pointer)
 
-    usr_option = get_option()
     # print(list_of_tuples)
     list_of_tuples = sort_characters(bad_list_of_tuples)
 
-    if usr_option == "1":
-        print("\nRegions:")
-        print(get_region_list(list_of_tuples))
+    while True:
+        usr_option = get_option()
 
-    elif usr_option == "2":
-        criteria = input(CRITERIA_INPUT)
-        value = input("Enter value: ")
-        rtrn_criteria = get_characters_by_criterion(list_of_tuples, criteria, value)
-        display_characters(rtrn_criteria)
 
-    
-    elif usr_option == "3":
-        element = input("Enter element: ")
-        weapon = input("Enter weapon: ")
-        rarity = int(input("Enter rarity "))
-        returned = get_characters_by_criteria(list_of_tuples, element, weapon, rarity)
-        display_characters(returned)
+        if usr_option == "1":
+            print("Regions:")
+            regions =get_region_list(list_of_tuples)
+            print(", ".join(regions), end= "\n")
+            continue
+                
+
+
+        elif usr_option == "2":
+            criteria = input(CRITERIA_INPUT)
+            value = input("\nEnter value: ")
+            rtrn_criteria = get_characters_by_criterion(list_of_tuples, criteria, value)
+            if rtrn_criteria == []:
+                print("\nNothing to print.")
+                continue
+
+            else:
+                display_characters(rtrn_criteria)
+                continue
 
         
-    
+        elif usr_option == "3":
+            element = input("Enter element: ")
+            weapon = input("\nEnter weapon: ")
 
+            while True:
+                try:
+                    rarity = int(input("\nEnter rarity: "))
+                    break
+                except ValueError:
+                    print("\nInvalid input")
+                    continue
 
+            returned = get_characters_by_criteria(list_of_tuples, element, weapon, rarity)
+            if returned == []:
+                print("\nNothing to print.")
 
+            else:
+                display_characters(returned)
+                continue
 
+        elif usr_option == "4":
+            exit()
 
 
 # DO NOT CHANGE THESE TWO LINES
