@@ -155,41 +155,6 @@ def main():
                 reg = "N/A"
             print(f"{char:20s}{ele:10s}{wea:10s}{rar:<10d}{reg:25s}") 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # DO NOT CHANGE THESE TWO LINES
 #These two lines allow this program to be imported into other code
 # such as our function_test code allowing other functions to be run
