@@ -135,7 +135,13 @@ def sort_characters(list_of_tuples):
 
 def display_characters(list_of_tuples):
     '''Docstring'''
-    pass
+    print("{:20s}{:10s}{:10s}{:<10s}{:25s}".format("Character", "Element", "Weapon","Rarity", "Region"))
+    for i in range(len(list_of_tuples)):
+        char,ele,wea,rar,reg = list_of_tuples[i]
+        if reg == None:
+            reg = "N/A"
+        print(f"{char:20s}{ele:10s}{wea:10s}{rar:<10d}{reg:25s}") 
+    
 
 def get_option():
     '''Docstring'''
@@ -145,11 +151,11 @@ def get_option():
     
 def main():
     file_pointer = open_file()
-    list_of_tuples1 = read_file(file_pointer)
+    bad_list_of_tuples = read_file(file_pointer)
 
     usr_option = get_option()
     # print(list_of_tuples)
-    list_of_tuples = sort_characters(list_of_tuples1)
+    list_of_tuples = sort_characters(bad_list_of_tuples)
 
 
 
@@ -161,16 +167,13 @@ def main():
         criteria = input(CRITERIA_INPUT)
         value = input("Enter value: ")
         rtrn_criteria = get_characters_by_criterion(list_of_tuples, criteria, value)
-        print("{:20s}{:10s}{:10s}{:<10s}{:25s}".format("Character", "Element", "Weapon","Rarity", "Region"))
-        for i in range(len(rtrn_criteria)):
-            char,ele,wea,rar,reg = rtrn_criteria[i]
-            if reg == None:
-                reg = "N/A"
-            print(f"{char:20s}{ele:10s}{wea:10s}{rar:<10d}{reg:25s}") 
+        display_characters(rtrn_criteria)
+
     
     elif usr_option == "3":
         criteria = input(CRITERIA_INPUT)
         value = input("Enter value: ")
+        
     
 
 
