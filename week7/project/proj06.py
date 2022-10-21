@@ -1,5 +1,6 @@
 #https://www.cse.msu.edu/~cse231/Online/Projects/Project06/
     
+import csv 
 from operator import itemgetter
 
 MENU = "\nWelcome to Genshin Impact Character Directory\n\
@@ -24,14 +25,14 @@ def open_file():
     '''
     asks user for input file, and returns the file that is requested
     '''
-    to_open = input("Enter file name: ")
-    if to_open == "data_small.csv" or to_open == "data.csv":
-        return open(f"{to_open}", "r")
+    while True:
+        to_open = input("Enter file name: ")
+        if to_open == "data_small.csv" or to_open == "data.csv":
+            return open(f"{to_open}", "r")
 
-    else:
-        print("\nError opening file. Please try again.")
-        return open_file()
-
+        else:
+            print("\nError opening file. Please try again.")
+            continue
 
 def read_file(fp) -> tuple: 
     '''
@@ -39,10 +40,13 @@ def read_file(fp) -> tuple:
         returns lists of toples
     '''
     output = []
-    fp.readline()
+
+    reader = csv.reader(fp)
+    next(reader,None)
+
     for i in fp:
-        # the gamer way to do it 😎😎😎 
         i = i.strip().split(",")
+        # is is currently [name,rarity,element,weapon,region]
         
         cara, rar, ele,wea,reg = i
         if reg == "": 
@@ -52,8 +56,8 @@ def read_file(fp) -> tuple:
 
         new_list = [cara, ele, wea,rar,reg]
 
-        new_list = tuple(new_list)
-        output.append(new_list)
+        final_tuple = tuple(new_list)
+        output.append(final_tuple)
     return output
 
 def get_characters_by_criterion(list_of_tuples: list, criteria: str or int, value: str or int) -> list: # 2
@@ -72,6 +76,10 @@ def get_characters_by_criterion(list_of_tuples: list, criteria: str or int, valu
     ## idk if this func still works without the area i listed xd
     ## and im too lazy to test it
 
+    #temp_list is [name,element,weapon,rarity,region]
+    #^^^^^^^^     [0]   [1]     [2]    [3]    [4]
+    # criteria is the number of which element
+    
         if criteria == 3: # if looking for rareity
             value = int(value)
             if tmp_list[criteria] == value:
