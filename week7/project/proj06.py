@@ -147,6 +147,7 @@ def display_characters(list_of_tuples):
             if reg == None:
                 reg = "N/A"
             print(ROW_FORMAT.format(char,ele,wea,rar,reg)) 
+            
     
 def get_option():
     '''prints out the menu and asks for the number'''
