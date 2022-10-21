@@ -18,8 +18,10 @@ CRITERIA_INPUT = "Choose the following criteria\n\
                  4. Region\n\
                  Enter criteria number: "
 
-HEADER_FORMAT = "\n{:20s}{:10s}{:10s}{:<10s}{:25s}"
+HEADER_FORMAT = "{:21s}{:10s}{:10s}{:<10s}{:25s}"
 ROW_FORMAT = "{:20s}{:10s}{:10s}{:<10d}{:25s}"
+
+INVALID_INPUT = "\nInvalid input"
 
 def open_file():
     '''
@@ -134,21 +136,27 @@ def display_characters(list_of_tuples):
     intakes a list that is already operated by other funcs, and reformat
     them to make them look nice to the end user
     '''
-    print("{:21s}{:10s}{:10s}{:<10s}{:25s}".format("\nCharacter", "Element", "Weapon","Rarity", "Region"))
-    #      ^^^^^^ test case says it wanted 21... 
-    for i in range(len(list_of_tuples)):
-        char,ele,wea,rar,reg = list_of_tuples[i]
+    if list_of_tuples == []:
+        print("\nNothing to print.")
+    else:
+        print(HEADER_FORMAT.format("\nCharacter", "Element", "Weapon","Rarity", "Region"))
+        for i in range(len(list_of_tuples)):
+            char,ele,wea,rar,reg = list_of_tuples[i]
 
-        if reg == None:
-            reg = "N/A"
-        print(f"{char:20s}{ele:10s}{wea:10s}{rar:<10d}{reg:25s}") 
+            if reg == None:
+                reg = "N/A"
+            print(ROW_FORMAT.format(char,ele,wea,rar,reg)) 
     
 def get_option():
     '''prints out the menu and asks for the number'''
 
     print(MENU)
     optionz = input("")
-    return optionz # the main function will do the matching
+    if optionz <"1" or optionz >"4":
+        print(INVALID_INPUT)
+    else:
+        return optionz # the main function will do the matching
+
 
 def get_characters_by_criteria(master_list: tuple, element: str, weapon: str, rarity:int): #3
     '''
@@ -186,18 +194,14 @@ def main():
             criteria = input(CRITERIA_INPUT)
             value = input("\nEnter value: ")
             rtrn_criteria = get_characters_by_criterion(list_of_tuples, criteria, value)
-            if rtrn_criteria == []:
-                print("\nNothing to print.")
-                continue
-            else:
-                display_characters(rtrn_criteria)
-                continue
+            display_characters(rtrn_criteria)
+            continue
         
         elif usr_option == "3":
             element = input("Enter element: ")
             weapon = input("\nEnter weapon: ")
 
-            while True: # keeps asking for actual intergers
+            while True: # keeps asking for actual integers
                 try:
                     rarity = int(input("\nEnter rarity: "))
                     break
@@ -206,12 +210,8 @@ def main():
                     continue
 
             returned = get_characters_by_criteria(list_of_tuples, element, weapon, rarity)
-            if returned == []:
-                print("\nNothing to print.")
-
-            else:
-                display_characters(returned)
-                continue
+            display_characters(returned)
+            continue
 
         elif usr_option == "4":
             exit()

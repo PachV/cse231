@@ -1,2 +1,0 @@
-[['Albedo', 'Geo', 'Sword', 5, 'Mondstadt'], ['Aloy', 'Cryo', 'Bow', 5, None], ['Traveler', 'None', 'Sword', 5, None], ['Yae Miko', 'Electro', 'Catalyst', 5, 'Inazuma'], ['Xingqiu', 'Hydro', 'Sword', 4, 'Liyue']]
-[['Xingqiu', 'Hydro', 'Sword', 4, 'Liyue'], ['Albedo', 'Geo', 'Sword', 5, 'Mondstadt'], ['Aloy', 'Cryo', 'Bow', 5, None], ['Traveler', 'None', 'Sword', 5, None], ['Yae Miko', 'Electro', 'Catalyst', 5, 'Inazuma']]
