@@ -206,7 +206,8 @@ def main():
         elif usr_option == "2":
             criteria = input(CRITERIA_INPUT)
             value = input("\nEnter value: ")
-            rtrn_criteria = get_characters_by_criterion(list_of_tuples, criteria, value)
+            rtrn_criteria = get_characters_by_criterion(list_of_tuples,\
+                 criteria, value)
             display_characters(rtrn_criteria)
             continue
         
@@ -222,7 +223,8 @@ def main():
                     print("\nInvalid input")
                     continue
 
-            returned = get_characters_by_criteria(list_of_tuples, element, weapon, rarity)
+            returned = get_characters_by_criteria(list_of_tuples,\
+                 element, weapon, rarity)
             display_characters(returned)
             continue
 
