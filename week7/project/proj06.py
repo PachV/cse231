@@ -25,7 +25,7 @@ INVALID_INPUT = "\nInvalid input"
 
 def open_file():
     '''
-    asks user for input file, and returns the file that is requested
+    asks user for input file, and returns the file pointer that is requested
     '''
     while True:
         to_open = input("Enter file name: ")
@@ -97,7 +97,7 @@ def get_characters_by_criterion(list_of_tuples: list, criteria: str or int, valu
 
 def get_region_list(master_list) -> list:
     '''
-    find the region that isnt in the list, 
+    find the region that isnt in the seen list, 
     then sort and return the region that is seen
     '''
     regions = []
@@ -115,7 +115,7 @@ def get_region_list(master_list) -> list:
 
 def sort_characters(list_of_tuples):
     '''
-    reorder the list of tuples to the standard one
+    reorder the list of tuples
     with rarity being on top
 
     '''
@@ -123,6 +123,7 @@ def sort_characters(list_of_tuples):
     for i in range(len(list_of_tuples)):
         # declare var for each element
         _ ,ele,wea,rar,reg = list_of_tuples[i]
+
         # reorder the var for each element
         tmp_list = [_ ,ele,wea,rar,reg]
         cleaned.append(tmp_list)
@@ -152,7 +153,7 @@ def get_option():
 
     print(MENU)
     optionz = input("")
-    if optionz <"1" or optionz >"4":
+    if optionz < "1" or optionz > "4":
         print(INVALID_INPUT)
     else:
         return optionz # the main function will do the matching
