@@ -1,5 +1,15 @@
-#https://www.cse.msu.edu/~cse231/Online/Projects/Project06/
-    
+##################################
+# Proj 06
+# Ask user for file name
+#  if fails then ask them again
+# Ask user for which option to get 1-4
+# ask user for the following criteria in the option
+# match the options that the user wants and print it out
+# ask the user which option to get again
+# if 4 then exit the program
+# else it keeps looping until 4(exit)
+# ###################################
+
 import csv 
 from operator import itemgetter
 
@@ -48,7 +58,7 @@ def read_file(fp) -> tuple:
 
     for i in fp:
         i = i.strip().split(",")
-        # is is currently [name,rarity,element,weapon,region]
+        # i is currently [name,rarity,element,weapon,region]
         
         cara, rar, ele,wea,reg = i
         if reg == "": 
@@ -62,7 +72,7 @@ def read_file(fp) -> tuple:
         output.append(final_tuple)
     return output
 
-def get_characters_by_criterion(list_of_tuples: list, criteria: str or int, value: str or int) -> list: # 2
+def get_characters_by_criterion(list_of_tuples, criteria, value): # 2
     '''
     matches with all the parameters that the user want,
     and returns them into a list of lists
@@ -85,13 +95,13 @@ def get_characters_by_criterion(list_of_tuples: list, criteria: str or int, valu
         if criteria == 3: # if looking for rareity
             value = int(value)
             if tmp_list[criteria] == value:
-                match.append(tmp_list)
+                match.append(tuple(tmp_list))
 
         else: # everything else
             if tmp_list[criteria] == None:
                 tmp_list[criteria] = "N/A"
             if tmp_list[criteria].lower() == value.lower():
-                match.append(tmp_list)
+                match.append(tuple(tmp_list))
 
     return match
 
@@ -126,7 +136,7 @@ def sort_characters(list_of_tuples):
 
         # reorder the var for each element
         tmp_list = [_ ,ele,wea,rar,reg]
-        cleaned.append(tmp_list)
+        cleaned.append(tuple(tmp_list))
 
     sotred_clean = sorted(cleaned, key=itemgetter(0)) # not fully cleaned/sort
     sorted_clean = sorted(sotred_clean, key=itemgetter(3),reverse=True)
@@ -140,14 +150,15 @@ def display_characters(list_of_tuples):
     if list_of_tuples == []:
         print("\nNothing to print.")
     else:
-        print(HEADER_FORMAT.format("\nCharacter", "Element", "Weapon","Rarity", "Region"))
+        print(HEADER_FORMAT.format("\nCharacter", "Element",\
+             "Weapon","Rarity", "Region"))
         for i in range(len(list_of_tuples)):
             char,ele,wea,rar,reg = list_of_tuples[i]
 
             if reg == None:
                 reg = "N/A"
             print(ROW_FORMAT.format(char,ele,wea,rar,reg)) 
-            
+
     
 def get_option():
     '''prints out the menu and asks for the number'''
@@ -160,7 +171,7 @@ def get_option():
         return optionz # the main function will do the matching
 
 
-def get_characters_by_criteria(master_list: tuple, element: str, weapon: str, rarity:int): #3
+def get_characters_by_criteria(master_list, element, weapon, rarity): #3
     '''
     match with all the requirements that the user wants
     and return them into a list
