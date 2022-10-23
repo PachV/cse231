@@ -163,12 +163,14 @@ def display_characters(list_of_tuples):
 def get_option():
     '''prints out the menu and asks for the number'''
 
-    print(MENU)
-    optionz = input("")
-    if optionz < "1" or optionz > "4":
-        print(INVALID_INPUT)
-    else:
-        return optionz # the main function will do the matching
+    while True:
+        print(MENU)
+        optionz = input("")
+        if optionz < "1" or optionz > "4":
+            print(INVALID_INPUT)
+            continue
+        else:
+            return optionz # the main function will do the matching
 
 
 def get_characters_by_criteria(master_list, element, weapon, rarity): #3
