@@ -39,10 +39,11 @@ def open_file():
     '''
     while True:
         to_open = input("Enter file name: ")
-        if to_open == "data_small.csv" or to_open == "data.csv":
+        try:
             return open(f"{to_open}", "r")
 
-        else:
+        except FileNotFoundError:
+
             print("\nError opening file. Please try again.")
             continue
 
