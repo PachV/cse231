@@ -43,9 +43,17 @@ def read_users(fp):
 
     return returns
 
-def read_movies(fp):
+def read_reviews(N,fp):
     ''' Docstring'''
-    pass   # remove this line
+    output = [[] for _ in range(N+1)]
+    for i in fp:
+        ind_list = i.split()
+        a = [int(x) for x in ind_list]
+        output[a[0]].append(tuple(a[1:3]))
+
+        for i in range(len(output)):
+            output[i].sort()
+    return(output)
         
 def year_movies(year,L_movies):
     ''' Docstring'''
@@ -71,33 +79,49 @@ def highest_rated_by_reviewer(L_in,N_movies):
     ''' Docstring'''
     pass   # remove this line
  
-def read_reviews(N,fp):
+def read_movies(fp):
     ''' Docstring'''
-    output = [[] for _ in range(N+1)]
-    for i in fp:
-        ind_list = i.split()
-        a = [int(x) for x in ind_list]
-        output[a[0]].append(tuple(a[1:3]))
+    output = [[]]
+    
 
-        for i in range(len(output)):
-            output[i].sort()
-    return(output)
 
 def main():
+    fp = open_file("movies_small.txt")
 
-    fp = open_file("reviews_small.txt")
-    N = 0
+    print(read_movies(fp))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ###
+    # fp = open_file("reviews_small.txt")
+    # N = 0
     
-    for i in fp:
-        if int(i[0]) > N:
-            N = int(i[0])
+    # for i in fp:
+    #     if int(i[0]) > N:
+    #         N = int(i[0])
     
-    fp = open_file("reviews_small.txt")
-    read_reviews(N+1, fp)
+    # fp = open_file("reviews_small.txt")
+    # read_reviews(N+1, fp)
 
     
 
-
+    ###
     # print(read_users(open_file("users_small.txt")))
 
     
