@@ -28,20 +28,16 @@ def open_file(s):
     return fp
 
 
-def read_reviews(N,fp): # python list is dynamic tho, no need for N :)
-    ''' Docstring'''
-    print("yes")
-    pass   # remove this line
+
+
 
 def read_users(fp):
     ''' Docstring'''
-    returns = []
+    returns = [[]]
 
     for i in fp:
         a = i.strip().split("|")
         a[1] = int(a[1])
-        if a[0] == "1":
-            returns.append([])
         a = tuple(a)
         returns.append(a[1:4])
 
@@ -75,9 +71,34 @@ def highest_rated_by_reviewer(L_in,N_movies):
     ''' Docstring'''
     pass   # remove this line
  
+def read_reviews(N,fp):
+    ''' Docstring'''
+    output = [[] for _ in range(N+1)]
+    for i in fp:
+        ind_list = i.split()
+        a = [int(x) for x in ind_list]
+        output[a[0]].append(tuple(a[1:3]))
+
+        for i in range(len(output)):
+            output[i].sort()
+    return(output)
+
 def main():
-    # read_reviews(None, open_file("reviews_small.txt"))
-    print(read_users(open_file("users_small.txt")))
+
+    fp = open_file("reviews_small.txt")
+    N = 0
+    
+    for i in fp:
+        if int(i[0]) > N:
+            N = int(i[0])
+    
+    fp = open_file("reviews_small.txt")
+    read_reviews(N+1, fp)
+
+    
+
+
+    # print(read_users(open_file("users_small.txt")))
 
     
 
