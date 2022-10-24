@@ -1,3 +1,4 @@
+# https://www.cse.msu.edu/~cse231/Online/Projects/Project07/Project07.pdf
 
 GENRES = ['Unknown','Action', 'Adventure', 'Animation',"Children's",
           'Comedy','Crime','Documentary', 'Drama', 'Fantasy', 'Film-noir',
@@ -23,15 +24,26 @@ MENU = '''
         '''
 def open_file(s):
     ''' Docstring'''
-    pass   # remove this line
+    fp = open(f"{s}", "r", encoding="windows-1252")
+    return fp
 
-def read_reviews(N,fp):
+
+def read_reviews(N,fp): # python list is dynamic tho, no need for N :)
     ''' Docstring'''
+    print("yes")
     pass   # remove this line
 
 def read_users(fp):
     ''' Docstring'''
-    pass   # remove this line
+    returns = [[]]
+
+    for i in fp:
+        a = i.strip().split("|")
+        a[1] = int(a[1])
+        a = tuple(a)
+        returns.append(a[1:4])
+
+    return returns
 
 def read_movies(fp):
     ''' Docstring'''
@@ -62,7 +74,34 @@ def highest_rated_by_reviewer(L_in,N_movies):
     pass   # remove this line
  
 def main():
-    pass   # remove this line
+    read_reviews(None, open_file("reviews_small.txt"))
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     main()
