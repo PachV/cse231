@@ -35,11 +35,13 @@ def read_reviews(N,fp): # python list is dynamic tho, no need for N :)
 
 def read_users(fp):
     ''' Docstring'''
-    returns = [[]]
+    returns = []
 
     for i in fp:
         a = i.strip().split("|")
         a[1] = int(a[1])
+        if a[0] == "1":
+            returns.append([])
         a = tuple(a)
         returns.append(a[1:4])
 
@@ -74,7 +76,9 @@ def highest_rated_by_reviewer(L_in,N_movies):
     pass   # remove this line
  
 def main():
-    read_reviews(None, open_file("reviews_small.txt"))
+    # read_reviews(None, open_file("reviews_small.txt"))
+    print(read_users(open_file("users_small.txt")))
+
     
 
 
