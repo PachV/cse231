@@ -82,7 +82,21 @@ def highest_rated_by_reviewer(L_in,N_movies):
 def read_movies(fp):
     ''' Docstring'''
     output = [[]]
-    
+    for i in fp:
+        a =i.strip().split("|")
+
+        matches = []                
+        for j in range(len(a)-5):
+            if((a[j+5])) == "1":
+                matches.append(GENRES[j])
+        a = a[1:3]
+        a.append(matches)
+        output.append(tuple(a))
+    return(output)
+
+
+
+                
 
 
 def main():
