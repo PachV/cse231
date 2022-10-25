@@ -58,7 +58,6 @@ def read_reviews(N,fp):
     ''' Docstring'''
     pass   # remove this line
 
-def genre_movies(genre,L_movies):
     ''' Docstring'''
     pass   # remove this line
 
@@ -112,17 +111,42 @@ def year_movies(year,L_movies):
     return matches
     
 
+def genre_movies(genre,L_movies):
+
+    matches = []
+    genre = genre.lower()
+
+    for i, strs in enumerate(L_movies):
+        if strs == []:
+            continue
+        strs = strs[-1]
+
+        tmp_list = []
+        for j in strs:
+            tmp_list.append(j.lower())
+
+        if genre in tmp_list:
+            matches.append(i)
+
+
+    return matches
 
 
 
 def main():
 
+
+
+
+
     moves_fp = open_file("movies_small.txt")
 
-    L_movies =(read_movies(moves_fp))
+    L_movies = (read_movies(moves_fp))
 
-    year = 1940
-    print(year_movies(year, L_movies))
+    genra = "drama"
+    print(genre_movies(genra, L_movies))
+    # year = 1940
+    # print(year_movies(year, L_movies))
 
 
 
