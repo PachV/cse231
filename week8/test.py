@@ -1,7 +1,10 @@
+from decimal import DivisionByZero
+
+
 def highest_rated_by_movie(L_in,L_reviews,N_movies):
     ''' Docstring'''
     # i is movie id, j is movie score
-    find_list = [[] for _ in range(N_movies+1)]
+    find_list = [[0,0] for _ in range(N_movies+1)]
     L_in = [1,2,3,6,7]
     for k in L_in:
         score_total = 0
@@ -11,17 +14,27 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
 
             for j in range(len_list):
 
-
                 if k in L_reviews[i][j]:
                     if L_reviews[i][j][0] != k:
                         continue
-                    
-                    score_total += L_reviews[i][j][1]
-                    seen +=1
+                    else:
+                        score_total += L_reviews[i][j][1]
+                        seen +=1
+        
+        find_list[k]= [score_total, seen]
+    
+    # print(find_list)
 
-        tmp_list = [score_total,seen]
-        find_list[k]= tmp_list
-    print(find_list)
+    avg_list = find_list[:]
+    for i in range(len(find_list)):
+    #     # average can be done by a[1][0]/a[1][1]
+        try:
+            avg_list[i] = float(f"{avg_list[i][0]/avg_list[i][1]:.2f}")
+        except ZeroDivisionError:
+            avg_list[i] = 0
+            continue
+    print(avg_list) 
+
 
 
 N = 10
