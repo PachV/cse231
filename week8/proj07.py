@@ -1,7 +1,5 @@
 # https://www.cse.msu.edu/~cse231/Online/Projects/Project07/Project07.pdf
 
-import enum
-
 
 GENRES = ['Unknown','Action', 'Adventure', 'Animation',"Children's",
           'Comedy','Crime','Documentary', 'Drama', 'Fantasy', 'Film-noir',
@@ -142,7 +140,17 @@ def gen_users (gender, L_users, L_reviews):
 
 def occ_users (occupation, L_users, L_reviews):
     ''' Docstring'''
-    pass   # remove this line
+    returns = []
+    for i, strs in enumerate(L_users):
+        if strs == []:
+            continue
+        if occupation in strs:
+            returns.append(L_reviews[i])
+    return(returns)
+
+
+
+
 
 
 def main():
@@ -168,7 +176,11 @@ def main():
     L_reviews = read_reviews(N, fp)
 #
 
+    users_fp = open_file("users_small.txt")
 
+    L_users = read_users(users_fp)
+
+    occ_users("technician", L_users, L_reviews)
     
 
 
@@ -179,11 +191,8 @@ def main():
 
 
 
-    users_fp = open_file("users_small.txt")
 
-    L_users = read_users(users_fp)
-
-    gen_users("F", L_users, L_reviews)
+    # gen_users("F", L_users, L_reviews)
     
 
     # year = 1940
