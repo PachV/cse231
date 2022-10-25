@@ -1,5 +1,8 @@
 # https://www.cse.msu.edu/~cse231/Online/Projects/Project07/Project07.pdf
 
+import enum
+
+
 GENRES = ['Unknown','Action', 'Adventure', 'Animation',"Children's",
           'Comedy','Crime','Documentary', 'Drama', 'Fantasy', 'Film-noir',
           'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 
@@ -61,13 +64,8 @@ def read_reviews(N,fp):
     ''' Docstring'''
     pass   # remove this line
 
-def gen_users (gender, L_users, L_reviews):
-    ''' Docstring'''
-    pass   # remove this line
+
           
-def occ_users (occupation, L_users, L_reviews):
-    ''' Docstring'''
-    pass   # remove this line
 
 def highest_rated_by_movie(L_in,L_reviews,N_movies):
     ''' Docstring'''
@@ -131,6 +129,20 @@ def genre_movies(genre,L_movies):
 
     return matches
 
+def gen_users (gender, L_users, L_reviews):
+    ''' Docstring'''
+    returns = []
+    for i, strs in enumerate(L_users):
+        if strs == []:
+            continue
+        if gender in strs:
+            returns.append(L_reviews[i])
+    return(returns)
+
+
+def occ_users (occupation, L_users, L_reviews):
+    ''' Docstring'''
+    pass   # remove this line
 
 
 def main():
@@ -139,12 +151,41 @@ def main():
 
 
 
-    moves_fp = open_file("movies_small.txt")
+    # moves_fp = open_file("movies_small.txt")
 
-    L_movies = (read_movies(moves_fp))
+    # L_movies = (read_movies(moves_fp))
 
-    genra = "drama"
-    print(genre_movies(genra, L_movies))
+
+#
+    fp = open_file("reviews_small.txt")
+    N = 0
+    
+    for i in fp:
+        if int(i[0]) > N:
+            N = int(i[0])
+    
+    fp = open_file("reviews_small.txt")
+    L_reviews = read_reviews(N, fp)
+#
+
+
+    
+
+
+
+
+
+
+
+
+
+    users_fp = open_file("users_small.txt")
+
+    L_users = read_users(users_fp)
+
+    gen_users("F", L_users, L_reviews)
+    
+
     # year = 1940
     # print(year_movies(year, L_movies))
 
@@ -166,15 +207,6 @@ def main():
 
 
     ###
-    # fp = open_file("reviews_small.txt")
-    # N = 0
-    
-    # for i in fp:
-    #     if int(i[0]) > N:
-    #         N = int(i[0])
-    
-    # fp = open_file("reviews_small.txt")
-    # read_reviews(N+1, fp)
 
     
 
