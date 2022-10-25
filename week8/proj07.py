@@ -55,7 +55,6 @@ def read_reviews(N,fp):
             output[i].sort()
     return(output)
         
-def year_movies(year,L_movies):
     ''' Docstring'''
     pass   # remove this line
 
@@ -86,8 +85,8 @@ def read_movies(fp):
         a =i.strip().split("|")
 
         matches = []                
-        for j in range(len(a)-5):
-            if((a[j+5])) == "1":
+        for j in range(len(a)-5): # the 0/1 starts at 5
+            if((a[j+5])) == "1": # ^^
                 matches.append(GENRES[j])
         a = a[1:3]
         a.append(matches)
@@ -96,19 +95,34 @@ def read_movies(fp):
 
 
 
-                
+def year_movies(year,L_movies):
+    year = int(year)
+
+    matches = []
+    for i, strs  in enumerate(L_movies):
+        if strs == []:
+            continue
+        a = strs[1].split("-")
+        
+        if a[-1] == "":
+            continue
+
+        if int(a[-1]) == year:
+            matches.append(i)
+    return matches
+    
+
+
 
 
 def main():
-    fp = open_file("movies_small.txt")
 
-    print(read_movies(fp))
+    moves_fp = open_file("movies_small.txt")
 
+    L_movies =(read_movies(moves_fp))
 
-
-
-
-
+    year = 1940
+    print(year_movies(year, L_movies))
 
 
 
@@ -117,6 +131,11 @@ def main():
 
 
 
+
+
+
+
+    ###
 
 
 
