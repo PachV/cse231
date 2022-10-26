@@ -1,4 +1,3 @@
-from decimal import DivisionByZero
 
 
 def highest_rated_by_movie(L_in,L_reviews,N_movies):
@@ -27,13 +26,19 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
 
     avg_list = find_list[:]
     for i in range(len(find_list)):
-    #     # average can be done by a[1][0]/a[1][1]
         try:
             avg_list[i] = float(f"{avg_list[i][0]/avg_list[i][1]:.2f}")
         except ZeroDivisionError:
             avg_list[i] = 0
             continue
-    print(avg_list) 
+    max_list = max(avg_list)
+    # print(max_list)
+    movies_find = []
+    for i in range(len(avg_list)):
+        if max_list == avg_list[i]:
+            movies_find.append(i)
+    
+    return (movies_find, max_list)
 
 
 

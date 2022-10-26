@@ -1,6 +1,8 @@
 # https://www.cse.msu.edu/~cse231/Online/Projects/Project07/Project07.pdf
 
 
+
+
 GENRES = ['Unknown','Action', 'Adventure', 'Animation',"Children's",
           'Comedy','Crime','Documentary', 'Drama', 'Fantasy', 'Film-noir',
           'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 
@@ -56,18 +58,6 @@ def read_reviews(N,fp):
             output[i].sort()
     return(output)
         
-    ''' Docstring'''
-    pass   # remove this line
-
-    ''' Docstring'''
-    pass   # remove this line
-
-
-          
-
-def highest_rated_by_movie(L_in,L_reviews,N_movies):
-    ''' Docstring'''
-    pass   # remove this line
              
 def highest_rated_by_reviewer(L_in,N_movies):
     ''' Docstring'''
@@ -148,6 +138,48 @@ def occ_users (occupation, L_users, L_reviews):
             returns.append(L_reviews[i])
     return(returns)
 
+def highest_rated_by_movie(L_in,L_reviews,N_movies):
+    ''' Docstring'''
+    # i is movie id, j is movie score
+    find_list = [[0,0] for _ in range(N_movies+1)]
+    L_in = [1,2,3,6,7]
+    for k in L_in:
+        score_total = 0
+        seen = 0
+        for i in range(len(L_reviews)):
+            len_list = len(L_reviews[i])
+
+            for j in range(len_list):
+
+                if k in L_reviews[i][j]:
+                    if L_reviews[i][j][0] != k:
+                        continue
+                    else:
+                        score_total += L_reviews[i][j][1]
+                        seen +=1
+        
+        find_list[k]= [score_total, seen]
+    
+    # print(find_list)
+
+    avg_list = find_list[:]
+    for i in range(len(find_list)):
+        try:
+            avg_list[i] = float(f"{avg_list[i][0]/avg_list[i][1]:.2f}")
+        except ZeroDivisionError:
+            avg_list[i] = 0
+            continue
+    max_list = max(avg_list)
+    # print(max_list)
+    movies_find = []
+    for i in range(len(avg_list)):
+        if max_list == avg_list[i]:
+            movies_find.append(i)
+    
+    return (movies_find, max_list)
+
+
+
 
 
 
@@ -155,93 +187,40 @@ def occ_users (occupation, L_users, L_reviews):
 
 def main():
 
+    # users = input("Input users filename: ")
+    # reviews = input("Input reviews filename: ")
+    # movies = input("Input movies filename: ")
 
 
+    # users = "users.txt"
+    # reviews = "reviews_small.txt"
+    # movies = "movies_small.txt"
 
 
-    # moves_fp = open_file("movies_small.txt")
+    # movies_fp = open_file(movies)
+    # L_movies = read_movies(movies_fp)
 
-    # L_movies = (read_movies(moves_fp))
-
-
-#
-    fp = open_file("reviews_small.txt")
-    N = 0
-    
-    for i in fp:
-        if int(i[0]) > N:
-            N = int(i[0])
-    
-    fp = open_file("reviews_small.txt")
-    L_reviews = read_reviews(N, fp)
-#
-
-    users_fp = open_file("users_small.txt")
-
-    L_users = read_users(users_fp)
-
-    occ_users("technician", L_users, L_reviews)
+    # reviews_fp = open_file(reviews)
+    # N = 0
+    # for i in reviews_fp:
+    #     i =i.split()
+    #     if int(i[0]) > N:
+    #         N = int(i[0])
+    # reviews_fp = open_file(reviews)
+    # L_reviews = read_reviews(N+1, reviews_fp)
     
 
 
 
 
 
+    print(MENU)
+    optionz = input()
 
-
-
-
-
-    # gen_users("F", L_users, L_reviews)
-    
-
-    # year = 1940
-    # print(year_movies(year, L_movies))
-
-
-
-
-
-
-
-
-
-
-
-
-    ###
-
-
-
-
-
-    ###
-
-    
-
-    ###
-    # print(read_users(open_file("users_small.txt")))
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if optionz == "1":
+        # year = int(input("Input a year: "))
+        # returned = year_movies(year,L_movies)
+        # highest_rated_by_movie(returned, L_reviews, N)
 
 
 
