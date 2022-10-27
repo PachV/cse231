@@ -49,9 +49,10 @@ def read_reviews(N,fp):
         ind_list = i.split()
         a = [int(x) for x in ind_list]
         output[a[0]].append(tuple(a[1:3]))
+    
+    for i in range(len(output)):
+        output[i].sort()
 
-        for i in range(len(output)):
-            output[i].sort()
     return(output)
         
              
@@ -179,7 +180,7 @@ def highest_rated_by_reviewer(L_in,N_movies):
 
             element = L_in[i][j][0]
             list_of_moives[element][0] += 1
-            # print(list_of_moives)
+            print(list_of_moives)
             movie_score = L_in[i][j][1]
             list_of_moives[element][1] += movie_score
             
@@ -207,15 +208,10 @@ def highest_rated_by_reviewer(L_in,N_movies):
 
 def main():
 
-    N = 10
 
-    L_in = [[(1,1),(0,0),(5,1),(7,1)],
-        [(1,2),(3,4),(5,2),(2,0),(7,2),(9,2)],
-        [(2,3),(4,3),(6,3),(8,3),(7,3),(3,3)],
-        [(2,4),(4,4),(6,4),(8,4)],
-        [(2, 2), (10, 2)]]
-
-    print(highest_rated_by_reviewer(L_in,N))
+    users = input("Input users filename: ")
+    reviews = input("Input reviews filename: ")
+    movies = input("Input movies filename: ")
 
 
 
@@ -224,48 +220,24 @@ def main():
 
 
 
+    optionz = input(MENU) 
+    movies_fp = open_file(movies)
+    L_movies = read_movies(movies_fp)
+
+    reviews_fp = open_file(reviews)
+    N = 0
+    for i in reviews_fp:
+        i =i.split()
+        if int(i[0]) > N:
+            N = int(i[0])
+    reviews_fp = open_file(reviews)
+    L_reviews = read_reviews(N+1, reviews_fp)
 
 
-
-
-
-
-
-
-    # users = input("Input users filename: ")
-    # reviews = input("Input reviews filename: ")
-    # movies = input("Input movies filename: ")
-
-
-    # users = "users.txt"
-    # reviews = "reviews_small.txt"
-    # movies = "movies_small.txt"
-
-
-    # movies_fp = open_file(movies)
-    # L_movies = read_movies(movies_fp)
-
-    # reviews_fp = open_file(reviews)
-    # N = 0
-    # for i in reviews_fp:
-    #     i =i.split()
-    #     if int(i[0]) > N:
-    #         N = int(i[0])
-    # reviews_fp = open_file(reviews)
-    # L_reviews = read_reviews(N+1, reviews_fp)
-    
-
-
-
-
-
-    # print(MENU)
-    # optionz = input()
-
-    # if optionz == "1":
-        # year = int(input("Input a year: "))
-        # returned = year_movies(year,L_movies)
-        # highest_rated_by_movie(returned, L_reviews, N)
+    if optionz == "1":
+        year = int(input("Input a year: "))
+        returned = year_movies(year,L_movies)
+        print(highest_rated_by_movie(returned, L_reviews, N))
 
 
 
