@@ -144,7 +144,6 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
                         score_total += L_reviews[i][j][1]
                         seen +=1
 
-        print(k)
         find_list[k]= [score_total, seen]
     
     # print(find_list)
@@ -234,7 +233,7 @@ def main():
         i_int = int(i[1])
         if i_int > N:
             N = i_int
-            print(N)
+            # print(N)
     reviews_fp = open_file(reviews)
     L_reviews = read_reviews(N+1, reviews_fp)
 
@@ -244,15 +243,32 @@ def main():
         optionz = input("\nSelect an option (1-5): ")
 
         if optionz == "1":
-            year = int(input("Input a year: "))
+            year = int(input("\nInput a year: "))
             returned = year_movies(year,L_movies)
-            a, b =(highest_rated_by_movie(returned, L_reviews, N))
+            a, rat = highest_rated_by_movie(returned, L_reviews, N)
+            
+            print(f"\nAvg max rating for the year is: {rat}")
             for i in a:
 
-                print(L_movies[i][0], b)
+                print(L_movies[i][0])
+
             continue
         elif optionz == "2":
-            pass
+            print(f"Valid Genres are: {GENRES}")
+
+            genre = input("Enter a genre: ")
+            L_in =(genre_movies(genre, L_movies))
+            a, rat = highest_rated_by_movie(L_in, L_reviews, N)
+
+            print(f"\nAvg max rating for the year is: {rat}")
+            for i in a:
+
+                print(L_movies[i][0])
+
+            continue
+
+
+
         elif optionz == "3":
             pass
         elif optionz == "4":
