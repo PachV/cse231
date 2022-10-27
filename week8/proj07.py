@@ -2,7 +2,6 @@
 
 
 
-
 GENRES = ['Unknown','Action', 'Adventure', 'Animation',"Children's",
           'Comedy','Crime','Documentary', 'Drama', 'Fantasy', 'Film-noir',
           'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 
@@ -30,12 +29,9 @@ def open_file(s):
     fp = open(f"{s}", "r", encoding="windows-1252")
     return fp
 
-
-
-
-
 def read_users(fp):
-    ''' Docstring'''
+    ''' split the user stats with | and reorder the 
+    '''
     returns = [[]]
 
     for i in fp:
@@ -59,9 +55,7 @@ def read_reviews(N,fp):
     return(output)
         
              
-def highest_rated_by_reviewer(L_in,N_movies):
-    ''' Docstring'''
-    pass   # remove this line
+
  
 def read_movies(fp):
     ''' Docstring'''
@@ -84,7 +78,7 @@ def year_movies(year,L_movies):
     year = int(year)
 
     matches = []
-    for i, strs  in enumerate(L_movies[1:], 1):
+    for i, strs in enumerate(L_movies[1:], 1):
         a = strs[1].split("-")
         
         if a[-1] == "":
@@ -167,16 +161,76 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
         if max_list == avg_list[i]:
             movies_find.append(i)
     
-    return (movies_find, max_list)
+    return movies_find, max_list
 
 
 
 
+def highest_rated_by_reviewer(L_in,N_movies):
+    #(movieid, rating)
+    #[score_tota, seen]
+    ''' Docstring'''
+    list_of_moives = [[0,0] for _ in range(N_movies+1)]
+
+    for i in range(len(L_in)):
+        
+
+        for j in range(len(L_in[i])):
+
+            element = L_in[i][j][0]
+            list_of_moives[element][0] += 1
+            # print(list_of_moives)
+            movie_score = L_in[i][j][1]
+            list_of_moives[element][1] += movie_score
+            
+
+    avg_list = list_of_moives[:] 
+    for i in range(len(avg_list)):
+        try:
+            avg_list[i] = float(f"{avg_list[i][1]/avg_list[i][0]:.2f}")
+        except ZeroDivisionError:
+            avg_list[i] = 0
+            continue
+    max_value = max(avg_list)
+    find_index_of_max = []
+    for i in range(len(avg_list)):
+        if avg_list[i] == max_value:
+            find_index_of_max.append(i)
+
+    return find_index_of_max, max_value
+
+
+    
 
 
 
 
 def main():
+
+    N = 10
+
+    L_in = [[(1,1),(0,0),(5,1),(7,1)],
+        [(1,2),(3,4),(5,2),(2,0),(7,2),(9,2)],
+        [(2,3),(4,3),(6,3),(8,3),(7,3),(3,3)],
+        [(2,4),(4,4),(6,4),(8,4)],
+        [(2, 2), (10, 2)]]
+
+    print(highest_rated_by_reviewer(L_in,N))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     # users = input("Input users filename: ")
     # reviews = input("Input reviews filename: ")
@@ -205,10 +259,10 @@ def main():
 
 
 
-    print(MENU)
-    optionz = input()
+    # print(MENU)
+    # optionz = input()
 
-    if optionz == "1":
+    # if optionz == "1":
         # year = int(input("Input a year: "))
         # returned = year_movies(year,L_movies)
         # highest_rated_by_movie(returned, L_reviews, N)
