@@ -209,9 +209,13 @@ def highest_rated_by_reviewer(L_in,N_movies):
 def main():
 
 
-    users = input("Input users filename: ")
-    reviews = input("Input reviews filename: ")
-    movies = input("Input movies filename: ")
+    # users = input("Input users filename: ")
+    # reviews = input("Input reviews filename: ")
+    # movies = input("Input movies filename: ")
+    users = "users.txt"
+    reviews = "reviews.txt"
+    movies = "movies.txt"
+    
 
 
 
@@ -223,8 +227,10 @@ def main():
     optionz = input(MENU) 
     movies_fp = open_file(movies)
     L_movies = read_movies(movies_fp)
-
     reviews_fp = open_file(reviews)
+
+
+
     N = 0
     for i in reviews_fp:
         i =i.split()
@@ -234,10 +240,16 @@ def main():
     L_reviews = read_reviews(N+1, reviews_fp)
 
 
-    if optionz == "1":
-        year = int(input("Input a year: "))
-        returned = year_movies(year,L_movies)
-        print(highest_rated_by_movie(returned, L_reviews, N))
+    # print(L_movies)
+    while True:
+        if optionz == "1":
+            year = int(input("Input a year: "))
+            returned = year_movies(year,L_movies)
+            a, b =(highest_rated_by_movie(returned, L_reviews, N))
+            for i in a:
+
+                print(L_movies[i][0], b)
+            continue
 
 
 
