@@ -143,7 +143,8 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
                     else:
                         score_total += L_reviews[i][j][1]
                         seen +=1
-        
+
+        print(k)
         find_list[k]= [score_total, seen]
     
     # print(find_list)
@@ -207,41 +208,41 @@ def highest_rated_by_reviewer(L_in,N_movies):
 
 
 def main():
+    users = "users.txt"
+    reviews = "reviews.txt"
+    movies = "movies.txt"
 
 
     # users = input("Input users filename: ")
     # reviews = input("Input reviews filename: ")
     # movies = input("Input movies filename: ")
-    users = "users.txt"
-    reviews = "reviews.txt"
-    movies = "movies.txt"
     
-
-
-
-
-
-
-
-
-    optionz = input(MENU) 
+    
     movies_fp = open_file(movies)
     L_movies = read_movies(movies_fp)
     reviews_fp = open_file(reviews)
 
 
 
+    print(MENU) 
+
+
+
     N = 0
     for i in reviews_fp:
         i =i.split()
-        if int(i[0]) > N:
-            N = int(i[0])
+        i_int = int(i[1])
+        if i_int > N:
+            N = i_int
+            print(N)
     reviews_fp = open_file(reviews)
     L_reviews = read_reviews(N+1, reviews_fp)
 
 
     # print(L_movies)
     while True:
+        optionz = input("\nSelect an option (1-5): ")
+
         if optionz == "1":
             year = int(input("Input a year: "))
             returned = year_movies(year,L_movies)
@@ -250,7 +251,14 @@ def main():
 
                 print(L_movies[i][0], b)
             continue
-
+        elif optionz == "2":
+            pass
+        elif optionz == "3":
+            pass
+        elif optionz == "4":
+            pass
+        elif optionz == "5":
+            exit()
 
 
 
