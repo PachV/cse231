@@ -180,7 +180,7 @@ def highest_rated_by_reviewer(L_in,N_movies):
 
             element = L_in[i][j][0]
             list_of_moives[element][0] += 1
-            print(list_of_moives)
+            # print(list_of_moives)
             movie_score = L_in[i][j][1]
             list_of_moives[element][1] += movie_score
             
@@ -217,9 +217,13 @@ def main():
     # movies = input("Input movies filename: ")
     
     
+    user_fp = open_file(users)
+    L_users = read_users(user_fp)
+    
     movies_fp = open_file(movies)
     L_movies = read_movies(movies_fp)
     reviews_fp = open_file(reviews)
+
 
 
 
@@ -264,13 +268,24 @@ def main():
             for i in a:
 
                 print(L_movies[i][0])
+            continue
 
+        elif optionz == "3":
+            gen = input("Enter a gender (M,F): ")
+
+            L_in = gen_users(gen, L_users, L_reviews)
+
+            a ,rat = highest_rated_by_reviewer(L_in, N)
+
+            print(f"\nAvg max rating for the year is: {rat}")
+            for i in a:
+
+                print(L_movies[i][0])
             continue
 
 
+            print(L_in)
 
-        elif optionz == "3":
-            pass
         elif optionz == "4":
             pass
         elif optionz == "5":
