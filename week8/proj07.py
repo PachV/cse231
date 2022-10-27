@@ -84,9 +84,7 @@ def year_movies(year,L_movies):
     year = int(year)
 
     matches = []
-    for i, strs  in enumerate(L_movies):
-        if strs == []:
-            continue
+    for i, strs  in enumerate(L_movies[1:], 1):
         a = strs[1].split("-")
         
         if a[-1] == "":
@@ -102,9 +100,7 @@ def genre_movies(genre,L_movies):
     matches = []
     genre = genre.lower()
 
-    for i, strs in enumerate(L_movies):
-        if strs == []:
-            continue
+    for i, strs in enumerate(L_movies[1:], 1):
         strs = strs[-1]
 
         tmp_list = []
@@ -120,9 +116,7 @@ def genre_movies(genre,L_movies):
 def gen_users (gender, L_users, L_reviews):
     ''' Docstring'''
     returns = []
-    for i, strs in enumerate(L_users):
-        if strs == []:
-            continue
+    for i, strs in enumerate(L_users[1:], 1):
         if gender in strs:
             returns.append(L_reviews[i])
     return(returns)
@@ -131,9 +125,7 @@ def gen_users (gender, L_users, L_reviews):
 def occ_users (occupation, L_users, L_reviews):
     ''' Docstring'''
     returns = []
-    for i, strs in enumerate(L_users):
-        if strs == []:
-            continue
+    for i, strs in enumerate(L_users[1:], 1):
         if occupation in strs:
             returns.append(L_reviews[i])
     return(returns)
@@ -142,7 +134,6 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
     ''' Docstring'''
     # i is movie id, j is movie score
     find_list = [[0,0] for _ in range(N_movies+1)]
-    L_in = [1,2,3,6,7]
     for k in L_in:
         score_total = 0
         seen = 0
