@@ -283,11 +283,22 @@ def main():
                 print(L_movies[i][0])
             continue
 
-
-            print(L_in)
-
         elif optionz == "4":
-            pass
+            print(f"Valid Occupations are: {OCCUPATIONS}")    
+            occu = input("Input an occupation: ")
+
+            L_in =occ_users(occu,L_users,L_reviews) 
+
+            a, rat = highest_rated_by_reviewer(L_in,N)
+
+            
+            print(f"\nAvg max rating for the year is: {rat}")
+            for i in a:
+
+                print(L_movies[i][0])
+            continue
+
+
         elif optionz == "5":
             exit()
 
