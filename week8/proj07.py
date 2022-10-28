@@ -54,9 +54,6 @@ def read_reviews(N,fp):
         output[i].sort()
 
     return(output)
-        
-             
-
  
 def read_movies(fp):
     ''' Docstring'''
@@ -73,11 +70,8 @@ def read_movies(fp):
         output.append(tuple(a))
     return(output)
 
-
-
 def year_movies(year,L_movies):
     year = int(year)
-
     matches = []
     for i, strs in enumerate(L_movies[1:], 1):
         a = strs[1].split("-")
@@ -89,22 +83,18 @@ def year_movies(year,L_movies):
             matches.append(i)
     return matches
     
-
 def genre_movies(genre,L_movies):
-
     matches = []
     genre = genre.lower()
 
     for i, strs in enumerate(L_movies[1:], 1):
         strs = strs[-1]
-
         tmp_list = []
         for j in strs:
             tmp_list.append(j.lower())
 
         if genre in tmp_list:
             matches.append(i)
-
 
     return matches
 
@@ -116,7 +106,6 @@ def gen_users (gender, L_users, L_reviews):
             returns.append(L_reviews[i])
     return(returns)
 
-
 def occ_users (occupation, L_users, L_reviews):
     ''' Docstring'''
     returns = []
@@ -127,7 +116,6 @@ def occ_users (occupation, L_users, L_reviews):
 
 def highest_rated_by_movie(L_in,L_reviews,N_movies):
     ''' Docstring'''
-    # i is movie id, j is movie score
     find_list = [[0,0] for _ in range(N_movies+1)]
     for k in L_in:
         score_total = 0
@@ -146,8 +134,6 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
 
         find_list[k]= [score_total, seen]
     
-    # print(find_list)
-
     avg_list = find_list[:]
     for i in range(len(find_list)):
         try:
@@ -156,7 +142,6 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
             avg_list[i] = 0
             continue
     max_list = max(avg_list)
-    # print(max_list)
     movies_find = []
     for i in range(len(avg_list)):
         if max_list == avg_list[i]:
@@ -164,18 +149,12 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
     
     return movies_find, max_list
 
-
-
-
 def highest_rated_by_reviewer(L_in,N_movies):
-    #(movieid, rating)
-    #[score_tota, seen]
     ''' Docstring'''
     list_of_moives = [[0,0] for _ in range(N_movies+1)]
 
     for i in range(len(L_in)):
         
-
         for j in range(len(L_in[i])):
 
             element = L_in[i][j][0]
@@ -183,7 +162,6 @@ def highest_rated_by_reviewer(L_in,N_movies):
             # print(list_of_moives)
             movie_score = L_in[i][j][1]
             list_of_moives[element][1] += movie_score
-            
 
     avg_list = list_of_moives[:] 
     for i in range(len(avg_list)):
@@ -205,7 +183,6 @@ def main():
     users = input("\nInput users filename: ")
     reviews = input("\nInput reviews filename: ")
     movies = input("\nInput movies filename: ")
-    
     
     user_fp = open_file(users)
     L_users = read_users(user_fp)
