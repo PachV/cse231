@@ -200,18 +200,8 @@ def highest_rated_by_reviewer(L_in,N_movies):
 
     return find_index_of_max, max_value
 
-
-    
-
-
-
-
 def main():
-    # users = "users.txt"
-    # reviews = "reviews.txt"
-    # movies = "movies.txt"
-
-
+  
     users = input("\nInput users filename: ")
     reviews = input("\nInput reviews filename: ")
     movies = input("\nInput movies filename: ")
@@ -224,12 +214,7 @@ def main():
     L_movies = read_movies(movies_fp)
     reviews_fp = open_file(reviews)
 
-
-
-
     print(MENU) 
-
-
 
     N = 0
     for i in reviews_fp:
@@ -237,12 +222,9 @@ def main():
         i_int = int(i[1])
         if i_int > N:
             N = i_int
-            # print(N)
     reviews_fp = open_file(reviews)
     L_reviews = read_reviews(N+1, reviews_fp)
 
-
-    # print(L_movies)
     while True:
         optionz = input("\nSelect an option (1-5): ")
 
@@ -252,7 +234,6 @@ def main():
                 returned = year_movies(year,L_movies)
                 a, rat = highest_rated_by_movie(returned, L_reviews, N)
                 
-
                 tmp_print_list = []
                 try:
                     for i in a:
@@ -285,8 +266,6 @@ def main():
                 for i in tmp_print_list:
                     print(i)
                 break
-
-
             continue
 
         elif optionz == "3":
@@ -307,8 +286,6 @@ def main():
                     print("\nError in gender.")
                     continue
 
-
-
         elif optionz == "4":
             print(f"\nValid Occupatipns are:  {OCCUPATIONS}")    
             while True:
@@ -316,16 +293,12 @@ def main():
 
                 if occu in OCCUPATIONS:
                     L_in =occ_users(occu,L_users,L_reviews) 
-
                     a, rat = highest_rated_by_reviewer(L_in,N)
-
                     
                     print(f"\nAvg max rating for the occupation is: {rat}")
                     for i in a:
-
                         print(L_movies[i][0])
                     break
-
                 else:
                     print("\nError in occupation.")
                     continue
@@ -335,12 +308,6 @@ def main():
         else:
             print("\nError: not a valid option.")
             continue
-
-
-
-
-
-
 
 if __name__ == "__main__":
     main()
