@@ -1,7 +1,4 @@
 # https://www.cse.msu.edu/~cse231/Online/Projects/Project07/Project07.pdf
-
-
-
 GENRES = ['Unknown','Action', 'Adventure', 'Animation',"Children's",
           'Comedy','Crime','Documentary', 'Drama', 'Fantasy', 'Film-noir',
           'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 
@@ -25,12 +22,15 @@ MENU = '''
         5. Quit
         '''
 def open_file(s):
-    ''' Docstring'''
+    ''' returns the file pointer with the parameter as the file'''
     fp = open(f"{s}", "r", encoding="windows-1252")
     return fp
 
 def read_users(fp):
-    ''' split the user stats with | and reorder the 
+    ''' read each line in the file
+        split the user stats with | and reorder the the list
+        convert the 2nd element to int because its a num
+        and only return the age, gender and occupation
     '''
     returns = [[]]
 
@@ -43,7 +43,12 @@ def read_users(fp):
     return returns
 
 def read_reviews(N,fp):
-    ''' Docstring'''
+    ''' 
+        N is the length of the list, and fp is file pointer
+        reorder the list to their coresponding movie id and score
+        (movieid, score)
+    
+    '''
     output = [[] for _ in range(N+1)]
     for i in fp:
         ind_list = i.split()
@@ -56,7 +61,9 @@ def read_reviews(N,fp):
     return(output)
  
 def read_movies(fp):
-    ''' Docstring'''
+    ''' returns a list of the movies and the year publishsed,
+        and the kind of genres it has
+    ''' 
     output = [[]]
     for i in fp:
         a =i.strip().split("|")
@@ -71,6 +78,10 @@ def read_movies(fp):
     return(output)
 
 def year_movies(year,L_movies):
+    '''
+        match the year of the movie in the list,
+        and return the movie's index in L_movies
+    '''
     year = int(year)
     matches = []
     for i, strs in enumerate(L_movies[1:], 1):
@@ -84,6 +95,10 @@ def year_movies(year,L_movies):
     return matches
     
 def genre_movies(genre,L_movies):
+    '''
+        match the genre with L_movies and return the
+        index of it
+    '''
     matches = []
     genre = genre.lower()
 
@@ -99,7 +114,10 @@ def genre_movies(genre,L_movies):
     return matches
 
 def gen_users (gender, L_users, L_reviews):
-    ''' Docstring'''
+    ''' match the gender in L_users and 
+        return a new list with movieid and
+        scores stuff with the respected gender
+    '''
     returns = []
     for i, strs in enumerate(L_users[1:], 1):
         if gender in strs:
@@ -107,7 +125,11 @@ def gen_users (gender, L_users, L_reviews):
     return(returns)
 
 def occ_users (occupation, L_users, L_reviews):
-    ''' Docstring'''
+    ''' 
+        match the occupation in L_users and
+        return a new list with the movieid and 
+        score with the respected occupation
+    '''
     returns = []
     for i, strs in enumerate(L_users[1:], 1):
         if occupation in strs:
@@ -115,7 +137,19 @@ def occ_users (occupation, L_users, L_reviews):
     return(returns)
 
 def highest_rated_by_movie(L_in,L_reviews,N_movies):
-    ''' Docstring'''
+    '''
+        make a N length list of 0,0 with N_movies,
+        L_in are the numbers we want to keep
+        from L_review(movieid, score), make the new list
+        with the according moveid num to the new list element
+        add the total score in the 0th index, and seen in 1st index
+        find the average by doing total_score/seen
+        and find the max average
+        with max average,  find the each index that matches with max average/
+         for the movieid.
+        and return the movieid/index with that max average, and max average
+
+    '''
     find_list = [[0,0] for _ in range(N_movies+1)]
     for k in L_in:
         score_total = 0
@@ -150,7 +184,15 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
     return movies_find, max_list
 
 def highest_rated_by_reviewer(L_in,N_movies):
-    ''' Docstring'''
+    '''         
+        make a N length list of 0,0 with N_movies,
+        L_in is a list from specific group of users
+
+        the movieid corresponds with the indext of new list
+        add the moveid seen and the score in the index of the moveid
+        then find the average by doing division
+        and return the highest max value and the index/movieid of it
+    '''
     list_of_moives = [[0,0] for _ in range(N_movies+1)]
 
     for i in range(len(L_in)):
@@ -179,7 +221,7 @@ def highest_rated_by_reviewer(L_in,N_movies):
     return find_index_of_max, max_value
 
 def main():
-  
+
     users = input("\nInput users filename: ")
     reviews = input("\nInput reviews filename: ")
     movies = input("\nInput movies filename: ")
