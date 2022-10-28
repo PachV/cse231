@@ -213,8 +213,8 @@ def main():
 
 
     # users = input("Input users filename: ")
-    # reviews = input("Input reviews filename: ")
-    # movies = input("Input movies filename: ")
+    # reviews = input("\nInput reviews filename: ")
+    # movies = input("\nInput movies filename: ")
     
     
     user_fp = open_file(users)
@@ -247,60 +247,95 @@ def main():
         optionz = input("\nSelect an option (1-5): ")
 
         if optionz == "1":
-            year = int(input("\nInput a year: "))
-            returned = year_movies(year,L_movies)
-            a, rat = highest_rated_by_movie(returned, L_reviews, N)
-            
-            print(f"\nAvg max rating for the year is: {rat}")
-            for i in a:
+            while True:
+                year = int(input("\nInput a year: "))
+                returned = year_movies(year,L_movies)
+                a, rat = highest_rated_by_movie(returned, L_reviews, N)
+                
 
-                print(L_movies[i][0])
+                tmp_print_list = []
+                try:
+                    for i in a:
+                            tmp_str = (L_movies[i][0])
+                            tmp_print_list.append(tmp_str)
+                except IndexError:
+                    print("\nError in year.")
+                    continue
+                print(f"\nAvg max rating for the year is: {rat}")
+                for i in tmp_print_list:
+                    print(i)
+                break
 
-            continue
         elif optionz == "2":
-            print(f"Valid Genres are: {GENRES}")
+            print(f"\nValid Genres are:  {GENRES}")
+            while True:
+                genre = input("\nInput a genre: ").lower().capitalize()
+                L_in =(genre_movies(genre, L_movies))
+                a, rat = highest_rated_by_movie(L_in, L_reviews, N)
 
-            genre = input("Enter a genre: ")
-            L_in =(genre_movies(genre, L_movies))
-            a, rat = highest_rated_by_movie(L_in, L_reviews, N)
+                tmp_print_list = []
+                try:
+                    for i in a:
+                        tmp_print_list.append(L_movies[i][0])
+                except IndexError:
+                    print("\nError in genre.")
+                    continue
 
-            print(f"\nAvg max rating for the year is: {rat}")
-            for i in a:
+                print(f"\nAvg max rating for the Genre is: {rat}")
+                for i in tmp_print_list:
+                    print(i)
+                break
 
-                print(L_movies[i][0])
+
             continue
 
         elif optionz == "3":
-            gen = input("Enter a gender (M,F): ")
+            while True:
+                gen = input("Input a gender (M,F): ").upper()
+                
+                if gen == "M" or gen == "F":
 
-            L_in = gen_users(gen, L_users, L_reviews)
+                    L_in = gen_users(gen, L_users, L_reviews)
 
-            a ,rat = highest_rated_by_reviewer(L_in, N)
+                    a ,rat = highest_rated_by_reviewer(L_in, N)
 
-            print(f"\nAvg max rating for the year is: {rat}")
-            for i in a:
+                    print(f"\nAvg max rating for the Gender is: {rat}")
+                    for i in a:
+                        print(L_movies[i][0])
+                    break
+                else:
+                    print(gen)
+                    print("\nError in gender")
+                    continue
 
-                print(L_movies[i][0])
-            continue
+
 
         elif optionz == "4":
-            print(f"Valid Occupations are: {OCCUPATIONS}")    
-            occu = input("Input an occupation: ")
+            print(f"Valid Occupatipns are:  {OCCUPATIONS}")    
+            while True:
+                occu = input("\nInput an occupation: ").lower()
 
-            L_in =occ_users(occu,L_users,L_reviews) 
+                if occu in OCCUPATIONS:
+                    L_in =occ_users(occu,L_users,L_reviews) 
 
-            a, rat = highest_rated_by_reviewer(L_in,N)
+                    a, rat = highest_rated_by_reviewer(L_in,N)
 
-            
-            print(f"\nAvg max rating for the year is: {rat}")
-            for i in a:
+                    
+                    print(f"\nAvg max rating for the occupation is: {rat}")
+                    for i in a:
 
-                print(L_movies[i][0])
-            continue
+                        print(L_movies[i][0])
+                    break
 
+                else:
+                    print("\nError in occupation.")
+                    continue
 
         elif optionz == "5":
             exit()
+        else:
+            print("\nError: not a valid option.")
+            continue
 
 
 
