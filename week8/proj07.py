@@ -36,9 +36,9 @@ def read_users(fp):
 
     for i in fp:
         a = i.strip().split("|")
-        a[1] = int(a[1])
+        a[1] = int(a[1]) 
         a = tuple(a)
-        returns.append(a[1:4])
+        returns.append(a[1:4]) # we only need [1:4]
 
     return returns
 
@@ -49,11 +49,11 @@ def read_reviews(N,fp):
         (movieid, score)
     
     '''
-    output = [[] for _ in range(N+1)]
+    output = [[] for _ in range(N+1)] # make each element seperate addresses
     for i in fp:
         ind_list = i.split()
-        a = [int(x) for x in ind_list]
-        output[a[0]].append(tuple(a[1:3]))
+        a = [int(x) for x in ind_list] # convert all to int
+        output[a[0]].append(tuple(a[1:3])) # the index will be the value
     
     for i in range(len(output)):
         output[i].sort()
@@ -69,9 +69,9 @@ def read_movies(fp):
         a =i.strip().split("|")
 
         matches = []                
-        for j in range(len(a)-5): # the 0/1 starts at 5
+        for j in range(len(a)-5): # the 0/1 starts at 5th index
             if((a[j+5])) == "1": # ^^
-                matches.append(GENRES[j])
+                matches.append(GENRES[j]) # if 1 then its true
         a = a[1:3]
         a.append(matches)
         output.append(tuple(a))
@@ -103,7 +103,7 @@ def genre_movies(genre,L_movies):
     genre = genre.lower()
 
     for i, strs in enumerate(L_movies[1:], 1):
-        strs = strs[-1]
+        strs = strs[-1] # only need last index
         tmp_list = []
         for j in strs:
             tmp_list.append(j.lower())
@@ -159,8 +159,8 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
 
             for j in range(len_list):
 
-                if k in L_reviews[i][j]:
-                    if L_reviews[i][j][0] != k:
+                if k in L_reviews[i][j]: # now reading elemnts in list of list
+                    if L_reviews[i][j][0] != k: # check if the movie is the k value
                         continue
                     else:
                         score_total += L_reviews[i][j][1]
@@ -168,7 +168,7 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
 
         find_list[k]= [score_total, seen]
     
-    avg_list = find_list[:]
+    avg_list = find_list[:] # copying just in case
     for i in range(len(find_list)):
         try:
             avg_list[i] = float(f"{avg_list[i][0]/avg_list[i][1]:.2f}")
@@ -178,7 +178,7 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
     max_list = max(avg_list)
     movies_find = []
     for i in range(len(avg_list)):
-        if max_list == avg_list[i]:
+        if max_list == avg_list[i]: # find the index that is equal to max value
             movies_find.append(i)
     
     return movies_find, max_list
