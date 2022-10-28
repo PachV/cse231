@@ -207,14 +207,14 @@ def highest_rated_by_reviewer(L_in,N_movies):
 
 
 def main():
-    users = "users.txt"
-    reviews = "reviews.txt"
-    movies = "movies.txt"
+    # users = "users.txt"
+    # reviews = "reviews.txt"
+    # movies = "movies.txt"
 
 
-    # users = input("Input users filename: ")
-    # reviews = input("\nInput reviews filename: ")
-    # movies = input("\nInput movies filename: ")
+    users = input("\nInput users filename: ")
+    reviews = input("\nInput reviews filename: ")
+    movies = input("\nInput movies filename: ")
     
     
     user_fp = open_file(users)
@@ -269,7 +269,7 @@ def main():
         elif optionz == "2":
             print(f"\nValid Genres are:  {GENRES}")
             while True:
-                genre = input("\nInput a genre: ").lower().capitalize()
+                genre = input("Input a genre: ").lower().capitalize()
                 L_in =(genre_movies(genre, L_movies))
                 a, rat = highest_rated_by_movie(L_in, L_reviews, N)
 
@@ -291,7 +291,7 @@ def main():
 
         elif optionz == "3":
             while True:
-                gen = input("Input a gender (M,F): ").upper()
+                gen = input("\nInput a gender (M,F): ").upper()
                 
                 if gen == "M" or gen == "F":
 
@@ -304,16 +304,15 @@ def main():
                         print(L_movies[i][0])
                     break
                 else:
-                    print(gen)
-                    print("\nError in gender")
+                    print("\nError in gender.")
                     continue
 
 
 
         elif optionz == "4":
-            print(f"Valid Occupatipns are:  {OCCUPATIONS}")    
+            print(f"\nValid Occupatipns are:  {OCCUPATIONS}")    
             while True:
-                occu = input("\nInput an occupation: ").lower()
+                occu = input("Input an occupation: ").lower()
 
                 if occu in OCCUPATIONS:
                     L_in =occ_users(occu,L_users,L_reviews) 
