@@ -1,4 +1,14 @@
-# https://www.cse.msu.edu/~cse231/Online/Projects/Project07/Project07.pdf
+######################## 
+# Proj07
+# User inputs the 3 needed files names, which is users,reviews,movies
+# user will select the option from 1-5
+# program will match the option from 1-5 
+# and will ask the user for the required items in that opiton
+# then prints out the max avg rating for that input and the movies\
+#  corresponding do it 
+# keeps asking for options until str 5 is entered, then exit the program 
+########################
+
 GENRES = ['Unknown','Action', 'Adventure', 'Animation',"Children's",
           'Comedy','Crime','Documentary', 'Drama', 'Fantasy', 'Film-noir',
           'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 
@@ -103,7 +113,7 @@ def genre_movies(genre,L_movies):
     genre = genre.lower()
 
     for i, strs in enumerate(L_movies[1:], 1):
-        strs = strs[-1] # only need last index
+        strs = strs[-1] # only need last element content
         tmp_list = []
         for j in strs:
             tmp_list.append(j.lower())
@@ -113,7 +123,7 @@ def genre_movies(genre,L_movies):
 
     return matches
 
-def gen_users (gender, L_users, L_reviews):
+def gen_users(gender, L_users, L_reviews):
     ''' match the gender in L_users and 
         return a new list with movieid and
         scores stuff with the respected gender
@@ -122,9 +132,9 @@ def gen_users (gender, L_users, L_reviews):
     for i, strs in enumerate(L_users[1:], 1):
         if gender in strs:
             returns.append(L_reviews[i])
-    return(returns)
+    return returns
 
-def occ_users (occupation, L_users, L_reviews):
+def occ_users(occupation, L_users, L_reviews):
     ''' 
         match the occupation in L_users and
         return a new list with the movieid and 
@@ -134,7 +144,7 @@ def occ_users (occupation, L_users, L_reviews):
     for i, strs in enumerate(L_users[1:], 1):
         if occupation in strs:
             returns.append(L_reviews[i])
-    return(returns)
+    return returns
 
 def highest_rated_by_movie(L_in,L_reviews,N_movies):
     '''
@@ -160,7 +170,7 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
             for j in range(len_list):
 
                 if k in L_reviews[i][j]: # now reading elemnts in list of list
-                    if L_reviews[i][j][0] != k: # check if the movie is the k value
+                    if L_reviews[i][j][0] != k: # check if the movie is k value
                         continue
                     else:
                         score_total += L_reviews[i][j][1]
@@ -201,7 +211,6 @@ def highest_rated_by_reviewer(L_in,N_movies):
 
             element = L_in[i][j][0]
             list_of_moives[element][0] += 1
-            # print(list_of_moives)
             movie_score = L_in[i][j][1]
             list_of_moives[element][1] += movie_score
 
@@ -231,26 +240,32 @@ def main():
     
     movies_fp = open_file(movies)
     L_movies = read_movies(movies_fp)
-    reviews_fp = open_file(reviews)
 
+    reviews_fp = open_file(reviews)
     print(MENU) 
 
+    # finds the largest value of N so we can
+    # call functions with the correct amount of 
+    # elements
     N = 0
     for i in reviews_fp:
         i =i.split()
         i_int = int(i[1])
         if i_int > N:
             N = i_int
+
     reviews_fp = open_file(reviews)
-    L_reviews = read_reviews(N+1, reviews_fp)
+    L_reviews = read_reviews(N, reviews_fp)
 
     while True:
         optionz = input("\nSelect an option (1-5): ")
 
         if optionz == "1":
             while True:
+                
                 year = int(input("\nInput a year: "))
                 returned = year_movies(year,L_movies)
+                # a is the indexes of the filtered lists
                 a, rat = highest_rated_by_movie(returned, L_reviews, N)
                 
                 tmp_print_list = []
@@ -271,6 +286,7 @@ def main():
             while True:
                 genre = input("Input a genre: ").lower().capitalize()
                 L_in =(genre_movies(genre, L_movies))
+                # a is the indexes of the filtered lists
                 a, rat = highest_rated_by_movie(L_in, L_reviews, N)
 
                 tmp_print_list = []
@@ -292,9 +308,7 @@ def main():
                 gen = input("\nInput a gender (M,F): ").upper()
                 
                 if gen == "M" or gen == "F":
-
                     L_in = gen_users(gen, L_users, L_reviews)
-
                     a ,rat = highest_rated_by_reviewer(L_in, N)
 
                     print(f"\nAvg max rating for the Gender is: {rat}")
