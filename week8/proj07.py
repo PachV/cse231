@@ -252,6 +252,7 @@ def main():
             continue
         else:
             L_users = read_users(user_fp)
+            user_fp.close()
             break
 
     while True: 
@@ -272,6 +273,7 @@ def main():
             continue
         else:
             L_movies = read_movies(movies_fp)   
+            movies_fp.close()
             break
 
     print(MENU) 
@@ -285,9 +287,11 @@ def main():
         i_int = int(i[1])
         if i_int > N:
             N = i_int
+    reviews_fp.close()
 
     reviews_fp = open_file(reviews)
     L_reviews = read_reviews(N, reviews_fp)
+    reviews_fp.close()
 
     while True:
         optionz = input("\nSelect an option (1-5): ")
