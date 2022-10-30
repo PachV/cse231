@@ -33,8 +33,21 @@ MENU = '''
         '''
 def open_file(s):
     ''' returns the file pointer with the parameter as the file'''
-    fp = open(f"{s}", "r", encoding="windows-1252")
-    return fp
+    while True:
+        try:
+            fp = open(f"{s}", "r", encoding="windows-1252")
+            return fp
+        except FileNotFoundError:
+            return 0 # this is error, the main will call this func again
+
+
+
+
+
+
+
+
+
 
 def read_users(fp):
     ''' read each line in the file
@@ -178,7 +191,7 @@ def highest_rated_by_movie(L_in,L_reviews,N_movies):
 
         find_list[k]= [score_total, seen]
     
-    avg_list = find_list[:] # copying just in case
+    avg_list = find_list
     for i in range(len(find_list)):
         try:
             avg_list[i] = float(f"{avg_list[i][0]/avg_list[i][1]:.2f}")
@@ -214,7 +227,7 @@ def highest_rated_by_reviewer(L_in,N_movies):
             movie_score = L_in[i][j][1]
             list_of_moives[element][1] += movie_score
 
-    avg_list = list_of_moives[:] 
+    avg_list = list_of_moives
     for i in range(len(avg_list)):
         try:
             avg_list[i] = float(f"{avg_list[i][1]/avg_list[i][0]:.2f}")
@@ -231,17 +244,36 @@ def highest_rated_by_reviewer(L_in,N_movies):
 
 def main():
 
-    users = input("\nInput users filename: ")
-    reviews = input("\nInput reviews filename: ")
-    movies = input("\nInput movies filename: ")
-    
-    user_fp = open_file(users)
-    L_users = read_users(user_fp)
-    
-    movies_fp = open_file(movies)
-    L_movies = read_movies(movies_fp)
+    while True:
+        users = input("\nInput users filename: ")
+        user_fp = open_file(users)
+        if user_fp == 0:
+            print("Error")
+            continue
+        else:
+            L_users = read_users(user_fp)
+            break
 
-    reviews_fp = open_file(reviews)
+    while True: 
+        reviews = input("\nInput reviews filename: ")
+        reviews_fp = open_file(reviews)
+        if reviews_fp == 0:
+            print("Error")
+            continue
+        else:
+            break
+
+
+    while True:
+        movies = input("\nInput movies filename: ")
+        movies_fp = open_file(movies)
+        if movies_fp == 0:
+            print("Error")
+            continue
+        else:
+            L_movies = read_movies(movies_fp)   
+            break
+
     print(MENU) 
 
     # finds the largest value of N so we can
