@@ -82,16 +82,50 @@ def find_max_friends(names_lst, friends_lst):
 def find_max_common_friends(friends_dict):
     '''Docstring'''
     possible_pairs = []
+    results_dict = dict()
+    max = 0
+
     for i in friends_dict:
         for j in friends_dict:
             if i != j:
-                if [i,j] and [j,i] in possible_pairs:
+                if (i,j) and (j,i) in possible_pairs:
                     continue
                 else:
-                    possible_pairs.append([i,j])
+                    possible_pairs.append((i,j))
             else:
                 continue
-    print(possible_pairs)
+    
+    for i in range(len(possible_pairs)):
+        # print(possible_pairs[i][0], possible_pairs[i][1])
+        name1 = possible_pairs[i][0]
+        name2 = possible_pairs[i][1]
+        names1_list = friends_dict[name1]
+        names2_list = friends_dict[name2]
+
+        names1_set = set(names1_list)
+        names2_set = set(names2_list)
+        
+        common = names1_set.intersection(names2_set)
+
+        if name1 in common:
+            common.remove(name1) 
+        if name2 in common:
+            common.remove(name2)
+        new_key = len(common)
+        
+
+        if new_key in results_dict:
+            results_dict[new_key].append((name1,name2))
+        else:
+            results_dict[new_key] = [(name1,name2)]
+
+    keys = list(results_dict.keys())
+    for i in keys:
+        if i > max:
+            max = i
+    common_friends = (results_dict[max])
+    return common_friends,max
+
     
 
 
@@ -128,7 +162,6 @@ def main():
     # for name,friends in friends_dict.items():
     #     print(name,":")
     #     print("   {}".format(friends))
-    print(find_max_common_friends(friends_dict))
 
     # print(MENU)
     # choice = input("\nChoose an option: ")

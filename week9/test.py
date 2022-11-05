@@ -39,3 +39,40 @@
     ['Brandon Garcia', 'Elizabeth Russell'], ['Brandon Garcia', 'Janet Myers'], ['Laura Todd', 'Alexander Rogers'], ['Laura Todd', 'Michael Walter'], ['Laura Todd', 'Elizabeth Russell'],
      ['Laura Todd', 'Janet Myers'], ['Alexander Rogers', 'Michael Walter'], ['Alexander Rogers', 'Elizabeth Russell'], ['Alexander Rogers', 'Janet Myers'], ['Michael Walter', 'Elizabeth Russell'],
       ['Michael Walter', 'Janet Myers'], ['Elizabeth Russell', 'Janet Myers']]
+
+
+# George Stewart Mark Mercado
+# George Stewart Devin Baldwin
+# George Stewart Samantha Murray
+# George Stewart Brandon Garcia
+# George Stewart Laura Todd
+# George Stewart Alexander Rogers
+# George Stewart Michael Walter
+# George Stewart Elizabeth Russell
+# George Stewart Janet Myers
+# Mark Mercado Devin Baldwin
+# Mark Mercado Samantha Murray
+# Mark Mercado Brandon Garcia
+# Mark Mercado Laura Todd
+# Mark Mercado Alexander Rogers
+# Mark Mercado Michael Walter
+# Mark Mercado Elizabeth Russell
+# Mark Mercado Janet Myers
+# Devin Baldwin Samantha Murray
+# Devin Baldwin Brandon Garcia
+# Devin Baldwin Laura Todd
+# Devin Baldwin Alexander Rogers
+# Devin Baldwin Michael Walter
+# Devin Baldwin Elizabeth Russell
+# Devin Baldwin Janet Myers
+# Samantha Murray Brandon Garcia
+# Samantha Murray Laura Todd
+# Samantha Murray Alexander Rogers
+# Samantha Murray Michael Walter
+# Samantha Murray Elizabeth Russell
+# Samantha Murray Janet Myers
+# Brandon Garcia Laura Todd
+# Brandon Garcia Alexander Rogers
+# Brandon Garcia Michael Walter
+# Brandon Garcia Elizabeth Russell
+# Brandon Garcia Janet Myers
