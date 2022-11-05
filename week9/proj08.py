@@ -79,15 +79,31 @@ def find_max_friends(names_lst, friends_lst):
 
     return max_friends, max_val 
          
-
-
-
-
-
 def find_max_common_friends(friends_dict):
     '''Docstring'''
-    pass # replace with your code
+    possible_pairs = []
+    for i in friends_dict:
+        for j in friends_dict:
+            if i != j:
+                if [i,j] and [j,i] in possible_pairs:
+                    continue
+                else:
+                    possible_pairs.append([i,j])
+            else:
+                continue
+    print(possible_pairs)
     
+
+
+
+
+    
+
+
+
+
+
+
 def find_second_friends(friends_dict):
     '''Docstring'''
     pass # replace with your code
@@ -112,8 +128,8 @@ def main():
     # for name,friends in friends_dict.items():
     #     print(name,":")
     #     print("   {}".format(friends))
+    print(find_max_common_friends(friends_dict))
 
-    find_max_friends(names_lst, friends_lst)
     # print(MENU)
     # choice = input("\nChoose an option: ")
     # while choice not in "12345":
