@@ -49,7 +49,12 @@ def create_friends_dict(names_lst,friends_lst):
             
 def find_common_friends(name1, name2, friends_dict):
     '''Docstring'''
-    pass # replace with your code
+    name1_list = friends_dict[name1]
+    name2_list = friends_dict[name2]
+    name1_set = set(name1_list)
+    name2_set = set(name2_list)
+    common = name1_set.intersection(name2_set) # same as (name1 & name2) sets
+    return common
 
 def find_max_friends(names_lst, friends_lst):
     '''Docstring'''
@@ -77,7 +82,7 @@ def main():
     fp = open("Friends_small.csv", "r")
     friends_lst = read_friends(fp,names_lst)
     # friends_dict = create_friends_dict(names_lst,friends_lst)
-    print(create_friends_dict(names_lst, friends_lst))
+    friends_dict = create_friends_dict(names_lst, friends_lst)
 
     # print("\nFriend Network:")
     # for name,friends in friends_dict.items():
