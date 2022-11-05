@@ -44,7 +44,8 @@ def read_friends(fp,names_lst):
 
 def create_friends_dict(names_lst,friends_lst):
     '''Docstring'''
-    pass # replace with your code
+    return {names_lst: friends_lst for names_lst, friends_lst in zip(names_lst, friends_lst) }
+
             
 def find_common_friends(name1, name2, friends_dict):
     '''Docstring'''
@@ -72,12 +73,11 @@ def main():
 
     fp = open("Names_small.txt", "r")
     names_lst = read_names(fp)
-    print(names_lst)
     # fp = open_file("friends")
     fp = open("Friends_small.csv", "r")
     friends_lst = read_friends(fp,names_lst)
-    print(friends_lst)
     # friends_dict = create_friends_dict(names_lst,friends_lst)
+    print(create_friends_dict(names_lst, friends_lst))
 
     # print("\nFriend Network:")
     # for name,friends in friends_dict.items():
