@@ -58,8 +58,32 @@ def find_common_friends(name1, name2, friends_dict):
 
 def find_max_friends(names_lst, friends_lst):
     '''Docstring'''
-    pass # replace with your code
-    
+    max_val = 0
+    new_dict = dict()
+    for i in range(len(names_lst)):
+        new_key = len(friends_lst[i])
+
+        if new_key in new_dict:
+            new_dict[new_key].append(names_lst[i])
+            
+        else:
+            new_dict[new_key] = [names_lst[i]]
+
+    key_values=list(new_dict.keys())
+    for i in key_values:
+        if i > max_val:
+            max_val = i
+
+    max_friends = new_dict[max_val]
+    max_friends.sort()
+
+    return max_friends, max_val 
+         
+
+
+
+
+
 def find_max_common_friends(friends_dict):
     '''Docstring'''
     pass # replace with your code
@@ -89,6 +113,7 @@ def main():
     #     print(name,":")
     #     print("   {}".format(friends))
 
+    find_max_friends(names_lst, friends_lst)
     # print(MENU)
     # choice = input("\nChoose an option: ")
     # while choice not in "12345":
