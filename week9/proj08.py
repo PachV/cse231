@@ -30,7 +30,17 @@ def read_names(fp):
 
 def read_friends(fp,names_lst):
     '''Docstring'''
-    pass # replace with your code
+    output = []
+    for i in fp:
+        i =list(i.replace(",", "").replace(" ", "").strip())
+        tmp_list = []
+        for j in i:
+            j = int(j)
+            tmp_list.append(names_lst[j])
+        output.append(tmp_list)
+    return output
+
+
 
 def create_friends_dict(names_lst,friends_lst):
     '''Docstring'''
