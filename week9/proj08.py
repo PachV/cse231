@@ -32,7 +32,7 @@ def read_friends(fp,names_lst):
     '''Docstring'''
     output = []
     for i in fp:
-        i =list(i.replace(",", "").replace(" ", "").strip())
+        i = i.strip(",").split(",")[0:-1]
         tmp_list = []
         for j in i:
             j = int(j)
@@ -140,7 +140,8 @@ def find_second_friends(friends_dict):
         for j in friends:
             if j in f_of_f:
                 f_of_f.remove(j)
-        f_of_f.remove(i)
+        if i in f_of_f:
+            f_of_f.remove(i)
         new_dict[i] = f_of_f
     return new_dict 
 
@@ -167,27 +168,15 @@ def find_max_second_friends(seconds_dict):
     return max_friends, max_val 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 def main():
 
-    fp = open("Names_small.txt", "r")
+    fp = open("Names.txt", "r")
     names_lst = read_names(fp)
-    fp = open("Friends_small.csv", "r")
+    fp = open("Friends.csv", "r")
     friends_lst = read_friends(fp,names_lst)
     friends_dict = create_friends_dict(names_lst, friends_lst)
     seconds_dict = find_second_friends(friends_dict)
-    print(find_max_second_friends(seconds_dict))
+    #################
 
     # print("\nFriend Network\n")
     # fp = open_file("names")
@@ -201,46 +190,46 @@ def main():
     #     print(name,":")
     #     print("   {}".format(friends))
 
-    # print(MENU)
-    # choice = input("\nChoose an option: ")
-    # while choice not in "12345":
-    #     print("Error in choice. Try again.")
-    #     choice = input("Choose an option: ")
+    print(MENU)
+    choice = input("\nChoose an option: ")
+    while choice not in "12345":
+        print("Error in choice. Try again.")
+        choice = input("Choose an option: ")
         
-    # while choice != '5':
+    while choice != '5':
 
-    #     if choice == "1":
-    #         max_friends, max_val = find_max_friends(names_lst, friends_lst)
-    #         print("\nThe maximum number of friends:", max_val)
-    #         print("People with most friends:")
-    #         for name in max_friends:
-    #             print(name)
+        if choice == "1":
+            max_friends, max_val = find_max_friends(names_lst, friends_lst)
+            print("\nThe maximum number of friends:", max_val)
+            print("People with most friends:")
+            for name in max_friends:
+                print(name)
                 
-    #     elif choice == "2":
-    #         max_names, max_val = find_max_common_friends(friends_dict)
-    #         print("\nThe maximum number of commmon friends:", max_val)
-    #         print("Pairs of non-friends with the most friends in common:")
-    #         for name in max_names:
-    #             print(name)
+        elif choice == "2":
+            max_names, max_val = find_max_common_friends(friends_dict)
+            print("\nThe maximum number of commmon friends:", max_val)
+            print("Pairs of non-friends with the most friends in common:")
+            for name in max_names:
+                print(name)
                 
-    #     elif choice == "3":
-    #         seconds_dict = find_second_friends(friends_dict)
-    #         max_seconds, max_val = find_max_second_friends(seconds_dict)
-    #         print("\nThe maximum number of second-order friends:", max_val)
-    #         print("People with the most second_order friends:")
-    #         for name in max_seconds:
-    #             print(name)
+        elif choice == "3":
+            seconds_dict = find_second_friends(friends_dict)
+            max_seconds, max_val = find_max_second_friends(seconds_dict)
+            print("\nThe maximum number of second-order friends:", max_val)
+            print("People with the most second_order friends:")
+            for name in max_seconds:
+                print(name)
                 
-    #     elif choice == "4":
-    #         pass  # YOUR CODE GOES HERE
+        elif choice == "4":
+            pass  # YOUR CODE GOES HERE
 
-    #     else: 
-    #         print("Shouldn't get here.")
+        else: 
+            print("Shouldn't get here.")
             
-    #     choice = input("\nChoose an option: ")
-    #     while choice not in "12345":
-    #         print("Error in choice. Try again.")
-    #         choice = input("Choose an option: ")
+        choice = input("\nChoose an option: ")
+        while choice not in "12345":
+            print("Error in choice. Try again.")
+            choice = input("Choose an option: ")
 
 if __name__ == "__main__":
     main()

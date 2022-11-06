@@ -62,3 +62,8 @@
 'Michael Walter': {'Samantha Murray', 'Brandon Garcia', 'Elizabeth Russell', 'George Stewart', 'Laura Todd', 'Devin Baldwin', 'Janet Myers'}, 
 'Elizabeth Russell': {'Michael Walter', 'Laura Todd', 'Devin Baldwin', 'Janet Myers'}, 
 'Janet Myers': {'Samantha Murray', 'Brandon Garcia', 'Michael Walter', 'Laura Todd', 'Alexander Rogers'}}
+
+
+
+
+['Samantha Murray', 'Samantha Murray', 'Laura Todd', 'Samantha Murray', 'Alexander Rogers', 'Laura Todd', 'George Stewart', 'Michael Walter', 'George Stewart', 'Michael Stewart Jr', 'Mark Mercado', 'Michael Stewart Jr', 'Laura Todd', 'George Stewart', 'Gregory Williams', 'Samantha Murray', 'George Stewart', 'Gregory Williams', 'Laura Todd', 'George Stewart', 'Gregory Williams', 'Alexander Rogers', 'George Stewart', 'Gregory Williams', 'Michael Walter', 'George Stewart', 'George Stewart', 'George Stewart', 'George Stewart', 'Mark Mercado', 'Michael Stewart Jr', 'George Stewart', 'Devin Baldwin', 'George Stewart', 'George Stewart', 'Devin Baldwin', 'Mark Mercado', 'George Stewart', 'Devin Baldwin', 'Devin Baldwin', 'George Stewart', 'Samantha Murray', 'Alexander Rogers', 'George Stewart', 'Samantha Murray', 'Michael Walter', 'George Stewart', 'Brandon Garcia', 'Laura Todd', 'George Stewart', 'Brandon Garcia', 'Michael Stewart Jr', 'George Stewart', 'Laura Todd', 'George Stewart', 'George Stewart', 'Laura Todd', 'Michael Walter', 'George Stewart', 'Michael Walter', 'Michael Stewart Jr', 'George Stewart', 'Michael Stewart Jr', 'Samantha Murray']
