@@ -10,7 +10,7 @@ MENU = '''
     
 def open_file(s):
     '''Docstring'''
-    file_name = input(f"Input a {s} file: ")
+    file_name = input(f"\nInput a {s} file: ")
     while True:
         try:
             fp = open(f"{file_name}", "r")
@@ -168,6 +168,14 @@ def find_max_second_friends(seconds_dict):
     return max_friends, max_val 
 
 
+def friends_of_person(person,friends_dict):
+    try:
+        output = friends_dict[person]
+        return output
+    except KeyError:
+        print(f"\nThe name {person} is not in the list.")
+        return 0 
+
 def main():
 
     fp = open("Names.txt", "r")
@@ -184,11 +192,6 @@ def main():
     # fp = open_file("friends")
     # friends_lst = read_friends(fp,names_lst)
     # friends_dict = create_friends_dict(names_lst,friends_lst)
-
-    # print("\nFriend Network:")
-    # for name,friends in friends_dict.items():
-    #     print(name,":")
-    #     print("   {}".format(friends))
 
     print(MENU)
     choice = input("\nChoose an option: ")
@@ -221,7 +224,16 @@ def main():
                 print(name)
                 
         elif choice == "4":
-            pass  # YOUR CODE GOES HERE
+            while True:
+                person = input("\nEnter a name: ")
+                fr_list = friends_of_person(person, friends_dict)
+                if fr_list == 0:
+                    continue
+                
+                print(f"\nFriends of {person}:")
+                for i in fr_list: 
+                    print(i)
+                break
 
         else: 
             print("Shouldn't get here.")
