@@ -123,24 +123,37 @@ def find_max_common_friends(friends_dict):
     for i in keys:
         if i > max:
             max = i
-    common_friends = (results_dict[max])
+    common_friends = results_dict[max]
     return common_friends,max
-
-    
-
-
-
-
-    
-
-
-
-
-
 
 def find_second_friends(friends_dict):
     '''Docstring'''
-    pass # replace with your code
+    new_dict = dict()
+
+    for i in friends_dict:
+        f_of_f = []
+        friends = friends_dict[i]
+        for j in friends:
+            f_of_f += friends_dict[j]
+        f_of_f = set(f_of_f)
+        # print(f_of_f)
+        for j in friends:
+            if j in f_of_f:
+                f_of_f.remove(j)
+        f_of_f.remove(i)
+        new_dict[i] = f_of_f
+    return new_dict 
+
+
+
+
+
+
+
+
+
+
+
 
 def find_max_second_friends(seconds_dict):
     '''Docstring'''
@@ -158,6 +171,7 @@ def main():
     # friends_dict = create_friends_dict(names_lst,friends_lst)
     friends_dict = create_friends_dict(names_lst, friends_lst)
 
+    print(find_second_friends(friends_dict))
     # print("\nFriend Network:")
     # for name,friends in friends_dict.items():
     #     print(name,":")

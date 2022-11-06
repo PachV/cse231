@@ -41,38 +41,24 @@
       ['Michael Walter', 'Janet Myers'], ['Elizabeth Russell', 'Janet Myers']]
 
 
-# George Stewart Mark Mercado
-# George Stewart Devin Baldwin
-# George Stewart Samantha Murray
-# George Stewart Brandon Garcia
-# George Stewart Laura Todd
-# George Stewart Alexander Rogers
-# George Stewart Michael Walter
-# George Stewart Elizabeth Russell
-# George Stewart Janet Myers
-# Mark Mercado Devin Baldwin
-# Mark Mercado Samantha Murray
-# Mark Mercado Brandon Garcia
-# Mark Mercado Laura Todd
-# Mark Mercado Alexander Rogers
-# Mark Mercado Michael Walter
-# Mark Mercado Elizabeth Russell
-# Mark Mercado Janet Myers
-# Devin Baldwin Samantha Murray
-# Devin Baldwin Brandon Garcia
-# Devin Baldwin Laura Todd
-# Devin Baldwin Alexander Rogers
-# Devin Baldwin Michael Walter
-# Devin Baldwin Elizabeth Russell
-# Devin Baldwin Janet Myers
-# Samantha Murray Brandon Garcia
-# Samantha Murray Laura Todd
-# Samantha Murray Alexander Rogers
-# Samantha Murray Michael Walter
-# Samantha Murray Elizabeth Russell
-# Samantha Murray Janet Myers
-# Brandon Garcia Laura Todd
-# Brandon Garcia Alexander Rogers
-# Brandon Garcia Michael Walter
-# Brandon Garcia Elizabeth Russell
-# Brandon Garcia Janet Myers
+{'George Stewart': {'Mark Mercado', 'Michael Walter', 'Alexander Rogers', 'Janet Myers', 'Samantha Murray'},
+ 'Mark Mercado': {'Janet Myers', 'Laura Todd', 'Brandon Garcia', 'Elizabeth Russell'},
+  'Devin Baldwin': {'Alexander Rogers', 'Laura Todd', 'Brandon Garcia', 'Elizabeth Russell'},
+   'Samantha Murray': {'Alexander Rogers', 'Mark Mercado', 'Brandon Garcia', 'George Stewart'},
+    'Brandon Garcia': {'Alexander Rogers', 'Mark Mercado', 'Janet Myers', 'Elizabeth Russell'}, 
+    'Laura Todd': {'Janet Myers', 'Devin Baldwin', 'Michael Walter', 'Samantha Murray'}, 
+    'Alexander Rogers': {'Mark Mercado', 'George Stewart', 'Samantha Murray'},
+     'Michael Walter': {'Laura Todd', 'Brandon Garcia', 'Devin Baldwin', 'Janet Myers', 'Elizabeth Russell', 'George Stewart', 'Samantha Murray'},
+      'Elizabeth Russell': {'Janet Myers', 'Devin Baldwin', 'Michael Walter', 'Laura Todd'},
+       'Janet Myers': {'Laura Todd', 'Brandon Garcia', 'Michael Walter', 'Alexander Rogers', 'Samantha Murray'}}
+
+{'George Stewart': {'Samantha Murray', 'Mark Mercado', 'Michael Walter', 'Alexander Rogers', 'Janet Myers'}, 
+'Mark Mercado': {'Brandon Garcia', 'Elizabeth Russell', 'Laura Todd', 'Janet Myers'}, 
+'Devin Baldwin': {'Brandon Garcia', 'Elizabeth Russell', 'Laura Todd', 'Alexander Rogers'}, 
+'Samantha Murray': {'Brandon Garcia', 'Mark Mercado', 'George Stewart', 'Alexander Rogers'}, 
+'Brandon Garcia': {'Mark Mercado', 'Elizabeth Russell', 'Alexander Rogers', 'Janet Myers'}, 
+'Laura Todd': {'Samantha Murray', 'Michael Walter', 'Devin Baldwin', 'Janet Myers'}, 
+'Alexander Rogers': {'Samantha Murray', 'Mark Mercado', 'George Stewart'}, 
+'Michael Walter': {'Samantha Murray', 'Brandon Garcia', 'Elizabeth Russell', 'George Stewart', 'Laura Todd', 'Devin Baldwin', 'Janet Myers'}, 
+'Elizabeth Russell': {'Michael Walter', 'Laura Todd', 'Devin Baldwin', 'Janet Myers'}, 
+'Janet Myers': {'Samantha Murray', 'Brandon Garcia', 'Michael Walter', 'Laura Todd', 'Alexander Rogers'}}
