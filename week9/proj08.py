@@ -10,14 +10,14 @@ MENU = '''
     
 def open_file(s):
     '''Docstring'''
-    # file_name = input(f"Input a {s} file: ")
-    # while True:
-    #     try:
-    #         fp = open(f"{file_name}", "r")
-    #         return fp
-    #     except FileNotFoundError:
-    #         print("Not found, try again")
-    #         file_name = input(f"Input a {s} file: ")
+    file_name = input(f"Input a {s} file: ")
+    while True:
+        try:
+            fp = open(f"{file_name}", "r")
+            return fp
+        except FileNotFoundError:
+            print("Not found, try again")
+            file_name = input(f"Input a {s} file: ")
 
 def read_names(fp):
     '''Docstring'''
@@ -145,33 +145,57 @@ def find_second_friends(friends_dict):
     return new_dict 
 
 
-
-
-
-
-
-
-
-
-
-
 def find_max_second_friends(seconds_dict):
     '''Docstring'''
-    pass # replace with your code
+    new_dict = dict()
+    max_val = 0
+    for i in seconds_dict:
+        friends = seconds_dict[i]
+        new_key = int(len(friends))
+
+        if new_key in new_dict:
+            new_dict[new_key].append([i])
+        else:
+            new_dict[new_key] = [i]
+
+    key_values=list(new_dict.keys())
+    for i in key_values:
+        if i > max_val:
+            max_val = i
+    max_friends = new_dict[max_val]
+    max_friends.sort()
+    return max_friends, max_val 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def main():
-    # print("\nFriend Network\n")
-    # fp = open_file("names")
 
     fp = open("Names_small.txt", "r")
     names_lst = read_names(fp)
-    # fp = open_file("friends")
     fp = open("Friends_small.csv", "r")
     friends_lst = read_friends(fp,names_lst)
-    # friends_dict = create_friends_dict(names_lst,friends_lst)
     friends_dict = create_friends_dict(names_lst, friends_lst)
+    seconds_dict = find_second_friends(friends_dict)
+    print(find_max_second_friends(seconds_dict))
 
-    print(find_second_friends(friends_dict))
+    # print("\nFriend Network\n")
+    # fp = open_file("names")
+    # names_lst = read_names(fp)
+    # fp = open_file("friends")
+    # friends_lst = read_friends(fp,names_lst)
+    # friends_dict = create_friends_dict(names_lst,friends_lst)
+
     # print("\nFriend Network:")
     # for name,friends in friends_dict.items():
     #     print(name,":")
