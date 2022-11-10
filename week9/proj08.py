@@ -9,7 +9,9 @@ MENU = '''
     5: Quit                       '''
     
 def open_file(s):
-    '''Docstring'''
+    '''use the parameter for asking desired file
+        returns the file pointer that is founded
+    '''
     file_name = input(f"\nInput a {s} file: ")
     while True:
         try:
@@ -20,7 +22,9 @@ def open_file(s):
             file_name = input(f"Input a {s} file: ")
 
 def read_names(fp):
-    '''Docstring'''
+    '''use the file pointer to
+        read the names and returns a list of lists.
+    '''
     names = []
     for i in fp:
         names.append(i.strip())
@@ -29,7 +33,10 @@ def read_names(fp):
 
 
 def read_friends(fp,names_lst):
-    '''Docstring'''
+    '''read each line in fp, and use the numbers as indexes for names
+        each list in the index is the friend of the index in name_list
+        returns that^
+    '''
     output = []
     for i in fp:
         i = i.strip(",").split(",")[0:-1]
@@ -43,12 +50,15 @@ def read_friends(fp,names_lst):
 
 
 def create_friends_dict(names_lst,friends_lst):
-    '''Docstring'''
+    '''make a dictionay with the name_list as key and friend_list as value'''
     return {names_lst: friends_lst for names_lst, friends_lst in zip(names_lst, friends_lst) }
 
             
 def find_common_friends(name1, name2, friends_dict):
-    '''Docstring'''
+    '''find the 2 names of the desired with freinds_dict
+        then make a set and intersect them to find the common name
+        then return it
+    '''
     name1_list = friends_dict[name1]
     name2_list = friends_dict[name2]
     name1_set = set(name1_list)
@@ -57,7 +67,10 @@ def find_common_friends(name1, name2, friends_dict):
     return common
 
 def find_max_friends(names_lst, friends_lst):
-    '''Docstring'''
+    '''find the length of the friend list, and assign the
+        number as the key and the value as the name
+        then find the max value in keys and return the names and key
+    '''
     max_val = 0
     new_dict = dict()
     for i in range(len(names_lst)):
@@ -80,7 +93,11 @@ def find_max_friends(names_lst, friends_lst):
     return max_friends, max_val 
          
 def find_max_common_friends(friends_dict):
-    '''Docstring'''
+    '''find each possible pair of friends
+       and get their friends, and remove eachother if they are in the pair
+       the key will be the number of common firends, and value is the pair name
+       then return the max number of key, and the pair names
+    '''
     possible_pairs = []
     results_dict = dict()
     max = 0
@@ -136,7 +153,6 @@ def find_second_friends(friends_dict):
         for j in friends:
             f_of_f += friends_dict[j]
         f_of_f = set(f_of_f)
-        # print(f_of_f)
         for j in friends:
             if j in f_of_f:
                 f_of_f.remove(j)
@@ -169,6 +185,7 @@ def find_max_second_friends(seconds_dict):
 
 
 def friends_of_person(person,friends_dict):
+    ''''''
     try:
         output = friends_dict[person]
         return output
@@ -178,20 +195,12 @@ def friends_of_person(person,friends_dict):
 
 def main():
 
-    fp = open("Names.txt", "r")
+    print("\nFriend Network\n")
+    fp = open_file("names")
     names_lst = read_names(fp)
-    fp = open("Friends.csv", "r")
+    fp = open_file("friends")
     friends_lst = read_friends(fp,names_lst)
-    friends_dict = create_friends_dict(names_lst, friends_lst)
-    seconds_dict = find_second_friends(friends_dict)
-    #################
-
-    # print("\nFriend Network\n")
-    # fp = open_file("names")
-    # names_lst = read_names(fp)
-    # fp = open_file("friends")
-    # friends_lst = read_friends(fp,names_lst)
-    # friends_dict = create_friends_dict(names_lst,friends_lst)
+    friends_dict = create_friends_dict(names_lst,friends_lst)
 
     print(MENU)
     choice = input("\nChoose an option: ")
