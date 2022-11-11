@@ -1,4 +1,10 @@
-#https://www.cse.msu.edu/~cse231/Online/Projects/Project08/Project08.pdf
+############################################
+#proj 08
+#   print out the options for 1-5 and let the user choose
+#   match that number and ask for the required inputs to call the option
+#   call the option and print out the results
+#   keep looping for option 1-5 until 5 is chosed, then quit
+###################################
 
 MENU = '''
  Menu : 
@@ -105,7 +111,8 @@ def find_max_common_friends(friends_dict):
     for i in friends_dict:
         for j in friends_dict:
             if i != j:
-                if (i,j) and (j,i) in possible_pairs:
+                if (i,j) and (j,i) in possible_pairs:# check if the new pair is
+                                                     # unseen 
                     continue
                 else:
                     possible_pairs.append((i,j))
@@ -113,7 +120,7 @@ def find_max_common_friends(friends_dict):
                 continue
     
     for i in range(len(possible_pairs)):
-        # print(possible_pairs[i][0], possible_pairs[i][1])
+        # print(possible_pairs[i][0], possible_pairs[i][1]) = (name1, name2)
         name1 = possible_pairs[i][0]
         name2 = possible_pairs[i][1]
         names1_list = friends_dict[name1]
