@@ -144,7 +144,11 @@ def find_max_common_friends(friends_dict):
     return common_friends,max
 
 def find_second_friends(friends_dict):
-    '''Docstring'''
+    '''look up the friends of friends in the dictionary, 
+        and append them into a dict.
+        remove the 1st root of friends and the main person
+        return a dictionary of friends
+    '''
     new_dict = dict()
 
     for i in friends_dict:
@@ -163,7 +167,10 @@ def find_second_friends(friends_dict):
 
 
 def find_max_second_friends(seconds_dict):
-    '''Docstring'''
+    '''find the length of the value in the input dict.
+        and make a new dict and key is number and value as name
+        and return the key and the value of the most friends.
+    '''
     new_dict = dict()
     max_val = 0
     for i in seconds_dict:
@@ -185,7 +192,9 @@ def find_max_second_friends(seconds_dict):
 
 
 def friends_of_person(person,friends_dict):
-    ''''''
+    '''use the parameter person as the key and 
+        look it up on the dict and return the value of it
+    '''
     try:
         output = friends_dict[person]
         return output
