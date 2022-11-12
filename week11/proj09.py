@@ -13,12 +13,37 @@ WELCOME = "Welcome to the New York Stock Exchange.\n"
     
 def open_file():
     '''Docstring'''
-    pass
+    #prices_file = input("Enter the price's filename: ")
+    #security_file = input("Enter the security's filename: ")
+#    prices_fp = open(f"{prices_file}","r")
+#    security_fp = open(f"{security_file}","r")
+#    return prices_fp, security_fp
+
+
+###############
+    prices_fp = open("small_prices.csv","r")
+    securities_fp = open("small_securities.csv","r")
+    return prices_fp, securities_fp
+###############3
+    
 
 def read_file(securities_fp):
     '''Docstring'''
-    pass
-        
+    csvreader = csv.reader(securities_fp)
+    header = next(csvreader)
+    # print(header)
+    the_set = set()
+    the_dict = dict()
+
+    for i in csvreader:
+        new_key = i[0]
+        new_values = i[1:-1]
+        new_values.remove("reports")
+        new_values.append([])
+        the_dict[new_key] = new_values
+        the_set.add(i[1])
+    return the_set, the_dict
+
 def add_prices (master_dictionary, prices_file_pointer):
     '''Docstring'''
     pass
@@ -40,7 +65,15 @@ def display_list (lst):  # "{:^35s}"
     pass
     
 def main():
-    pass
-       
+###########
+    price_fp, securties_fp = open_file()
+    read_file(securties_fp)
+    
+##############
+
+
+
+
+
 if __name__ == "__main__": 
     main() 
