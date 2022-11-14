@@ -21,7 +21,7 @@ def open_file():
 
 
 ###############
-    prices_fp = open("small_prices.csv","r")
+    prices_fp = open("small_prices.csv","r", encoding="utf-8")
     securities_fp = open("small_securities.csv","r")
     return prices_fp, securities_fp
 ###############3
@@ -46,7 +46,29 @@ def read_file(securities_fp):
 
 def add_prices (master_dictionary, prices_file_pointer):
     '''Docstring'''
-    pass
+
+    csvreader = csv.reader(prices_file_pointer)
+    header = next(csvreader)
+    for i in csvreader:
+        new_key = i.pop(1)
+        new_value = i
+        # print({new_key: new_value})
+        tmp_float = [float(x) for x in new_value[1:5]]
+        tmp_float.insert(0,new_value[0])
+
+        try:
+            master_dictionary[new_key][-1].append(tmp_float)
+        except KeyError:
+            continue
+
+    print(master_dictionary)
+
+
+
+
+
+
+
     
 def get_max_price_of_company (master_dictionary, company_symbol):
     '''Docstring'''
@@ -67,8 +89,9 @@ def display_list (lst):  # "{:^35s}"
 def main():
 ###########
     price_fp, securties_fp = open_file()
-    read_file(securties_fp)
-    
+    the_set, the_dict =read_file(securties_fp)
+
+    add_prices(the_dict,price_fp)
 ##############
 
 
