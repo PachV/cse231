@@ -63,6 +63,7 @@ def add_prices (master_dictionary, prices_file_pointer):
 
 
 def get_max_price_of_company (master_dictionary, company_symbol):
+    '''Docstring'''
     try:
         the_values = master_dictionary[company_symbol]
     except KeyError:
@@ -81,11 +82,20 @@ def get_max_price_of_company (master_dictionary, company_symbol):
 
 def find_max_company_price (master_dictionary):
     '''Docstring'''
-    pass
+    highs = {}
+    for company in master_dictionary:
+        company_values = master_dictionary[company]
+        for stat in company_values[-1]:
+            highs[stat[-1]]= company
+    maxium = (max(highs))
+    name = highs[maxium]
+    return(name, maxium)
 
-def get_avg_price_of_company (master_dictionary, company_symbol):
-    '''Docstring'''
-    pass
+
+
+
+
+
             
 def display_list (lst):  # "{:^35s}"
     '''Docstring'''
@@ -97,7 +107,9 @@ def main():
     the_set, the_dict =read_file(securties_fp)
 
     add_prices(the_dict,price_fp)
-    print(get_max_price_of_company(the_dict))
+    # get_max_price_of_company(the_dict)
+    find_max_company_price(the_dict)
+
 ##############
 
 
