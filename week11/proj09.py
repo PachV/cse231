@@ -92,8 +92,19 @@ def find_max_company_price (master_dictionary):
     return(name, maxium)
 
 
-
-
+def get_avg_price_of_company (master_dictionary, company_symbol):
+    '''Docstring'''
+    try:
+        the_values = master_dictionary[company_symbol]
+    except KeyError:
+        return 0.0
+    # print(the_values[-1])
+    highs = []
+    for strs in the_values[-1]:
+        # print(str, count)
+        highs.append(strs[-1])
+    avged =(sum(highs)/len(highs))
+    return round(avged,2)
 
 
             
@@ -108,7 +119,8 @@ def main():
 
     add_prices(the_dict,price_fp)
     # get_max_price_of_company(the_dict)
-    find_max_company_price(the_dict)
+    # find_max_company_price(the_dict)
+    get_avg_price_of_company(the_dict)
 
 ##############
 
