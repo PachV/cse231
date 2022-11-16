@@ -1,4 +1,4 @@
-# https://www.cse.msu.edu/~cse231/Online/Projects/Project08/Project08.pdf
+# https://www.cse.msu.edu/~cse231/Online/Projects/Project09/Project09.pdf
 import csv
 
 MENU = '''\nSelect an option from below:
@@ -13,11 +13,11 @@ WELCOME = "Welcome to the New York Stock Exchange.\n"
     
 def open_file():
     '''Docstring'''
-    #prices_file = input("Enter the price's filename: ")
-    #security_file = input("Enter the security's filename: ")
-#    prices_fp = open(f"{prices_file}","r")
-#    security_fp = open(f"{security_file}","r")
-#    return prices_fp, security_fp
+    # prices_file = input("\nEnter the price's filename: ")
+    # security_file = input("\nEnter the security's filename: ")
+    # prices_fp = open(f"{prices_file}","r", encoding="utf-8")
+    # security_fp = open(f"{security_file}","r")
+    # return prices_fp, security_fp
 
 
 ###############
@@ -110,19 +110,61 @@ def get_avg_price_of_company (master_dictionary, company_symbol):
             
 def display_list (lst):  # "{:^35s}"
     '''Docstring'''
-    pass
+    for i in range(0,len(lst),3):
+        tmp_str = f"{lst[i]:^35s}{lst[i+1]:^35s}{lst[i+2]:^35s}"
+        print(tmp_str)
+    print("\n")
+
+    
+
+
     
 def main():
 ###########
+    # price_fp, securties_fp = open_file()
+    # the_set, the_dict =read_file(securties_fp)
+
+    # add_prices(the_dict,price_fp)
+    # # get_max_price_of_company(the_dict)
+    # # find_max_company_price(the_dict)
+    # get_avg_price_of_company(the_dict)
+
+##############
+    print(WELCOME)
     price_fp, securties_fp = open_file()
     the_set, the_dict =read_file(securties_fp)
 
-    add_prices(the_dict,price_fp)
-    # get_max_price_of_company(the_dict)
-    # find_max_company_price(the_dict)
-    get_avg_price_of_company(the_dict)
+    while True:
+        optionz = input(MENU +"\n\nOption: ")
 
-##############
+        if optionz == "1":
+            title = "Companies in the New York Stock Market from 2010 to 2016"
+
+            print(f"\n{title:^105s}")
+            the_list = list(the_set)
+            the_list.sort()
+
+
+
+            display_list(the_list)
+            continue
+        if optionz == "2":
+            print("\ncompanies' symbols:")
+            the_list = (list(the_dict.keys()))
+            the_list.sort()
+            display_list(the_list)
+
+            
+        if optionz == "3":
+            pass
+        if optionz == "4":
+            pass
+        if optionz == "5":
+            pass
+        if optionz == "6":
+            exit()
+
+        
 
 
 
