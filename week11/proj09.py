@@ -1,4 +1,3 @@
-# https://www.cse.msu.edu/~cse231/Online/Projects/Project09/Project09.pdf
 import csv
 
 MENU = '''\nSelect an option from below:
@@ -18,14 +17,6 @@ def open_file():
     prices_fp = open(f"{prices_file}","r", encoding="utf-8")
     security_fp = open(f"{security_file}","r")
     return prices_fp, security_fp
-
-
-###############
-    # prices_fp = open("small_prices.csv","r", encoding="utf-8")
-    # securities_fp = open("small_securities.csv","r")
-    # return prices_fp, securities_fp
-###############3
-    
 
 def read_file(securities_fp):
     '''Docstring'''
@@ -61,7 +52,6 @@ def add_prices (master_dictionary, prices_file_pointer):
         except KeyError:
             continue
 
-
 def get_max_price_of_company (master_dictionary, company_symbol):
     '''Docstring'''
     try:
@@ -82,7 +72,6 @@ def get_max_price_of_company (master_dictionary, company_symbol):
     date = the_values[-1][index_in_index][0]
     return (maxium, date)
 
-
 def find_max_company_price (master_dictionary):
     '''Docstring'''
     highs = {}
@@ -93,7 +82,6 @@ def find_max_company_price (master_dictionary):
     maxium = (max(highs))
     name = highs[maxium]
     return(name, maxium)
-
 
 def get_avg_price_of_company (master_dictionary, company_symbol):
     '''Docstring'''
@@ -108,36 +96,30 @@ def get_avg_price_of_company (master_dictionary, company_symbol):
         highs.append(strs[-1])
     avged =(sum(highs)/len(highs))
     return round(avged,2)
-
-
             
 def display_list (lst):  # "{:^35s}"
     '''Docstring'''
+    leng = len(lst) % 3
     for i in range(0,len(lst),3):
-        tmp_str = f"{lst[i]:^35s}{lst[i+1]:^35s}{lst[i+2]:^35s}"
-        print(tmp_str)
+        try:
+            tmp_str = f"{lst[i]:^35s}{lst[i+1]:^35s}{lst[i+2]:^35s}"
+            print(tmp_str)
+        except IndexError:
+            if leng == 1:
+                print(f"{lst[len(lst)-1]:^35s}",end="")
+            elif leng == 2:
+                print(f"{lst[len(lst)-1]:^35s}{lst[len(lst)-2]:^35s}",end="")
+            elif leng == 3:
+                print(f"{lst[len(lst)-1]:^35s}{lst[len(lst)-2]:^35s}\{lst[len(lst)-3]:^35s}",end="")
+            else:
+                print("how???????????")
     print("\n")
 
-    
-
-
-    
 def main():
-###########
-    # price_fp, securties_fp = open_file()
-    # the_set, the_dict =read_file(securties_fp)
-
-    # add_prices(the_dict,price_fp)
-    # # get_max_price_of_company(the_dict)
-    # # find_max_company_price(the_dict)
-    # get_avg_price_of_company(the_dict)
-
-##############
     print(WELCOME)
     price_fp, securties_fp = open_file()
     the_set, the_dict =read_file(securties_fp)
     add_prices(the_dict,price_fp)
-
     optionz = 0
 
     while optionz !=6:
@@ -149,8 +131,6 @@ def main():
             print(f"\n{title:^105s}")
             the_list = list(the_set)
             the_list.sort()
-
-
 
             display_list(the_list)
             continue
@@ -169,7 +149,6 @@ def main():
                             print("\nError: not a company symbol. Please try again.")
                             continue
                             
-                        
                         elif max_price == 0 and time == 0:
                             print("\nThere were no prices.")
                             break
@@ -178,12 +157,10 @@ def main():
                             break
             except EOFError:
                 break
-                
-
 
         if optionz == "4":
             name = find_max_company_price(the_dict)
-            print(f"\nThe company with the highest stock price is MMM with a value of ${name[1]:.2f}\n")
+            print(f"\nThe company with the highest stock price is {name[0]} with a value of ${name[1]:.2f}\n")
             continue
 
         if optionz == "5":
@@ -197,20 +174,10 @@ def main():
                     else:
                         print(f"\nThe average stock price was ${result}.\n")
                         break
-
-                    
-
             except EOFError:
                 break
             
         if optionz == "6":
             exit()
-
-        
-
-
-
-
-
 if __name__ == "__main__": 
     main() 
