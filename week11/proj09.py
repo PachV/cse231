@@ -1,3 +1,5 @@
+# add fails for open file
+# then 
 import csv
 
 MENU = '''\nSelect an option from below:
@@ -22,7 +24,6 @@ def read_file(securities_fp):
     '''Docstring'''
     csvreader = csv.reader(securities_fp)
     header = next(csvreader)
-    # print(header)
     the_set = set()
     the_dict = dict()
 
@@ -43,7 +44,6 @@ def add_prices (master_dictionary, prices_file_pointer):
     for i in csvreader:
         new_key = i.pop(1)
         new_value = i
-        # print({new_key: new_value})
         tmp_float = [float(x) for x in new_value[1:5]]
         tmp_float.insert(0,new_value[0])
 
@@ -58,16 +58,13 @@ def get_max_price_of_company (master_dictionary, company_symbol):
         the_values = master_dictionary[company_symbol]
     except KeyError:
         return (None, None)
-    # print(the_values[-1])
     highs = []
     for strs in the_values[-1]:
-        # print(str, count)
         highs.append(strs[-1])
     try:
         maxium = max(highs)
     except ValueError:
         return 0,0
-    # print(maxium)
     index_in_index = highs.index(maxium)
     date = the_values[-1][index_in_index][0]
     return (maxium, date)
@@ -89,10 +86,8 @@ def get_avg_price_of_company (master_dictionary, company_symbol):
         the_values = master_dictionary[company_symbol]
     except KeyError:
         return 0.0
-    # print(the_values[-1])
     highs = []
     for strs in the_values[-1]:
-        # print(str, count)
         highs.append(strs[-1])
     avged =(sum(highs)/len(highs))
     return round(avged,2)
@@ -110,7 +105,8 @@ def display_list (lst):  # "{:^35s}"
             elif leng == 2:
                 print(f"{lst[len(lst)-1]:^35s}{lst[len(lst)-2]:^35s}",end="")
             elif leng == 3:
-                print(f"{lst[len(lst)-1]:^35s}{lst[len(lst)-2]:^35s}\{lst[len(lst)-3]:^35s}",end="")
+                print(f"{lst[len(lst)-1]:^35s}{lst[len(lst)-2]:^35s}\
+                    {lst[len(lst)-3]:^35s}",end="")
             else:
                 print("how???????????")
     print("\n")
@@ -143,33 +139,40 @@ def main():
         if optionz == "3":
             try:
                 while True:
-                        symbol = input("\nEnter company symbol for max price: ")
-                        max_price, time= get_max_price_of_company(the_dict, symbol)
+                        symbol = input("\nEnter company symbol for\
+ max price: ")
+                        max_price, time= get_max_price_of_company\
+                            (the_dict, symbol)
                         if max_price == None and time == None:
-                            print("\nError: not a company symbol. Please try again.")
+                            print("\nError: not a company symbol.\
+ Please try again.")
                             continue
                             
                         elif max_price == 0 and time == 0:
                             print("\nThere were no prices.")
                             break
                         else:
-                            print(f"\nThe maximum stock price was ${max_price:.2f} on the date {time}/\n")
+                            print(f"\nThe maximum stock price was \
+${max_price:.2f} on the date {time}/\n")
                             break
             except EOFError:
                 break
 
         if optionz == "4":
             name = find_max_company_price(the_dict)
-            print(f"\nThe company with the highest stock price is {name[0]} with a value of ${name[1]:.2f}\n")
+            print(f"\nThe company with the highest stock price is \
+{name[0]} with a value of ${name[1]:.2f}\n")
             continue
 
         if optionz == "5":
             try:
                 while True:
-                    symbol = input("\nEnter company symbol for average price: ")
+                    symbol = input("\nEnter company symbol\
+ for average price: ")
                     result =get_avg_price_of_company(the_dict,symbol)
                     if result == 0.0:
-                        print("\nError: not a company symbol. Please try again.")
+                        print("\nError: not a company symbol. \
+Please try again.")
                         continue
                     else:
                         print(f"\nThe average stock price was ${result}.\n")
