@@ -13,17 +13,17 @@ WELCOME = "Welcome to the New York Stock Exchange.\n"
     
 def open_file():
     '''Docstring'''
-    # prices_file = input("\nEnter the price's filename: ")
-    # security_file = input("\nEnter the security's filename: ")
-    # prices_fp = open(f"{prices_file}","r", encoding="utf-8")
-    # security_fp = open(f"{security_file}","r")
-    # return prices_fp, security_fp
+    prices_file = input("\nEnter the price's filename: ")
+    security_file = input("\nEnter the security's filename: ")
+    prices_fp = open(f"{prices_file}","r", encoding="utf-8")
+    security_fp = open(f"{security_file}","r")
+    return prices_fp, security_fp
 
 
 ###############
-    prices_fp = open("small_prices.csv","r", encoding="utf-8")
-    securities_fp = open("small_securities.csv","r")
-    return prices_fp, securities_fp
+    # prices_fp = open("small_prices.csv","r", encoding="utf-8")
+    # securities_fp = open("small_securities.csv","r")
+    # return prices_fp, securities_fp
 ###############3
     
 
@@ -73,7 +73,10 @@ def get_max_price_of_company (master_dictionary, company_symbol):
     for strs in the_values[-1]:
         # print(str, count)
         highs.append(strs[-1])
-    maxium = max(highs)
+    try:
+        maxium = max(highs)
+    except ValueError:
+        return 0,0
     # print(maxium)
     index_in_index = highs.index(maxium)
     date = the_values[-1][index_in_index][0]
@@ -133,8 +136,11 @@ def main():
     print(WELCOME)
     price_fp, securties_fp = open_file()
     the_set, the_dict =read_file(securties_fp)
+    add_prices(the_dict,price_fp)
 
-    while True:
+    optionz = 0
+
+    while optionz !=6:
         optionz = input(MENU +"\n\nOption: ")
 
         if optionz == "1":
@@ -154,13 +160,49 @@ def main():
             the_list.sort()
             display_list(the_list)
 
-            
         if optionz == "3":
-            pass
+            try:
+                while True:
+                        symbol = input("\nEnter company symbol for max price: ")
+                        max_price, time= get_max_price_of_company(the_dict, symbol)
+                        if max_price == None and time == None:
+                            print("\nError: not a company symbol. Please try again.")
+                            continue
+                            
+                        
+                        elif max_price == 0 and time == 0:
+                            print("\nThere were no prices.")
+                            break
+                        else:
+                            print(f"\nThe maximum stock price was ${max_price:.2f} on the date {time}/\n")
+                            break
+            except EOFError:
+                break
+                
+
+
         if optionz == "4":
-            pass
+            name = find_max_company_price(the_dict)
+            print(f"\nThe company with the highest stock price is MMM with a value of ${name[1]:.2f}\n")
+            continue
+
         if optionz == "5":
-            pass
+            try:
+                while True:
+                    symbol = input("\nEnter company symbol for average price: ")
+                    result =get_avg_price_of_company(the_dict,symbol)
+                    if result == 0.0:
+                        print("\nError: not a company symbol. Please try again.")
+                        continue
+                    else:
+                        print(f"\nThe average stock price was ${result}.\n")
+                        break
+
+                    
+
+            except EOFError:
+                break
+            
         if optionz == "6":
             exit()
 
