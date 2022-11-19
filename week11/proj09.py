@@ -1,5 +1,3 @@
-# add fails for open file
-# then 
 import csv
 
 MENU = '''\nSelect an option from below:
@@ -13,15 +11,35 @@ MENU = '''\nSelect an option from below:
 WELCOME = "Welcome to the New York Stock Exchange.\n"
     
 def open_file():
-    '''Docstring'''
-    prices_file = input("\nEnter the price's filename: ")
-    security_file = input("\nEnter the security's filename: ")
-    prices_fp = open(f"{prices_file}","r", encoding="utf-8")
-    security_fp = open(f"{security_file}","r")
-    return prices_fp, security_fp
+    '''ask user for file and try to open it, if it cant, then prompt again'''
+    prices_fp = None
+    security_fp = None
+    while True:
+        prices_file = input("\nEnter the price's filename: ")
+        try:
+            prices_fp = open(f"{prices_file}","r")
+            break
+            
+        except FileNotFoundError:
+            print("Not found, try again.")
+    
+    while True:
+
+        security_file = input("\nEnter the security's filename: ")
+        try:
+            security_fp = open(f"{security_file}","r")
+            return prices_fp, security_fp
+        except FileNotFoundError:
+            print("File not found, try again")
+            
+
 
 def read_file(securities_fp):
-    '''Docstring'''
+    '''make a dict with the companies name as the key, and
+        their info as values 
+        also make a set that is the companies that is in securities.csv
+        return the dict and set
+    '''
     csvreader = csv.reader(securities_fp)
     header = next(csvreader)
     the_set = set()
@@ -30,14 +48,16 @@ def read_file(securities_fp):
     for i in csvreader:
         new_key = i[0]
         new_values = i[1:-1]
-        new_values.remove("reports")
+        new_values.remove("reports") #this index isnt used for anything
         new_values.append([])
         the_dict[new_key] = new_values
         the_set.add(i[1])
     return the_set, the_dict
 
 def add_prices (master_dictionary, prices_file_pointer):
-    '''Docstring'''
+    '''each value in the key, add the price history at index [-1], and
+        convert it into float
+    '''
 
     csvreader = csv.reader(prices_file_pointer)
     header = next(csvreader)
@@ -53,7 +73,11 @@ def add_prices (master_dictionary, prices_file_pointer):
             continue
 
 def get_max_price_of_company (master_dictionary, company_symbol):
-    '''Docstring'''
+    '''use the parameter to find the price history fo the company
+        then put all the highest value per that day into a list,
+        then max() it to find the highest value
+    
+    '''
     try:
         the_values = master_dictionary[company_symbol]
     except KeyError:
@@ -65,12 +89,16 @@ def get_max_price_of_company (master_dictionary, company_symbol):
         maxium = max(highs)
     except ValueError:
         return 0,0
+
+    # 0 index is first high price, 1th index is the 2nd high price
     index_in_index = highs.index(maxium)
     date = the_values[-1][index_in_index][0]
     return (maxium, date)
 
 def find_max_company_price (master_dictionary):
-    '''Docstring'''
+    '''make a dict, the key is the price, and the value is company symbol
+        use the max() to find max price, and use the key to find the symbol
+    '''
     highs = {}
     for company in master_dictionary:
         company_values = master_dictionary[company]
@@ -81,7 +109,9 @@ def find_max_company_price (master_dictionary):
     return(name, maxium)
 
 def get_avg_price_of_company (master_dictionary, company_symbol):
-    '''Docstring'''
+    '''same as get max price of company
+        but we find the average of them with sum() and len() 
+    '''
     try:
         the_values = master_dictionary[company_symbol]
     except KeyError:
@@ -92,19 +122,23 @@ def get_avg_price_of_company (master_dictionary, company_symbol):
     avged =(sum(highs)/len(highs))
     return round(avged,2)
             
-def display_list (lst):  # "{:^35s}"
-    '''Docstring'''
-    leng = len(lst) % 3
+def display_list (lst):
+    '''remin_len is the last row that needed to be formatted
+        each interation will skip 3 numbers, and use
+        math to find out the missing numbers, then index them using `[i]`
+    '''
+    remin_len = len(lst) % 3
     for i in range(0,len(lst),3):
         try:
             tmp_str = f"{lst[i]:^35s}{lst[i+1]:^35s}{lst[i+2]:^35s}"
             print(tmp_str)
         except IndexError:
-            if leng == 1:
+            # left overs
+            if remin_len == 1: 
                 print(f"{lst[len(lst)-1]:^35s}",end="")
-            elif leng == 2:
+            elif remin_len == 2:
                 print(f"{lst[len(lst)-1]:^35s}{lst[len(lst)-2]:^35s}",end="")
-            elif leng == 3:
+            elif remin_len == 3:
                 print(f"{lst[len(lst)-1]:^35s}{lst[len(lst)-2]:^35s}\
                     {lst[len(lst)-3]:^35s}",end="")
             else:
@@ -116,6 +150,9 @@ def main():
     price_fp, securties_fp = open_file()
     the_set, the_dict =read_file(securties_fp)
     add_prices(the_dict,price_fp)
+    price_fp.close()
+    securties_fp.close()
+
     optionz = 0
 
     while optionz !=6:
