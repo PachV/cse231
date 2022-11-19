@@ -20,17 +20,24 @@ def initialize():
     foundation = []
     waste = []
 
+
+
     deck = Deck()
     # deck.shuffle()
-    print(deck.display())
 
     for i in range(7):
         for _ in range(i+1):
             tableau[i].append(deck.deal())
 
-    
     print(tableau)
-    print(deck.display())
+    
+    for i in range(7):
+        for j in range(i):
+            (tableau[i][j].flip_card())
+
+    print(tableau)
+            
+
 
 
 

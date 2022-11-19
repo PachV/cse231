@@ -57,7 +57,8 @@ class Card( object ):
         else:
             return "{}{}".format( " X", "X")
         # version to print Card calls for developing tests
-        #return "cards.Card({},{})".format( self.__rank, self.__suit )
+
+        # return "cards.Card({},{})".format( self.__rank, self.__suit )
 
     def __repr__( self ):
         """ Convert card into a string for use in the shell. """
