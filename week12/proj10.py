@@ -25,7 +25,6 @@ def initialize():
     start = 0
     while True:
         for i in range(start,7):
-            print(start)
             popped = deck.deal()
             tableau[i].append(popped)
         start +=1
@@ -88,8 +87,11 @@ def display(tableau, stock, foundation, waste):
 
 def stock_to_waste( stock, waste ):
     '''Docstring'''
-    pass
-    
+    if stock.is_empty():
+        return False
+    else:
+        waste = waste.append(stock.deal())
+        return True
        
 def waste_to_tableau( waste, tableau, t_num ):
     '''Docstring'''
@@ -175,8 +177,10 @@ def parse_option(in_str):
 
 
 def main():   
+    #####
     tableau, stock, foundation, waste = initialize()
+    stock_to_waste(stock,waste)
     
-
+    ####
 if __name__ == '__main__':
      main()
