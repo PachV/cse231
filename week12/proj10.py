@@ -16,33 +16,32 @@ MENU ='''Prompt the user for an option and check that the input has the
 def initialize():
     '''Docstring'''
     tableau = [[] for _ in range(7)]
+    foundation = [[],[],[],[]]
     stock = []
-    foundation = []
     waste = []
-
-
-
     deck = Deck()
     # deck.shuffle()
 
-    for i in range(7):
-        for _ in range(i+1):
-            tableau[i].append(deck.deal())
-
-    print(tableau)
+    start = 0
+    while True:
+        for i in range(start,7):
+            print(start)
+            popped = deck.deal()
+            tableau[i].append(popped)
+        start +=1
+        if start == 7:
+            break
     
     for i in range(7):
         for j in range(i):
             (tableau[i][j].flip_card())
 
-    print(tableau)
-            
+    # print(tableau)
+    stock = deck
+    
+    waste.append(deck.deal())
+    return tableau,stock ,foundation,waste
 
-
-
-
-
-    return 1,2,3,4
 def display(tableau, stock, foundation, waste):
     """ display the game setup """
     stock_top_card = "empty"
