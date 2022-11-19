@@ -1,4 +1,4 @@
-
+# https://www.cse.msu.edu/~cse231/Online/Projects/Project10/project10.pdf
 from cards import Card, Deck
 
 MENU ='''Prompt the user for an option and check that the input has the 
@@ -15,8 +15,27 @@ MENU ='''Prompt the user for an option and check that the input has the
     '''
 def initialize():
     '''Docstring'''
-    pass
+    tableau = [[] for _ in range(7)]
+    stock = []
+    foundation = []
+    waste = []
+
+    deck = Deck()
+    # deck.shuffle()
+    print(deck.display())
+
+    for i in range(7):
+        for _ in range(i+1):
+            tableau[i].append(deck.deal())
+
     
+    print(tableau)
+    print(deck.display())
+
+
+
+
+    return 1,2,3,4
 def display(tableau, stock, foundation, waste):
     """ display the game setup """
     stock_top_card = "empty"
@@ -150,7 +169,8 @@ def parse_option(in_str):
 
 
 def main():   
-    pass
+    tableau, stock, foundation, waste = initialize()
+    
 
 if __name__ == '__main__':
      main()
