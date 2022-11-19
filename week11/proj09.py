@@ -1,3 +1,12 @@
+###############################
+#   proj 09
+#   ask for the price and security file name first
+#   then the master dict and set will be set up, it is used to call functions
+#   print out the menu and ask the user to select which function to go to
+#   ask for the required stuff that is needed to call the function
+#   and print out the result using display_list() or other ways 
+##############################
+
 import csv
 
 MENU = '''\nSelect an option from below:
@@ -14,6 +23,7 @@ def open_file():
     '''ask user for file and try to open it, if it cant, then prompt again'''
     prices_fp = None
     security_fp = None
+
     while True:
         prices_file = input("\nEnter the price's filename: ")
         try:
@@ -24,7 +34,6 @@ def open_file():
             print("Not found, try again.")
     
     while True:
-
         security_file = input("\nEnter the security's filename: ")
         try:
             security_fp = open(f"{security_file}","r")
@@ -37,7 +46,7 @@ def open_file():
 def read_file(securities_fp):
     '''make a dict with the companies name as the key, and
         their info as values 
-        also make a set that is the companies that is in securities.csv
+        also make a set that is the companies in securities.csv
         return the dict and set
     '''
     csvreader = csv.reader(securities_fp)
