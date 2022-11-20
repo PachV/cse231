@@ -158,6 +158,8 @@ def tableau_to_foundation( tableau, foundation, t_num, f_num ):
         if table_last.rank() - found_last.rank() == 1:
             t_last =tableau[t_num].pop()
             foundation[f_num].append(t_last)
+            if not tableau[t_num][-1].is_face_up():
+                tableau[t_num][-1].flip_card()
 
             return True
         return False
@@ -166,7 +168,34 @@ def tableau_to_foundation( tableau, foundation, t_num, f_num ):
 
 def tableau_to_tableau( tableau, t_num1, t_num2 ):
     '''Docstring'''
-    pass
+    if len(tableau[t_num2]) == 0:
+        if tableau[t_num1][-1].rank() == 13:
+            popped = tableau[t_num1].pop()    
+            tableau[t_num2].append(popped)
+            return True
+        return False
+
+
+    n1 = tableau[t_num1][-1]
+    n2 = tableau[t_num2][-1]
+
+    if n1.rank() == n2.rank():
+        return False
+
+    if 2 in(n1.suit(), n2.suit()) and 3 in (n1.suit(), n2.suit()):
+        return False
+    if 1 in(n1.suit(), n2.suit()) and 4 in (n1.suit(), n2.suit()):
+        return False
+    
+    if n2.rank() - n1.rank() == 1:
+        popped = tableau[t_num1].pop()
+        tableau[t_num2].append(popped)
+        return True
+    return False
+    
+
+
+
     
 def check_win (stock, waste, foundation, tableau):
     '''Docstring'''
