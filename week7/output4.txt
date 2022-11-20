@@ -1,0 +1,109 @@
+Enter file name: data.csv
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 2
+Choose the following criteria
+                 1. Element
+                 2. Weapon
+                 3. Rarity
+                 4. Region
+                 Enter criteria number: 2
+Enter value: polearm
+
+Character           Element   Weapon    Rarity    Region                   
+Hu Tao              Pyro      Polearm   5         Liyue                    
+Raiden Shogun       Electro   Polearm   5         Inazuma                  
+Shenhe              Cryo      Polearm   5         Liyue                    
+Xiao                Anemo     Polearm   5         Liyue                    
+Zhongli             Geo       Polearm   5         Liyue                    
+Rosaria             Cryo      Polearm   4         Mondstadt                
+Thoma               Pyro      Polearm   4         Inazuma                  
+Xiangling           Pyro      Polearm   4         Liyue                    
+Yun Jin             Geo       Polearm   4         Liyue                    
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 2
+Choose the following criteria
+                 1. Element
+                 2. Weapon
+                 3. Rarity
+                 4. Region
+                 Enter criteria number: 3
+Enter value: 5
+
+Character           Element   Weapon    Rarity    Region                   
+Albedo              Geo       Sword     5         Mondstadt                
+Aloy                Cryo      Bow       5         N/A                      
+Arataki Itto        Geo       Claymore  5         Inazuma                  
+Diluc               Pyro      Claymore  5         Mondstadt                
+Eula                Cryo      Claymore  5         Mondstadt                
+Ganyu               Cryo      Bow       5         Liyue                    
+Hu Tao              Pyro      Polearm   5         Liyue                    
+Jean                Anemo     Sword     5         Mondstadt                
+Kaedehara Kazuha    Anemo     Sword     5         Inazuma                  
+Kamisato Ayaka      Cryo      Sword     5         Inazuma                  
+Kamisato Ayato      Hydro     Sword     5         Inazuma                  
+Keqing              Electro   Sword     5         Liyue                    
+Klee                Pyro      Catalyst  5         Mondstadt                
+Mona                Hydro     Catalyst  5         Mondstadt                
+Qiqi                Cryo      Sword     5         Liyue                    
+Raiden Shogun       Electro   Polearm   5         Inazuma                  
+Sangonomiya Kokomi  Hydro     Catalyst  5         Inazuma                  
+Shenhe              Cryo      Polearm   5         Liyue                    
+Tartaglia           Hydro     Bow       5         Snezhnaya                
+Traveler            None      Sword     5         N/A                      
+Venti               Anemo     Bow       5         Mondstadt                
+Xiao                Anemo     Polearm   5         Liyue                    
+Yae Miko            Electro   Catalyst  5         Inazuma                  
+Yoimiya             Pyro      Bow       5         Inazuma                  
+Zhongli             Geo       Polearm   5         Liyue                    
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 2
+Choose the following criteria
+                 1. Element
+                 2. Weapon
+                 3. Rarity
+                 4. Region
+                 Enter criteria number: 4
+Enter value: liyue
+
+Character           Element   Weapon    Rarity    Region                   
+Ganyu               Cryo      Bow       5         Liyue                    
+Hu Tao              Pyro      Polearm   5         Liyue                    
+Keqing              Electro   Sword     5         Liyue                    
+Qiqi                Cryo      Sword     5         Liyue                    
+Shenhe              Cryo      Polearm   5         Liyue                    
+Xiao                Anemo     Polearm   5         Liyue                    
+Zhongli             Geo       Polearm   5         Liyue                    
+Beidou              Electro   Claymore  4         Liyue                    
+Chongyun            Cryo      Claymore  4         Liyue                    
+Ningguang           Geo       Catalyst  4         Liyue                    
+Xiangling           Pyro      Polearm   4         Liyue                    
+Xingqiu             Hydro     Sword     4         Liyue                    
+Xinyan              Pyro      Claymore  4         Liyue                    
+Yanfei              Pyro      Catalyst  4         Liyue                    
+Yun Jin             Geo       Polearm   4         Liyue                    
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 4

@@ -1,0 +1,9 @@
+Welcome to program that finds nearby exoplanets in circumstellar habitable zone.
+Input data to open: small
+Enter maximum distance from Earth (light years): 100
+Number of stars in systems with the most stars: 3.
+Number of planets in systems with the most planets: 4.
+Average mass of the planets: 455.26 Earth masses.
+Number of planets in circumstellar habitable zone: 1.
+No rocky planet in circumstellar habitable zone.
+Closest gaseous planet in the circumstellar habitable zone kap CrB b is 98.07 light years away.

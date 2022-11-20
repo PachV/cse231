@@ -1,0 +1,55 @@
+
+Input users filename: users.txt
+
+
+Input reviews filename: reviews.txt
+
+
+Input movies filename: movies.txt
+
+        Options:
+        1. Highest rated movie for a specific year
+        2. Highest rated movie for a specific Genre
+        3. Highest rated movies by a specific Gender (M,F)
+        4. Highest rated movies by a specific occupation
+        5. Quit
+        
+
+
+Select an option (1-5): 2
+
+Valid Genres are:  ['Unknown', 'Action', 'Adventure', 'Animation', "Children's", 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy', 'Film-noir', 'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']
+
+Input a genre: Film-Noir
+
+Avg max rating for the Genre is: 4.26
+Manchurian Candidate, The (1962)
+
+
+Select an option (1-5): 2
+
+Valid Genres are:  ['Unknown', 'Action', 'Adventure', 'Animation', "Children's", 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy', 'Film-noir', 'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']
+
+Input a genre: Documentary
+
+Avg max rating for the Genre is: 5.0
+Great Day in Harlem, A (1994)
+Marlene Dietrich: Shadow and Light (1996) 
+
+
+Select an option (1-5): 2
+
+Valid Genres are:  ['Unknown', 'Action', 'Adventure', 'Animation', "Children's", 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy', 'Film-noir', 'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']
+
+Input a genre: Drama
+
+Avg max rating for the Genre is: 5.0
+They Made Me a Criminal (1939)
+Prefontaine (1997)
+Saint of Fort Washington, The (1993)
+Aiqing wansui (1994)
+Someone Else's America (1995)
+Entertaining Angels: The Dorothy Day Story (1996)
+
+
+Select an option (1-5): 5

@@ -1,0 +1,71 @@
+Enter file name: data.csv
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 2
+Choose the following criteria
+                 1. Element
+                 2. Weapon
+                 3. Rarity
+                 4. Region
+                 Enter criteria number: 1
+Enter value: time
+
+Nothing to print.
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 2
+Choose the following criteria
+                 1. Element
+                 2. Weapon
+                 3. Rarity
+                 4. Region
+                 Enter criteria number: 1
+Enter value: cryo
+
+Character           Element   Weapon    Rarity    Region                   
+Aloy                Cryo      Bow       5         N/A                      
+Eula                Cryo      Claymore  5         Mondstadt                
+Ganyu               Cryo      Bow       5         Liyue                    
+Kamisato Ayaka      Cryo      Sword     5         Inazuma                  
+Qiqi                Cryo      Sword     5         Liyue                    
+Shenhe              Cryo      Polearm   5         Liyue                    
+Chongyun            Cryo      Claymore  4         Liyue                    
+Diona               Cryo      Bow       4         Mondstadt                
+Kaeya               Cryo      Sword     4         Mondstadt                
+Rosaria             Cryo      Polearm   4         Mondstadt                
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 2
+Choose the following criteria
+                 1. Element
+                 2. Weapon
+                 3. Rarity
+                 4. Region
+                 Enter criteria number: 1
+Enter value: none
+
+Character           Element   Weapon    Rarity    Region                   
+Traveler            None      Sword     5         N/A                      
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 4

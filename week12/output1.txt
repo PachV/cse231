@@ -1,0 +1,1169 @@
+Prompt the user for an option and check that the input has the 
+       form requested in the menu, printing an error message, if not.
+       Return:
+    TT s d: Move card from end of Tableau pile s to end of pile d.
+    TF s d: Move card from end of Tableau pile s to Foundation d.
+    WT d: Move card from Waste to Tableau pile d.
+    WF d: Move card from Waste to Foundation pile d.
+    SW : Move card from Stock to Waste.
+    R: Restart the game (after shuffling)
+    H: Display this menu of choices
+    Q: Quit the game        
+    
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     5♣   				 empty  empty  empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX     XX     XX     XX     XX     XX   
+		             3♦     XX     XX     XX     XX     XX   
+		                    A♣     XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     XX     XX   
+		                                         A♥     XX   
+		                                                7♣   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): TF 2 1
+Invalid move!
+
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     5♣   				 empty  empty  empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX     XX     XX     XX     XX     XX   
+		             3♦     XX     XX     XX     XX     XX   
+		                    A♣     XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     XX     XX   
+		                                         A♥     XX   
+		                                                7♣   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tf 3 1
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     5♣   				  A♣    empty  empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX     XX     XX     XX     XX     XX   
+		             3♦     J♣     XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     XX     XX   
+		                                         A♥     XX   
+		                                                7♣   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tf 6 1
+Invalid move!
+
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     5♣   				  A♣    empty  empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX     XX     XX     XX     XX     XX   
+		             3♦     J♣     XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     XX     XX   
+		                                         A♥     XX   
+		                                                7♣   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tf 6 2
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     5♣   				  A♣     A♥    empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX     XX     XX     XX     XX     XX   
+		             3♦     J♣     XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                                XX   
+		                                                7♣   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tt 3 1
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     5♣   				  A♣     A♥    empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX     6♦     XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                                XX   
+		                                                7♣   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tt 3 7
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     5♣   				  A♣     A♥    empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                                XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tt 4 3
+Invalid move!
+
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     5♣   				  A♣     A♥    empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                                XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wt 5
+Invalid move!
+
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     5♣   				  A♣     A♥    empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                                XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wt 6
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX    empty 				  A♣     A♥    empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                         5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     A♠   				  A♣     A♥    empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                         5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wt 3
+Invalid move!
+
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     A♠   				  A♣     A♥    empty  empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                         5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wf 3
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX    empty 				  A♣     A♥     A♠    empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                         5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     5♥   				  A♣     A♥     A♠    empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                         5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wt 5
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX    empty 				  A♣     A♥     A♠    empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX    10♥   				  A♣     A♥     A♠    empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		                           XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wt 1
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX    empty 				  A♣     A♥     A♠    empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		     10♥                   XX     XX     XX     XX   
+		                           9♣     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tt 4 1
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX    empty 				  A♣     A♥     A♠    empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                          XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     7♦   				  A♣     A♥     A♠    empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                          XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     2♦   				  A♣     A♥     A♠    empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                          XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wt 4
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     7♦   				  A♣     A♥     A♠    empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     9♦   				  A♣     A♥     A♠    empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     A♦   				  A♣     A♥     A♠    empty 
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wf 4
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     9♦   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     4♣   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                                7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wt 5
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     9♦   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     XX            XX     XX     XX     XX   
+		      J♣     3♦            XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣            7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tt 2 5
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     9♦   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣            7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     4♦   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣            7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wt 6
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     9♦   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): mtt 4 6 2
+
+Error in option: mtt 4 6 2
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     9♦   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     J♠   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     6♣   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     4♠   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     9♥   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     8♣   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     7♥   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     2♥   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wt 2
+
+Invalid move!
+
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     2♥   				  A♣     A♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wf 2
+stock waste 					 foundation
+				          1      2      3      4 
+XX     7♥   				  A♣     2♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tf 5 2
+
+Invalid move!
+
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     7♥   				  A♣     2♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX    10♦   				  A♣     2♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     K♦   				  A♣     2♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥            XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wt 3
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX    10♦   				  A♣     2♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥     K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     7♠   				  A♣     2♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥     K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     Q♣   				  A♣     2♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥     3♥     K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tf 2 2
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     Q♣   				  A♣     3♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     Q♠   				  A♣     3♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     4♥   				  A♣     3♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wf 2
+
+stock waste 					 foundation
+				          1      2      3      4 
+XX     Q♠   				  A♣     4♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): sw
+
+stock waste 					 foundation
+				          1      2      3      4 
+empty 10♣   				  A♣     4♥     A♠     A♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                   2♦     XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q):tf 4 4
+
+stock waste 					 foundation
+				          1      2      3      4 
+empty 10♣   				  A♣     4♥     A♠     2♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                          XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tt 0 4
+
+Error in Source.
+
+stock waste 					 foundation
+				          1      2      3      4 
+empty 10♣   				  A♣     4♥     A♠     2♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                          XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tt 4 8
+
+Error in Destination
+
+stock waste 					 foundation
+				          1      2      3      4 
+empty 10♣   				  A♣     4♥     A♠     2♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                          XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tt -1 4
+
+Error in option: tt -1 4
+
+stock waste 					 foundation
+				          1      2      3      4 
+empty 10♣   				  A♣     4♥     A♠     2♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                          XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): wf 5
+
+Error in Destination
+
+stock waste 					 foundation
+				          1      2      3      4 
+empty 10♣   				  A♣     4♥     A♠     2♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                          XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                  3♦            6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tf 5 4
+
+stock waste 					 foundation
+				          1      2      3      4 
+empty 10♣   				  A♣     4♥     A♠     3♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                          XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣     4♦     7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): tf 6 4
+stock waste 					 foundation
+				          1      2      3      4 
+empty 10♣   				  A♣     4♥     A♠     4♦   
+
+
+
+					tableau
+		      1      2      3      4      5      6      7 
+		      Q♥            K♦     XX     XX     XX     XX   
+		      J♣                   XX     XX     XX     XX   
+		     10♥                   3♣     XX     XX     XX   
+		      9♣                          XX     XX     XX   
+		                                  6♠     6♥     XX   
+		                                  5♥     5♣     XX   
+		                                  4♣            7♣   
+		                                                6♦   
+
+
+Input an option (TT,TF,WT,WF,SW,R,H,Q): q

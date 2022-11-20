@@ -1,0 +1,41 @@
+Welcome to the New York Stock Exchange.
+
+Enter the price's filename: small_prices.csv
+Enter the security's filename: small_securities.csv
+
+Select an option from below:
+            (1) Display all companies in the New York Stock Exchange
+            (2) Display companies' symbols
+            (3) Find max price of a company
+            (4) Find the company with the maximum stock price
+            (5) Find the average price of a company's stock
+            (6) quit
+    
+Option: 3
+Enter company symbol for max price: MMM
+The maximum stock price was $117.44 on the date 1/8/16 0:00/
+
+
+Select an option from below:
+            (1) Display all companies in the New York Stock Exchange
+            (2) Display companies' symbols
+            (3) Find max price of a company
+            (4) Find the company with the maximum stock price
+            (5) Find the average price of a company's stock
+            (6) quit
+    
+Option: 3
+Enter company symbol for max price: ABC
+Error: not a company symbol. Please try again.
+Enter company symbol for max price: AME
+There were no prices.
+
+Select an option from below:
+            (1) Display all companies in the New York Stock Exchange
+            (2) Display companies' symbols
+            (3) Find max price of a company
+            (4) Find the company with the maximum stock price
+            (5) Find the average price of a company's stock
+            (6) quit
+    
+Option: 6

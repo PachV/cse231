@@ -1,0 +1,13 @@
+Options below:
+    ‘F’: Factorial of N.
+    ‘E’: Approximate value of e.
+    ‘P’: Approximate value of Pi.
+    ‘S’: Approximate value of the sinh of X.
+    ‘M’: Display the menu of options.
+    ‘X’: Exit.
+
+
+
+Choose an option: X
+
+Thank you for playing.

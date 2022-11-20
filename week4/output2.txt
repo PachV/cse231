@@ -1,0 +1,99 @@
+Options below:
+    ‘F’: Factorial of N.
+    ‘E’: Approximate value of e.
+    ‘P’: Approximate value of Pi.
+    ‘S’: Approximate value of the sinh of X.
+    ‘M’: Display the menu of options.
+    ‘X’: Exit.
+
+
+
+Choose an option: F
+
+Factorial
+
+Input non-negative integer N: 3
+
+Calculated: 6
+Math: 6
+Diff: 0
+
+
+Choose an option: f
+
+Factorial
+
+Input non-negative integer N: 6
+
+Calculated: 720
+Math: 720
+Diff: 0
+
+
+Choose an option: E
+
+e
+Calculated: 2.7182818011
+Math: 2.7182818285
+Diff: 0.0000000274
+
+
+Choose an option: p
+
+pi
+Calculated: 3.1415924536
+Math: 3.1415926536
+Diff: 0.0000002000
+
+
+Choose an option: S
+
+sinh
+
+X in radians: 1
+
+Calculated: 1.1752011684
+Math: 1.1752011936
+Diff: 0.0000000252
+
+
+Choose an option: s
+
+sinh
+
+X in radians: 2.1
+
+Calculated: 4.0218566892
+Math: 4.0218567422
+Diff: 0.0000000530
+
+
+Choose an option: m
+
+Options below:
+    ‘F’: Factorial of N.
+    ‘E’: Approximate value of e.
+    ‘P’: Approximate value of Pi.
+    ‘S’: Approximate value of the sinh of X.
+    ‘M’: Display the menu of options.
+    ‘X’: Exit.
+
+
+
+Choose an option: a
+
+Invalid option: A
+
+Options below:
+    ‘F’: Factorial of N.
+    ‘E’: Approximate value of e.
+    ‘P’: Approximate value of Pi.
+    ‘S’: Approximate value of the sinh of X.
+    ‘M’: Display the menu of options.
+    ‘X’: Exit.
+
+
+
+Choose an option: x
+
+Thank you for playing.

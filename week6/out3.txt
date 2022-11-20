@@ -1,0 +1,13 @@
+Welcome to program that finds nearby exoplanets in circumstellar habitable zone.
+Input data to open: fail
+Error: file not found.  Please try again.
+Enter a file name: KGF.csv
+Error: file not found.  Please try again.
+Enter a file name: KGF
+Enter maximum distance from Earth (light years): 10000
+Number of stars in systems with the most stars: 4.
+Number of planets in systems with the most planets: 8.
+Average mass of the planets: 531.28 Earth masses.
+Number of planets in circumstellar habitable zone: 199.
+Closest rocky planet in the circumstellar habitable zone HD 219134 d is 21.31 light years away.
+Closest gaseous planet in the circumstellar habitable zone GJ 338 B b is 20.66 light years away.

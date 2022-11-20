@@ -1,0 +1,55 @@
+Enter file name: directory.csv
+Error opening file. Please try again.
+Enter file name: data.csv
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 3
+Enter element: dendro
+Enter weapon: catalyst
+Enter rarity: 5
+
+Nothing to print.
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 3
+Enter element: cryo
+Enter weapon: bow
+Enter rarity: 5
+
+Character           Element   Weapon    Rarity    Region                   
+Aloy                Cryo      Bow       5         N/A                      
+Ganyu               Cryo      Bow       5         Liyue                    
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 3
+Enter element: electro
+Enter weapon: sword
+Enter rarity: ssr
+Invalid input
+Enter rarity: 5
+
+Character           Element   Weapon    Rarity    Region                   
+Keqing              Electro   Sword     5         Liyue                    
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 4

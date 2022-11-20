@@ -1,0 +1,3 @@
+"\nInput an option (TT,TF,WT,WF,SW,R,H,Q): " 
+"\nInvalid move!\n"
+

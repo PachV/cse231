@@ -1,0 +1,77 @@
+
+Friend Network
+
+Input a names file: Names.txt
+Input a friends file: Friends.csv
+
+ Menu : 
+    1: Popular people (with the most friends). 
+    2: Non-friends with the most friends in common.
+    3: People with the most second-order friends. 
+    4: Input member name, to print the friends  
+    5: Quit                       
+
+Choose an option: 1
+
+The maximum number of friends: 30
+People with most friends:
+Laura Todd
+Sarah White
+
+Choose an option: 2
+
+The maximum number of commmon friends: 10
+Pairs of non-friends with the most friends in common:
+('Michael Brooks', 'William Chaney')
+
+Choose an option: 3
+
+The maximum number of second-order friends: 169
+People with the most second_order friends:
+Benjamin Conway
+
+Choose an option: 4
+Enter a name: Amanda Barnes
+
+Friends of Amanda Barnes:
+Mark Mercado
+Miss Kayla Walker
+Brandy Vargas
+Thomas King
+Thomas Perry
+Sandra Harris
+Larry Powell
+George Gomez
+Joseph Nguyen
+Terry Johns
+Tyler Davis
+Katie Ferguson
+Thomas Bass
+Bryce Garrison
+Shawn Logan
+Jordan Johnson
+
+Choose an option: 4
+Enter a name: Kelly Greer
+
+Friends of Kelly Greer:
+Gregory Williams
+Devin Baldwin
+Christopher Henderson
+Jeffrey Glover
+David Gomez
+Jamie Jackson
+Michael Brooks
+Ronald Reed
+William Chaney
+Levi Alexander
+Kelly Cunningham
+Brady Gomez
+Jeremy Burke
+Brian Burton
+Melissa King
+Stephen Parker
+James Gonzalez
+Richard Horn
+
+Choose an option: 5

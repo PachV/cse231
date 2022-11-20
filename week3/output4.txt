@@ -1,0 +1,37 @@
+
+
+╭━━━━╮╱╱╱╱╱╱╱╱╱╱╭╮
+┃╭╮╭╮┃╱╱╱╱╱╱╱╱╱╱┃┃
+╰╯┃┃┣┻┳┳━━┳━╮╭━━┫┃╭━━╮
+╱╱┃┃┃╭╋┫╭╮┃╭╮┫╭╮┃┃┃┃━┫
+╱╱┃┃┃┃┃┃╭╮┃┃┃┃╰╯┃╰┫┃━┫
+╱╱╰╯╰╯╰┻╯╰┻╯╰┻━╮┣━┻━━╯
+╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+
+
+Do you wish to process a triangle (Y or N)?  y
+
+Enter length of side AB: 4
+
+Enter length of side BC: 5
+
+Enter length of side CA: 9
+
+
+  Degenerate Triangle
+
+Do you wish to process another triangle? (Y or N) Y
+
+Enter length of side AB: 3
+
+Enter length of side BC: 4
+
+Enter length of side CA: 8
+
+
+  Not a Triangle
+
+Do you wish to process another triangle? (Y or N) n
+
+Number of valid triangles: 0

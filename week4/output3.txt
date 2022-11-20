@@ -1,0 +1,41 @@
+
+Options below:
+    ‘F’: Factorial of N.
+    ‘E’: Approximate value of e.
+    ‘P’: Approximate value of Pi.
+    ‘S’: Approximate value of the sinh of X.
+    ‘M’: Display the menu of options.
+    ‘X’: Exit.
+
+
+
+Choose an option: F
+
+Factorial
+
+Input non-negative integer N: -2
+
+Invalid N.
+
+
+Choose an option: f
+
+Factorial
+
+Input non-negative integer N: a
+
+Invalid N.
+
+
+Choose an option: s
+
+sinh
+
+X in radians: 2a
+
+Invalid X.
+
+
+Choose an option: x
+
+Thank you for playing.

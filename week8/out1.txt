@@ -1,0 +1,47 @@
+
+Input users filename: users.txt
+
+
+Input reviews filename: reviews.txt
+
+
+Input movies filename: movies.txt
+
+        Options:
+        1. Highest rated movie for a specific year
+        2. Highest rated movie for a specific Genre
+        3. Highest rated movies by a specific Gender (M,F)
+        4. Highest rated movies by a specific occupation
+        5. Quit
+        
+
+
+Select an option (1-5): 1
+
+
+Input a year: 1972
+
+Avg max rating for the year is: 4.28
+Godfather, The (1972)
+
+
+Select an option (1-5): 1
+
+
+Input a year: 1995
+
+Avg max rating for the year is: 4.39
+Usual Suspects, The (1995)
+
+
+Select an option (1-5): 1
+
+
+Input a year: 1935
+
+Avg max rating for the year is: 4.05
+39 Steps, The (1935)
+Top Hat (1935)
+
+
+Select an option (1-5): 5

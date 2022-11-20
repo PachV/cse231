@@ -1,0 +1,10 @@
+prices.csv
+securities.csv
+1
+2
+3
+AES
+4
+5
+T
+6

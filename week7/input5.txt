@@ -1,0 +1,16 @@
+directory.csv
+data.csv
+3
+dendro
+catalyst
+5
+3
+cryo
+bow
+5
+3
+electro
+sword
+ssr
+5
+4

@@ -1,0 +1,175 @@
+
+
+╭━━━━╮╱╱╱╱╱╱╱╱╱╱╭╮
+┃╭╮╭╮┃╱╱╱╱╱╱╱╱╱╱┃┃
+╰╯┃┃┣┻┳┳━━┳━╮╭━━┫┃╭━━╮
+╱╱┃┃┃╭╋┫╭╮┃╭╮┫╭╮┃┃┃┃━┫
+╱╱┃┃┃┃┃┃╭╮┃┃┃┃╰╯┃╰┫┃━┫
+╱╱╰╯╰╯╰┻╯╰┻╯╰┻━╮┣━┻━━╯
+╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+
+
+Do you wish to process a triangle (Y or N)?  Y
+
+Enter length of side AB: 3
+
+Enter length of side BC: 3
+
+Enter length of side CA: 3
+
+
+  Valid Triangle
+
+  Triangle sides:
+    Length of side AB: 3.0
+    Length of side BC: 3.0
+    Length of side CA: 3.0
+
+  Degree measure of interior angles:
+    Angle A: 60.0
+    Angle B: 60.0
+    Angle C: 60.0
+
+  Radian measure of interior angles:
+    Angle A: 1.0
+    Angle B: 1.0
+    Angle C: 1.0
+
+  Perimeter and Area of triangle:
+    Perimeter of triangle: 9.0
+    Area of triangle: 3.9
+
+  Types of triangle:
+    Isosceles Triangle
+    Equilateral Triangle
+    Oblique Triangle
+
+Do you wish to process another triangle? (Y or N) y
+
+Enter length of side AB: 3
+
+Enter length of side BC: 4
+
+Enter length of side CA: 5
+
+
+  Valid Triangle
+
+  Triangle sides:
+    Length of side AB: 3.0
+    Length of side BC: 4.0
+    Length of side CA: 5.0
+
+  Degree measure of interior angles:
+    Angle A: 53.1
+    Angle B: 90.0
+    Angle C: 36.9
+
+  Radian measure of interior angles:
+    Angle A: 0.9
+    Angle B: 1.6
+    Angle C: 0.6
+
+  Perimeter and Area of triangle:
+    Perimeter of triangle: 12.0
+    Area of triangle: 6.0
+
+  Types of triangle:
+    Scalene Triangle
+    Right Triangle
+
+Do you wish to process another triangle? (Y or N) Y
+
+Enter length of side AB: 3
+
+Enter length of side BC: 3
+
+Enter length of side CA: 2
+
+
+  Valid Triangle
+
+  Triangle sides:
+    Length of side AB: 3.0
+    Length of side BC: 3.0
+    Length of side CA: 2.0
+
+  Degree measure of interior angles:
+    Angle A: 70.5
+    Angle B: 38.9
+    Angle C: 70.5
+
+  Radian measure of interior angles:
+    Angle A: 1.2
+    Angle B: 0.7
+    Angle C: 1.2
+
+  Perimeter and Area of triangle:
+    Perimeter of triangle: 8.0
+    Area of triangle: 2.8
+
+  Types of triangle:
+    Isosceles Triangle
+    Oblique Triangle
+
+Do you wish to process another triangle? (Y or N) y
+
+Enter length of side AB: 3
+
+Enter length of side BC: 4
+
+Enter length of side CA: 6
+
+
+  Valid Triangle
+
+  Triangle sides:
+    Length of side AB: 3.0
+    Length of side BC: 4.0
+    Length of side CA: 6.0
+
+  Degree measure of interior angles:
+    Angle A: 36.3
+    Angle B: 117.3
+    Angle C: 26.4
+
+  Radian measure of interior angles:
+    Angle A: 0.6
+    Angle B: 2.0
+    Angle C: 0.5
+
+  Perimeter and Area of triangle:
+    Perimeter of triangle: 13.0
+    Area of triangle: 5.3
+
+  Types of triangle:
+    Scalene Triangle
+    Oblique Triangle
+    Obtuse Triangle
+
+Do you wish to process another triangle? (Y or N) Y
+
+Enter length of side AB: 3
+
+Enter length of side BC: 4
+
+Enter length of side CA: 7
+
+
+  Degenerate Triangle
+
+Do you wish to process another triangle? (Y or N) y
+
+Enter length of side AB: 3
+
+Enter length of side BC: 4
+
+Enter length of side CA: 8
+
+
+  Not a Triangle
+
+Do you wish to process another triangle? (Y or N) n
+
+Number of valid triangles: 4

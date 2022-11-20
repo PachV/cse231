@@ -1,0 +1,13 @@
+Welcome to program that finds nearby exoplanets in circumstellar habitable zone.
+Input data to open: all
+Enter maximum distance from Earth (light years): test
+Error: Distance needs to be a float.
+Enter maximum distance from Earth (light years): -34
+Distance needs to be greater than 0.
+Enter maximum distance from Earth (light years): 1000000
+Number of stars in systems with the most stars: 4.
+Number of planets in systems with the most planets: 8.
+Average mass of the planets: 510.35 Earth masses.
+Number of planets in circumstellar habitable zone: 268.
+Closest rocky planet in the circumstellar habitable zone Proxima Cen b is 4.24 light years away.
+Closest gaseous planet in the circumstellar habitable zone GJ 338 B b is 20.66 light years away.

@@ -1,0 +1,34 @@
+
+"Do you wish to process a triangle (Y or N)?  " 
+'\nEnter length of side AB: '
+'\nEnter length of side BC: '
+'\nEnter length of side CA: '
+"\n\n  Valid Triangle" 
+"\n\n  Degenerate Triangle" 
+"\n\n  Not a Triangle" 
+"\n  Triangle sides:"
+"    Length of side AB:"
+"    Length of side BC:"
+"    Length of side CA:"
+"\n  Degree measure of interior angles:"
+"    Angle A:"
+"    Angle B:"
+"    Angle C:"
+"\n  Radian measure of interior angles:"
+"    Angle A:"
+"    Angle B:"
+"    Angle C:"
+"\n  Perimeter and Area of triangle:"
+"    Perimeter of triangle:"
+"    Area of triangle:"
+"\n  Types of triangle:"
+"    Scalene Triangle" 
+"    Isosceles Triangle"
+"    Equilateral Triangle"
+"    Oblique Triangle"
+"    Right Triangle"
+"    Obtuse Triangle"
+"\nDo you wish to process another triangle? (Y or N) "
+"\nNumber of valid triangles:"
+
+

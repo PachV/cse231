@@ -1,0 +1,75 @@
+
+Input users filename: users.txt
+
+
+Input reviews filename: reviews.txt
+
+
+Input movies filename: movies.txt
+
+        Options:
+        1. Highest rated movie for a specific year
+        2. Highest rated movie for a specific Genre
+        3. Highest rated movies by a specific Gender (M,F)
+        4. Highest rated movies by a specific occupation
+        5. Quit
+        
+
+
+Select an option (1-5): 4
+
+Valid Occupatipns are:  ['administrator', 'artist', 'doctor', 'educator', 'engineer', 'entertainment', 'executive', 'healthcare', 'homemaker', 'lawyer', 'librarian', 'marketing', 'none', 'other', 'programmer', 'retired', 'salesman', 'scientist', 'student', 'technician', 'writer']
+
+Input an occupation: programmer
+
+Avg max rating for the occupation is: 5.0
+Wallace & Gromit: The Best of Aardman Animation (1996)
+Paradise Lost: The Child Murders at Robin Hood Hills (1996)
+Old Yeller (1957)
+His Girl Friday (1940)
+Miserables, Les (1995)
+Laura (1944)
+Crooklyn (1994)
+Girl 6 (1996)
+Meet John Doe (1941)
+Perfect Candidate, A (1996)
+Fear (1996)
+Trust (1990)
+Faithful (1996)
+Beautiful Thing (1996)
+Love & Human Remains (1993)
+Total Eclipse (1995)
+Love in the Afternoon (1957)
+Late Bloomers (1996)
+8 Seconds (1994)
+Little Princess, The (1939)
+Santa with Muscles (1996)
+
+
+Select an option (1-5): 4
+
+Valid Occupatipns are:  ['administrator', 'artist', 'doctor', 'educator', 'engineer', 'entertainment', 'executive', 'healthcare', 'homemaker', 'lawyer', 'librarian', 'marketing', 'none', 'other', 'programmer', 'retired', 'salesman', 'scientist', 'student', 'technician', 'writer']
+
+Input an occupation: engineer
+
+Avg max rating for the occupation is: 5.0
+Laura (1944)
+Halloween: The Curse of Michael Myers (1995)
+Charade (1963)
+Grateful Dead (1995)
+Maximum Risk (1996)
+Shadow Conspiracy (1997)
+Little Princess, A (1995)
+Umbrellas of Cherbourg, The (Parapluies de Cherbourg, Les) (1964)
+Hard Eight (1996)
+Quiet Room, The (1996)
+Top Hat (1935)
+Jade (1995)
+Selena (1997)
+Late Bloomers (1996)
+Harlem (1993)
+Tom and Huck (1995)
+World of Apu, The (Apur Sansar) (1959)
+
+
+Select an option (1-5): 5

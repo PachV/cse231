@@ -1,0 +1,20 @@
+Enter file name: data.csv
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 1
+
+Regions:
+Inazuma, Liyue, Mondstadt, Snezhnaya
+
+Welcome to Genshin Impact Character Directory
+        Choose one of below options:
+        1. Get all available regions
+        2. Filter characters by a certain criteria
+        3. Filter characters by element, weapon, and rarity
+        4. Quit the program
+        Enter option: 4

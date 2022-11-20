@@ -1,0 +1,117 @@
+
+Input users filename: users.txt
+
+
+Input reviews filename: reviews.txt
+
+
+Input movies filename: movies.txt
+
+        Options:
+        1. Highest rated movie for a specific year
+        2. Highest rated movie for a specific Genre
+        3. Highest rated movies by a specific Gender (M,F)
+        4. Highest rated movies by a specific occupation
+        5. Quit
+        
+
+
+Select an option (1-5): 1
+
+
+Input a year: 1900
+
+Error in year.
+
+
+Input a year: 2000
+
+Error in year.
+
+
+Input a year: 1990
+
+Avg max rating for the year is: 4.01
+Nikita (La Femme Nikita) (1990)
+
+
+Select an option (1-5): 2
+
+Valid Genres are:  ['Unknown', 'Action', 'Adventure', 'Animation', "Children's", 'Comedy', 'Crime', 'Documentary', 'Drama', 'Fantasy', 'Film-noir', 'Horror', 'Musical', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller', 'War', 'Western']
+
+Input a genre: abcd
+
+Error in genre.
+
+Input a genre: 123
+
+Error in genre.
+
+Input a genre: cOmedY
+
+Avg max rating for the Genre is: 5.0
+Santa with Muscles (1996)
+
+
+Select an option (1-5): 3
+
+
+Input a gender (M,F): A
+
+Error in gender.
+
+Input a gender (M,F): f
+
+Avg max rating for the Gender is: 5.0
+Faster Pussycat! Kill! Kill! (1965)
+Maya Lin: A Strong Clear Vision (1994)
+Telling Lies in America (1997)
+Year of the Horse (1997)
+Prefontaine (1997)
+Stripes (1981)
+Mina Tannenbaum (1994)
+Foreign Correspondent (1940)
+Visitors, The (Visiteurs, Les) (1993)
+Everest (1998)
+Someone Else's America (1995)
+
+
+Select an option (1-5): 4
+Valid Occupatipns are:  ['administrator', 'artist', 'doctor', 'educator', 'engineer', 'entertainment', 'executive', 'healthcare', 'homemaker', 'lawyer', 'librarian', 'marketing', 'none', 'other', 'programmer', 'retired', 'salesman', 'scientist', 'student', 'technician', 'writer']
+
+Input an occupation: judge
+
+Error in occupation.
+
+Input an occupation: teacher
+
+Error in occupation.
+
+Input an occupation: EngiNeer
+
+Avg max rating for the occupation is: 5.0
+Laura (1944)
+Halloween: The Curse of Michael Myers (1995)
+Charade (1963)
+Grateful Dead (1995)
+Maximum Risk (1996)
+Shadow Conspiracy (1997)
+Little Princess, A (1995)
+Umbrellas of Cherbourg, The (Parapluies de Cherbourg, Les) (1964)
+Hard Eight (1996)
+Quiet Room, The (1996)
+Top Hat (1935)
+Jade (1995)
+Selena (1997)
+Late Bloomers (1996)
+Harlem (1993)
+Tom and Huck (1995)
+World of Apu, The (Apur Sansar) (1959)
+
+
+Select an option (1-5): 9
+
+Error: not a valid option.
+
+
+Select an option (1-5): 5

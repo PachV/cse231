@@ -1,0 +1,61 @@
+
+
+╭━━━━╮╱╱╱╱╱╱╱╱╱╱╭╮
+┃╭╮╭╮┃╱╱╱╱╱╱╱╱╱╱┃┃
+╰╯┃┃┣┻┳┳━━┳━╮╭━━┫┃╭━━╮
+╱╱┃┃┃╭╋┫╭╮┃╭╮┫╭╮┃┃┃┃━┫
+╱╱┃┃┃┃┃┃╭╮┃┃┃┃╰╯┃╰┫┃━┫
+╱╱╰╯╰╯╰┻╯╰┻╯╰┻━╮┣━┻━━╯
+╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+
+
+Do you wish to process a triangle (Y or N)?  Y
+
+Enter length of side AB: 3
+
+Enter length of side BC: 4
+
+Enter length of side CA: 6
+
+
+  Valid Triangle
+
+  Triangle sides:
+    Length of side AB: 3.0
+    Length of side BC: 4.0
+    Length of side CA: 6.0
+
+  Degree measure of interior angles:
+    Angle A: 36.3
+    Angle B: 117.3
+    Angle C: 26.4
+
+  Radian measure of interior angles:
+    Angle A: 0.6
+    Angle B: 2.0
+    Angle C: 0.5
+
+  Perimeter and Area of triangle:
+    Perimeter of triangle: 13.0
+    Area of triangle: 5.3
+
+  Types of triangle:
+    Scalene Triangle
+    Oblique Triangle
+    Obtuse Triangle
+
+Do you wish to process another triangle? (Y or N) Y
+
+Enter length of side AB: 3
+
+Enter length of side BC: 4
+
+Enter length of side CA: 7
+
+
+  Degenerate Triangle
+
+Do you wish to process another triangle? (Y or N) n
+
+Number of valid triangles: 1

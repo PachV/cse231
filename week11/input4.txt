@@ -1,0 +1,8 @@
+small_prices.csv
+small_securities.csv
+3
+MMM
+3
+ABC
+AME
+6

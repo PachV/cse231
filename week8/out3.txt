@@ -1,0 +1,62 @@
+
+Input users filename: users.txt
+
+
+Input reviews filename: reviews.txt
+
+
+Input movies filename: movies.txt
+
+        Options:
+        1. Highest rated movie for a specific year
+        2. Highest rated movie for a specific Genre
+        3. Highest rated movies by a specific Gender (M,F)
+        4. Highest rated movies by a specific occupation
+        5. Quit
+        
+
+
+Select an option (1-5): 3
+
+
+Input a gender (M,F): F
+
+Avg max rating for the Gender is: 5.0
+Faster Pussycat! Kill! Kill! (1965)
+Maya Lin: A Strong Clear Vision (1994)
+Telling Lies in America (1997)
+Year of the Horse (1997)
+Prefontaine (1997)
+Stripes (1981)
+Mina Tannenbaum (1994)
+Foreign Correspondent (1940)
+Visitors, The (Visiteurs, Les) (1993)
+Everest (1998)
+Someone Else's America (1995)
+
+
+Select an option (1-5): 3
+
+
+Input a gender (M,F): M
+
+Avg max rating for the Gender is: 5.0
+Great Day in Harlem, A (1994)
+They Made Me a Criminal (1939)
+Quiet Room, The (1996)
+Hugo Pool (1997)
+Prefontaine (1997)
+Letter From Death Row, A (1998)
+Marlene Dietrich: Shadow and Light (1996) 
+Star Kid (1997)
+Delta of Venus (1994)
+Saint of Fort Washington, The (1993)
+Santa with Muscles (1996)
+Aiqing wansui (1994)
+Love Serenade (1996)
+Leading Man, The (1996)
+Entertaining Angels: The Dorothy Day Story (1996)
+Little City (1998)
+
+
+Select an option (1-5): 5

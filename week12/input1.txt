@@ -1,0 +1,57 @@
+TF 2 1
+tf 3 1
+tf 6 1
+tf 6 2
+tt 3 1
+tt 3 7
+tt 4 3
+wt 5
+wt 6
+sw
+wt 3
+wf 3
+sw
+wt 5
+sw
+wt 1
+tt 4 1
+sw
+sw
+wt 4
+sw
+sw
+wf 4
+sw
+wt 5
+tt 2 5
+sw
+wt 6
+mtt 4 6 2
+sw
+sw
+sw
+sw
+sw
+sw
+sw
+wt 2
+wf 2
+tf 5 2
+sw
+sw
+wt 3
+sw
+sw
+tf 2 2
+sw 
+sw
+wf 2
+sw
+tf 4 4
+tt 0 4
+tt 4 8
+tt -1 4
+wf 5
+tf 5 4
+tf 6 4
+q

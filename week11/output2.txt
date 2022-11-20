@@ -1,0 +1,33 @@
+Welcome to the New York Stock Exchange.
+
+Enter the price's filename: small_prices.csv
+Enter the security's filename: small_securities.csv
+
+Select an option from below:
+            (1) Display all companies in the New York Stock Exchange
+            (2) Display companies' symbols
+            (3) Find max price of a company
+            (4) Find the company with the maximum stock price
+            (5) Find the average price of a company's stock
+            (6) quit
+    
+Option: 1
+                        Companies in the New York Stock Market from 2010 to 2016                         
+            3M Company                         AMETEK Inc                           AbbVie               
+        Abbott Laboratories                   Accenture plc                   Activision Blizzard        
+             Amgen Inc                      Wynn Resorts Ltd                      XL Capital             
+          Xcel Energy Inc                      Xerox Corp.                        Xilinx Inc             
+            Xylem Inc.                         Yahoo Inc.                       Yum! Brands Inc          
+      Zimmer Biomet Holdings                  Zions Bancorp                         Zoetis               
+
+
+
+Select an option from below:
+            (1) Display all companies in the New York Stock Exchange
+            (2) Display companies' symbols
+            (3) Find max price of a company
+            (4) Find the company with the maximum stock price
+            (5) Find the average price of a company's stock
+            (6) quit
+    
+Option: 6
