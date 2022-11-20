@@ -145,6 +145,10 @@ def tableau_to_foundation( tableau, foundation, t_num, f_num ):
         if tableau[t_num][-1].rank() == 1:
             popped = tableau[t_num].pop()
             foundation[f_num].append(popped)
+            if len(tableau[t_num]) == 0:
+                return True
+            if not tableau[t_num][-1].is_face_up():
+                tableau[t_num][-1].flip_card()
             return True
         else:    
             return False
@@ -172,6 +176,8 @@ def tableau_to_tableau( tableau, t_num1, t_num2 ):
         if tableau[t_num1][-1].rank() == 13:
             popped = tableau[t_num1].pop()    
             tableau[t_num2].append(popped)
+            if not tableau[t_num1][-1].is_face_up():
+                tableau[t_num1][-1].flip_card()
             return True
         return False
 
@@ -190,6 +196,10 @@ def tableau_to_tableau( tableau, t_num1, t_num2 ):
     if n2.rank() - n1.rank() == 1:
         popped = tableau[t_num1].pop()
         tableau[t_num2].append(popped)
+        if len(tableau[t_num1]) == 0:
+            return True
+        if not tableau[t_num1][-1].is_face_up():
+            tableau[t_num1][-1].flip_card()
         return True
     return False
     
@@ -199,7 +209,12 @@ def tableau_to_tableau( tableau, t_num1, t_num2 ):
     
 def check_win (stock, waste, foundation, tableau):
     '''Docstring'''
-    pass
+    if stock.is_empty():
+        if waste.is_empty():
+            if foundation.is_empty():
+                if tableau.is_empty():
+                    return True
+    return False
 
 def parse_option(in_str):
     '''Prompt the user for an option and check that the input has the 
