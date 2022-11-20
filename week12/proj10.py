@@ -105,7 +105,6 @@ def waste_to_foundation( waste, foundation, f_num):
             
     found_last = foundation[f_num][-1]
 
-
     if waste_last.suit() == found_last.suit():
         if waste_last.rank() - found_last.rank() == 1:
             foundation[f_num].append(waste_last)
@@ -113,11 +112,6 @@ def waste_to_foundation( waste, foundation, f_num):
             return True
 
     return False
-    
-
-
-    pass
-
 
 def waste_to_tableau( waste, tableau, t_num ):
     '''Docstring'''
@@ -128,7 +122,6 @@ def waste_to_tableau( waste, tableau, t_num ):
             waste.pop()
             return True
         return False
-
 
     found_last = tableau[t_num][-1]
 
@@ -146,10 +139,30 @@ def waste_to_tableau( waste, tableau, t_num ):
                 return True
             return False
 
-
 def tableau_to_foundation( tableau, foundation, t_num, f_num ):
     '''Docstring'''
-    pass
+    if len(foundation[f_num]) == 0:
+        if tableau[t_num][-1].rank() == 1:
+            popped = tableau[t_num].pop()
+            foundation[f_num].append(popped)
+            return True
+        else:    
+            return False
+    if len(tableau[t_num]) == 0:
+        return False
+
+    found_last = foundation[f_num][-1]
+    table_last = tableau[t_num][-1]
+
+    if found_last.suit() == table_last.suit():
+        if table_last.rank() - found_last.rank() == 1:
+            t_last =tableau[t_num].pop()
+            foundation[f_num].append(t_last)
+
+            return True
+        return False
+    else:
+        return False
 
 def tableau_to_tableau( tableau, t_num1, t_num2 ):
     '''Docstring'''

@@ -57,7 +57,8 @@ def read_friends(fp,names_lst):
 
 def create_friends_dict(names_lst,friends_lst):
     '''make a dictionay with the name_list as key and friend_list as value'''
-    return {names_lst: friends_lst for names_lst, friends_lst in zip(names_lst, friends_lst) }
+    return {names_lst: friends_lst for names_lst, friends_lst\
+            in zip(names_lst, friends_lst) }
 
             
 def find_common_friends(name1, name2, friends_dict):
@@ -120,7 +121,6 @@ def find_max_common_friends(friends_dict):
                 continue
     
     for i in range(len(possible_pairs)):
-        # print(possible_pairs[i][0], possible_pairs[i][1]) = (name1, name2)
         name1 = possible_pairs[i][0]
         name2 = possible_pairs[i][1]
         names1_list = friends_dict[name1]
