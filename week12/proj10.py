@@ -1,5 +1,6 @@
 # https://www.cse.msu.edu/~cse231/Online/Projects/Project10/project10.pdf
 from cards import Card, Deck
+# heart 2665 is red, diamond 2666 is red [2,3]red [1,4] black
 
 MENU ='''Prompt the user for an option and check that the input has the 
        form requested in the menu, printing an error message, if not.
@@ -93,13 +94,47 @@ def stock_to_waste( stock, waste ):
         waste = waste.append(stock.deal())
         return True
        
-def waste_to_tableau( waste, tableau, t_num ):
+def waste_to_foundation( waste, foundation, f_num):
     '''Docstring'''
+    waste_last = waste[-1]
+    if len(foundation[f_num]) == 0:
+        if waste_last.rank() != 1:
+            return False
+        else:
+            return True
+
+    found_last = foundation[f_num][-1]
+
+    if waste_last.suit() == found_last.suit():
+        if waste_last.rank() - found_last.rank() == 1:
+            foundation[f_num].append(waste_last)
+            waste.pop()
+            return True
+
+    return False
+    
+
+
     pass
 
-def waste_to_foundation( waste, foundation, f_num ):
+
+def waste_to_tableau( waste, tableau, t_num ):
     '''Docstring'''
-    pass
+    waste_last = waste[-1]
+    found_last = tableau[t_num][-1]
+
+    if waste_last.suit() != found_last.suit():
+        if 2 in (waste_last.suit(), found_last.suit()) and 3 in (waste_last.suit(), found_last.suit()):
+            return False
+
+        if 1 in (waste_last.suit(), found_last.suit()) and 4 in (waste_last.suit(), found_last.suit()):
+            return False
+
+        if found_last.rank() - waste_last.rank() == 1:
+            return True
+        
+    else:
+        return False
 
 def tableau_to_foundation( tableau, foundation, t_num, f_num ):
     '''Docstring'''
@@ -180,6 +215,7 @@ def main():
     #####
     tableau, stock, foundation, waste = initialize()
     stock_to_waste(stock,waste)
+    waste_to_foundation()
     
     ####
 if __name__ == '__main__':
