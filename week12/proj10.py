@@ -206,15 +206,20 @@ def tableau_to_tableau( tableau, t_num1, t_num2 ):
 
 
 
-    
 def check_win (stock, waste, foundation, tableau):
     '''Docstring'''
+
     if stock.is_empty():
-        if waste.is_empty():
-            if foundation.is_empty():
-                if tableau.is_empty():
+        if len(waste) == 0:
+            if len(foundation) == 4:
+                yes = 0
+                for i in range(len(tableau)):
+                    if len(tableau[i]) == 0:
+                        yes +=1
+                if yes == 7:
                     return True
-    return False
+    return False    
+
 
 def parse_option(in_str):
     '''Prompt the user for an option and check that the input has the 
