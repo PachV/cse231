@@ -162,6 +162,8 @@ def tableau_to_foundation( tableau, foundation, t_num, f_num ):
         if table_last.rank() - found_last.rank() == 1:
             t_last =tableau[t_num].pop()
             foundation[f_num].append(t_last)
+            if len(tableau[t_num]) == 0:
+                return True
             if not tableau[t_num][-1].is_face_up():
                 tableau[t_num][-1].flip_card()
 
@@ -291,27 +293,48 @@ def main():
     print(MENU)
     display(tableau,stock,foundation,waste)
     while True:
-        optionz = input("Input an option (TT,TF,WT,WF,SW,R,H,Q): ").upper()
-        parsed =parse_option(optionz)
-        if parsed[0] == "TT":
-            print(tableau_to_tableau(tableau, parsed[1]+1,parsed[2]+1))
-        elif parsed [0] == "TF":
-            print(tableau_to_foundation(tableau,foundation,parsed[1]+1,parsed[2]-1))
-            display(tableau,stock,foundation,waste)
+        try:
+            while True:
+                optionz = input("Input an option (TT,TF,WT,WF,SW,R,H,Q): ")
+                parsed =parse_option(optionz)
 
-            pass
-        elif parsed [0] == "WT":
-            pass
-        elif parsed [0] == "WF":
-            pass
-        elif parsed [0] == "SW":
-            pass
-        elif parsed [0] == "R":
-            pass
-        elif parsed [0] == "H":
-            pass
-        elif parsed [0] == "Q":
-            pass
+                if parsed == None:
+                    continue
+                
+
+
+
+                if parsed[0] == "TT":
+                    print(tableau_to_tableau(tableau, parsed[1]-1,parsed[2]-1))
+                    display(tableau,stock,foundation,waste)
+                elif parsed [0] == "TF":
+                    print(tableau_to_foundation(tableau,foundation,parsed[1]-1,parsed[2]-1))
+                    display(tableau,stock,foundation,waste)
+
+                    pass
+                elif parsed [0] == "WT":
+                    print(waste_to_tableau(waste,tableau,parsed[1]-1))
+                    display(tableau,stock,foundation,waste)
+                    pass
+                elif parsed [0] == "WF":
+                    print(waste_to_foundation(waste,foundation,parsed[1]-1))
+                    display(tableau,stock,foundation,waste)
+                    pass
+                elif parsed [0] == "SW":
+                    print(stock_to_waste(stock,waste))
+                    display(tableau,stock,foundation,waste)
+
+                    pass
+                elif parsed [0] == "R":
+                    pass
+                elif parsed [0] == "H":
+                    pass
+                elif parsed [0] == "Q":
+                    pass
+        except EOFError:
+            break
+            
+
 
 
 
