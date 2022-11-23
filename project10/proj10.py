@@ -287,9 +287,13 @@ def parse_option(in_str):
 def main():   
     #####
     tableau, stock, foundation, waste = initialize()
-    stock_to_waste(stock,waste)
-    waste_to_foundation()
-    
+
+
+
+
+
+
+
     ####
 if __name__ == '__main__':
      main()
