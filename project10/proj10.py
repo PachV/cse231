@@ -288,6 +288,33 @@ def main():
     #####
     tableau, stock, foundation, waste = initialize()
 
+    print(MENU)
+    display(tableau,stock,foundation,waste)
+    while True:
+        optionz = input("Input an option (TT,TF,WT,WF,SW,R,H,Q): ").upper()
+        parsed =parse_option(optionz)
+        if parsed[0] == "TT":
+            print(tableau_to_tableau(tableau, parsed[1]+1,parsed[2]+1))
+        elif parsed [0] == "TF":
+            print(tableau_to_foundation(tableau,foundation,parsed[1]+1,parsed[2]-1))
+            display(tableau,stock,foundation,waste)
+
+            pass
+        elif parsed [0] == "WT":
+            pass
+        elif parsed [0] == "WF":
+            pass
+        elif parsed [0] == "SW":
+            pass
+        elif parsed [0] == "R":
+            pass
+        elif parsed [0] == "H":
+            pass
+        elif parsed [0] == "Q":
+            pass
+
+
+
 
 
 
