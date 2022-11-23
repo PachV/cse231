@@ -21,7 +21,7 @@ def initialize():
     stock = []
     waste = []
     deck = Deck()
-    # deck.shuffle()
+    deck.shuffle()
 
     start = 0
     while True:
@@ -304,10 +304,7 @@ def main():
 
                     display(tableau,stock,foundation,waste)
                     continue
-                
-
-
-
+ 
                 if parsed[0] == "TT":
                     question=tableau_to_tableau(tableau, parsed[1]-1,parsed[2]-1)
                     if not question:
@@ -322,27 +319,23 @@ def main():
 
                     display(tableau,stock,foundation,waste)
 
-                    pass
                 elif parsed [0] == "WT":
                     question = (waste_to_tableau(waste,tableau,parsed[1]-1))
                     if not question:
                         print("\nInvalid move!\n")
 
                     display(tableau,stock,foundation,waste)
-                    pass
                 elif parsed [0] == "WF":
                     (waste_to_foundation(waste,foundation,parsed[1]-1))
                     display(tableau,stock,foundation,waste)
-                    pass
                 elif parsed [0] == "SW":
                     (stock_to_waste(stock,waste))
                     display(tableau,stock,foundation,waste)
-
-                    pass
                 elif parsed [0] == "R":
-                    pass
+                    tableau, stock, foundation, waste = initialize()
+                    display(tableau,stock,foundation,waste)
                 elif parsed [0] == "H":
-                    pass
+                    print(MENU)
                 elif parsed [0] == "Q":
                     exit()
                 else:
@@ -350,14 +343,6 @@ def main():
         except EOFError:
             break
             
-
-
-
-
-
-
-
-
 
 
     ####
