@@ -101,6 +101,8 @@ def waste_to_foundation( waste, foundation, f_num):
         if waste_last.rank() != 1:
             return False
         else:
+            popped=waste.pop()
+            foundation[f_num].append(popped)
             return True
             
     found_last = foundation[f_num][-1]
@@ -295,33 +297,45 @@ def main():
     while True:
         try:
             while True:
-                optionz = input("Input an option (TT,TF,WT,WF,SW,R,H,Q): ")
+                optionz = input("\nInput an option (TT,TF,WT,WF,SW,R,H,Q): ")
                 parsed =parse_option(optionz)
 
                 if parsed == None:
+
+                    display(tableau,stock,foundation,waste)
                     continue
                 
 
 
 
                 if parsed[0] == "TT":
-                    print(tableau_to_tableau(tableau, parsed[1]-1,parsed[2]-1))
+                    question=tableau_to_tableau(tableau, parsed[1]-1,parsed[2]-1)
+                    if not question:
+                        print("\nInvalid move!\n")
+
+
                     display(tableau,stock,foundation,waste)
                 elif parsed [0] == "TF":
-                    print(tableau_to_foundation(tableau,foundation,parsed[1]-1,parsed[2]-1))
+                    question = (tableau_to_foundation(tableau,foundation,parsed[1]-1,parsed[2]-1))
+                    if not question:
+                        print("\nInvalid move!\n")
+
                     display(tableau,stock,foundation,waste)
 
                     pass
                 elif parsed [0] == "WT":
-                    print(waste_to_tableau(waste,tableau,parsed[1]-1))
+                    question = (waste_to_tableau(waste,tableau,parsed[1]-1))
+                    if not question:
+                        print("\nInvalid move!\n")
+
                     display(tableau,stock,foundation,waste)
                     pass
                 elif parsed [0] == "WF":
-                    print(waste_to_foundation(waste,foundation,parsed[1]-1))
+                    (waste_to_foundation(waste,foundation,parsed[1]-1))
                     display(tableau,stock,foundation,waste)
                     pass
                 elif parsed [0] == "SW":
-                    print(stock_to_waste(stock,waste))
+                    (stock_to_waste(stock,waste))
                     display(tableau,stock,foundation,waste)
 
                     pass
@@ -330,6 +344,8 @@ def main():
                 elif parsed [0] == "H":
                     pass
                 elif parsed [0] == "Q":
+                    exit()
+                else:
                     pass
         except EOFError:
             break
