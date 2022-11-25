@@ -1,6 +1,16 @@
-# https://www.cse.msu.edu/~cse231/Online/Projects/Project10/project10.pdf
+###########################################
+# project 10
+# setup the board with initalize()
+# then print the menu and display the board
+# then ask the user for a input with menu
+# call parse_option() to see if its valid
+# if not then printout the error
+# then call the option with the user selected option
+# then call check_win to see if they won
+# and keep looping until the user won or exit() it
+#########################################
+
 from cards import Card, Deck
-# heart 2665 is red, diamond 2666 is red [2,3]red [1,4] black
 
 MENU ='''Prompt the user for an option and check that the input has the 
        form requested in the menu, printing an error message, if not.
