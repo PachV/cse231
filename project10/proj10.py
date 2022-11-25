@@ -333,7 +333,7 @@ def main():
                     display(tableau,stock,foundation,waste)
                     continue
                 if parsed[0] == "TT":
-                    question=tableau_to_tableau(tableau, parsed[1]-1,parsed[2]-1)
+                    question=tableau_to_tableau(tableau, parsed[1]-1, parsed[2]-1)
                     if not question:
                         print("\nInvalid move!\n")
                     check_win(stock,waste,foundation,tableau)
