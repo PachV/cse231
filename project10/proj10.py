@@ -237,9 +237,6 @@ def tableau_to_tableau( tableau, t_num1, t_num2 ):
         return True
     return False
     
-
-
-
 def check_win (stock, waste, foundation, tableau):
     '''check if everything is empty, except for foundation which has to be 4
     '''
@@ -257,7 +254,6 @@ def check_win (stock, waste, foundation, tableau):
                     print("You've Won!")
                     return True
     return False    
-
 
 def parse_option(in_str):
     '''Prompt the user for an option and check that the input has the 
@@ -321,7 +317,6 @@ def parse_option(in_str):
     print("\nError in option:", in_str)
     return None   # none of the above
 
-
 def main():   
     #####
     tableau, stock, foundation, waste = initialize()
@@ -381,9 +376,6 @@ def main():
                     pass
         except EOFError:
             break
-            
-
-
     ####
 if __name__ == '__main__':
      main()
