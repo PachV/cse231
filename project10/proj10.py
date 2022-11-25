@@ -15,7 +15,9 @@ MENU ='''Prompt the user for an option and check that the input has the
     Q: Quit the game        
     '''
 def initialize():
-    '''Docstring'''
+    '''make the standard setup for the game
+        and all the cards are flipped except the [-1]index
+    '''
     tableau = [[] for _ in range(7)]
     foundation = [[],[],[],[]]
     stock = []
@@ -26,7 +28,7 @@ def initialize():
     start = 0
     while True:
         for i in range(start,7):
-            popped = deck.deal()
+            popped = deck.deal() # same as .pop()
             tableau[i].append(popped)
         start +=1
         if start == 7:
@@ -34,9 +36,8 @@ def initialize():
     
     for i in range(7):
         for j in range(i):
-            (tableau[i][j].flip_card())
+            (tableau[i][j].flip_card())# flip everyhting except last
 
-    # print(tableau)
     stock = deck
     
     waste.append(deck.deal())
@@ -87,7 +88,9 @@ def display(tableau, stock, foundation, waste):
     
 
 def stock_to_waste( stock, waste ):
-    '''Docstring'''
+    '''if stock is empty, return false
+        if not, pop the stock and put it in waste
+    '''
     if stock.is_empty():
         return False
     else:
@@ -95,7 +98,10 @@ def stock_to_waste( stock, waste ):
         return True
        
 def waste_to_foundation( waste, foundation, f_num):
-    '''Docstring'''
+    '''put waste into foundation,
+        and check if the move is valid,
+        if it is end appent it to the foundation
+    '''
     waste_last = waste[-1]
     if len(foundation[f_num]) == 0:
         if waste_last.rank() != 1:
@@ -116,7 +122,12 @@ def waste_to_foundation( waste, foundation, f_num):
     return False
 
 def waste_to_tableau( waste, tableau, t_num ):
-    '''Docstring'''
+    '''put waste to table,
+        if the color is the same, then it cant,
+        if the table - the waste card is equal to 1
+        then it is a valid move
+        and then pop waste
+    '''
     waste_last = waste[-1]
     if len(tableau[t_num]) == 0:
         if waste_last.rank() == 13:
@@ -130,6 +141,7 @@ def waste_to_tableau( waste, tableau, t_num ):
     if waste_last.suit() == found_last.suit():
         return False
     else:
+        # [2,3] are red, [1,4] are black
         if 2 in (waste_last.suit(), found_last.suit()) and 3 in (waste_last.suit(), found_last.suit()):
             return False
         elif 1 in (waste_last.suit(), found_last.suit()) and 4 in (waste_last.suit(), found_last.suit()):
@@ -142,7 +154,10 @@ def waste_to_tableau( waste, tableau, t_num ):
             return False
 
 def tableau_to_foundation( tableau, foundation, t_num, f_num ):
-    '''Docstring'''
+    '''check if the move is valid, 
+    if so then append to the foundation and pop the table
+    then flip the card if its not face up
+    '''
     if len(foundation[f_num]) == 0:
         if tableau[t_num][-1].rank() == 1:
             popped = tableau[t_num].pop()
@@ -175,7 +190,12 @@ def tableau_to_foundation( tableau, foundation, t_num, f_num ):
         return False
 
 def tableau_to_tableau( tableau, t_num1, t_num2 ):
-    '''Docstring'''
+    '''if both are the same color, its invalid,
+        if the t_num2 - t_num 1 = 1
+        then it is a valid move
+        then check if the t_num1's previous card is faced up
+        if not then make it face up
+    '''
     if len(tableau[t_num2]) == 0:
         if tableau[t_num1][-1].rank() == 13:
             popped = tableau[t_num1].pop()    
@@ -211,7 +231,8 @@ def tableau_to_tableau( tableau, t_num1, t_num2 ):
 
 
 def check_win (stock, waste, foundation, tableau):
-    '''Docstring'''
+    '''check if everything is empty, except for foundation which has to be 4
+    '''
 
     if stock.is_empty():
         if len(waste) == 0:
@@ -220,7 +241,10 @@ def check_win (stock, waste, foundation, tableau):
                 for i in range(len(tableau)):
                     if len(tableau[i]) == 0:
                         yes +=1
+                    else:
+                        return False
                 if yes == 7:
+                    print("You've Won!")
                     return True
     return False    
 
@@ -301,36 +325,41 @@ def main():
                 parsed =parse_option(optionz)
 
                 if parsed == None:
-
                     display(tableau,stock,foundation,waste)
                     continue
- 
                 if parsed[0] == "TT":
                     question=tableau_to_tableau(tableau, parsed[1]-1,parsed[2]-1)
                     if not question:
                         print("\nInvalid move!\n")
-
-
-                    display(tableau,stock,foundation,waste)
+                    check_win(stock,waste,foundation,tableau)
+                    if display(tableau,stock,foundation,waste):
+                        exit()
                 elif parsed [0] == "TF":
                     question = (tableau_to_foundation(tableau,foundation,parsed[1]-1,parsed[2]-1))
                     if not question:
                         print("\nInvalid move!\n")
 
                     display(tableau,stock,foundation,waste)
-
+                    if check_win(stock,waste,foundation,tableau):
+                        exit()
                 elif parsed [0] == "WT":
                     question = (waste_to_tableau(waste,tableau,parsed[1]-1))
                     if not question:
                         print("\nInvalid move!\n")
 
                     display(tableau,stock,foundation,waste)
+                    if check_win(stock,waste,foundation,tableau):
+                        exit()
                 elif parsed [0] == "WF":
                     (waste_to_foundation(waste,foundation,parsed[1]-1))
                     display(tableau,stock,foundation,waste)
+                    if check_win(stock,waste,foundation,tableau):
+                        exit()
                 elif parsed [0] == "SW":
                     (stock_to_waste(stock,waste))
                     display(tableau,stock,foundation,waste)
+                    if check_win(stock,waste,foundation,tableau):
+                        exit()
                 elif parsed [0] == "R":
                     tableau, stock, foundation, waste = initialize()
                     display(tableau,stock,foundation,waste)
