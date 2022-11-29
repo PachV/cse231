@@ -1,15 +1,33 @@
+#https://www.cse.msu.edu/~cse231/Online/Projects/Project11/Project11.pdf
+
+
 UNITS = ["ml","oz"]
 MLperOZ = 29.5735295625  # ml per oz
 DELTA = 0.000001
 
 class Volume(object):
-    def __init__():   # this line is incomplete: parameters needed
+    def __init__(self, magnitude= 0, units= "ml"):   # this line is incomplete: parameters needed
         '''Docstring'''
-        pass
+
+
+
+
+
+        if type(magnitude) == int or type(magnitude) == float:
+            if magnitude >= 0:
+                self.magnitude = magnitude  
         
-    def __str__():    # this line is incomplete: parameters needed
+        
+        if type (units) == None:
+            self.units = "ml"
+        else:
+            self.units = units
+
+
+        
+    def __str__(self):    # this line is incomplete: parameters needed
         '''Docstring'''
-        pass
+        return (f"{self.magnitude}{type(self.magnitude)}, {self.units}{type(self.units)}")
         
     def __repr__():    # this line is incomplete: parameters needed
         '''Docstring'''
