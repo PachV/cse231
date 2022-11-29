@@ -7,18 +7,27 @@ DELTA = 0.000001
 
 class Volume(object):
     def __init__(self, magnitude= 0, units= "ml"):   # this line is incomplete: parameters needed
-        if units in UNITS:
 
-            if magnitude >=0:
-                if type(magnitude) == int or type(magnitude) == float:
-                    self.magnitude = magnitude
-                    self.units = units
+
+
+        if magnitude >=0:
+            if type(magnitude) == int or type(magnitude) == float:
+                self.magnitude = magnitude
+                self.units = units
             else:
                 self.magnitude = 0
                 self.units = None
         else:
+            self.magnitude = 0
+            self.units = None
+
+        if units not in UNITS:
             self.magnitude = None
             self.units = None
+
+
+
+
             
 
 
@@ -26,7 +35,10 @@ class Volume(object):
         
     def __str__(self):    # this line is incomplete: parameters needed
         '''Docstring'''
-        return (f"{self.magnitude}{type(self.magnitude)}, {self.units}{type(self.units)}")
+        if self.magnitude == None:
+            return ("Not a volume")
+        else:
+            return (f"{self.magnitude:.3f}, {self.units}")
         
     def __repr__():    # this line is incomplete: parameters needed
         '''Docstring'''
@@ -64,5 +76,5 @@ class Volume(object):
         '''Docstring'''
         pass
 
-G = Volume(20,"oz")
+G = Volume(10, "ml")
 print(G)
