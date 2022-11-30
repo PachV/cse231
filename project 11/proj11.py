@@ -70,24 +70,12 @@ class Volume(object):
         else:
             return Volume(self.magnitude*MLperOZ)
 
-
-            
-
-
-
-
-
-
-
     def customary(self):    # this line is incomplete: parameters needed
         '''Docstring'''
         if self.units == "oz":
             return Volume(self.magnitude, self.units)
         else:
             return Volume(self.magnitude/MLperOZ, "oz")
-        
-
-
         
     def __eq__(self, other): #this line is incomplete: parameters needed
         '''Docstring'''
@@ -98,13 +86,35 @@ class Volume(object):
        
     def __add__(self,other):  # this line is incomplete: parameters needed
         '''Docstring'''
+        if type(other) == float or type(other) == int:
+            total = self.magnitude + other
+            return Volume(total, self.units)
 
+        if self.units == "ml":
+            if other.units == "oz":
+                total = self.magnitude + other.magnitude * MLperOZ
+                return( Volume(total, "ml"))
 
+        if self.units == "oz":
+            if other.units == "ml":
+                total = (self.magnitude) + other.magnitude/MLperOZ
+                return Volume(total, "oz")
 
+        return None
     
-    def sub(self): # this line is incomplete: parameters needed
+    def sub(self, other): # this line is incomplete: parameters needed
         '''Docstring'''
-        pass
+        if type(other) == float or type(other) == int:
+            total = self.magnitude - other
+            return Volume(total, self.units)
 
+        if self.units == "ml":
+            if other.units == "oz":
+                total = self.magnitude - other.magnitude * MLperOZ
+                return( Volume(total, "ml"))
 
-# D = Volume( 4.5678 )
+        if self.units == "oz":
+            if other.units == "ml":
+                total = (self.magnitude) - other.magnitude/MLperOZ
+                return Volume(total, "oz")
+        return None
