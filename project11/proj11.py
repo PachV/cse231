@@ -8,8 +8,6 @@ DELTA = 0.000001
 class Volume(object):
     def __init__(self, magnitude= 0, units= "ml"):   # this line is incomplete: parameters needed
 
-
-
         if magnitude >=0:
             if type(magnitude) == int or type(magnitude) == float:
                 self.magnitude = magnitude
@@ -25,8 +23,6 @@ class Volume(object):
             self.magnitude = None
             self.units = None
 
-
-        
     def __str__(self):    # this line is incomplete: parameters needed
         '''Docstring'''
         if self.magnitude == None or self.magnitude == 0:
@@ -40,7 +36,6 @@ class Volume(object):
             return ("Not a Volume")
         else:
             return (f"{round(self.magnitude,6):.6f} {self.units}")
-        
         
     def is_valid(self):     # this line is incomplete: parameters needed
         '''Docstring'''
@@ -84,7 +79,7 @@ class Volume(object):
                 return True
         return False
        
-    def __add__(self,other):  # this line is incomplete: parameters needed
+    def add(self,other):  # this line is incomplete: parameters needed
         '''Docstring'''
         if type(other) == float or type(other) == int:
             total = self.magnitude + other
