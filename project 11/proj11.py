@@ -26,55 +26,65 @@ class Volume(object):
             self.units = None
 
 
-
-
-            
-
-
-
         
     def __str__(self):    # this line is incomplete: parameters needed
         '''Docstring'''
-        if self.magnitude == None:
-            return ("Not a volume")
+        if self.magnitude == None or self.magnitude == 0:
+            return ("Not a Volume")
         else:
-            return (f"{self.magnitude:.3f}, {self.units}")
+            return (f"{self.magnitude:.3f} {self.units}")
         
-    def __repr__():    # this line is incomplete: parameters needed
+    def __repr__(self):    # this line is incomplete: parameters needed
         '''Docstring'''
-        pass
+        if self.magnitude == None or self.magnitude == 0 :
+            return ("Not a Volume")
+        else:
+            return (f"{round(self.magnitude,6):.6f} {self.units}")
         
-    def is_valid():     # this line is incomplete: parameters needed
+        
+    def is_valid(self):     # this line is incomplete: parameters needed
         '''Docstring'''
-        pass
+        if self.magnitude != None:
+            return True
+        else:
+            return False
     
-    def get_units():     # this line is incomplete: parameters needed
+    def get_units(self):     # this line is incomplete: parameters needed
         '''Docstring'''
-        pass
+        if self.magnitude != None:
+            return self.units
+        else:
+            return None
     
-    def get_magnitude():  # this line is incomplete: parameters needed
+    def get_magnitude(self):  # this line is incomplete: parameters needed
         '''Docstring'''
-        pass
+        if self.magnitude != None:
+            return self.magnitude
+        else:
+            return None
     
-    def metric():      # this line is incomplete: parameters needed
+    def metric(self):      # this line is incomplete: parameters needed
         '''Docstring'''
-        pass
-        
-    def customary():    # this line is incomplete: parameters needed
+        if self.units in UNITS:
+            return self.units
+        else:
+            return None
+
+    def customary(self):    # this line is incomplete: parameters needed
         '''Docstring'''
-        pass
+        if self.units 
         
-    def __eq__():  # this line is incomplete: parameters needed
+    def __eq__(self): #this line is incomplete: parameters needed
         '''Docstring'''
         pass
        
-    def add():  # this line is incomplete: parameters needed
+    def add(self):  # this line is incomplete: parameters needed
         '''Docstring'''
         pass
     
-    def sub(): # this line is incomplete: parameters needed
+    def sub(self): # this line is incomplete: parameters needed
         '''Docstring'''
         pass
 
-G = Volume(10, "ml")
-print(G)
+G = Volume(10.123455123, "ml")
+print(G.__repr__())
