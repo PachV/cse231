@@ -59,35 +59,52 @@ class Volume(object):
     def get_magnitude(self):  # this line is incomplete: parameters needed
         '''Docstring'''
         if self.magnitude != None:
-            return self.magnitude
+            return (self.magnitude)
         else:
             return None
     
     def metric(self):      # this line is incomplete: parameters needed
         '''Docstring'''
-        if self.units in UNITS:
-            return self.magnitude
+        if self.units == "ml":
+            return Volume(self.magnitude, self.units)
         else:
-            return None
+            return Volume(self.magnitude*MLperOZ)
+
+
+            
+
+
+
+
+
+
 
     def customary(self):    # this line is incomplete: parameters needed
         '''Docstring'''
-        if self.magnitude != None:
-            return f"{(self.magnitude/MLperOZ)}"
+        if self.units == "oz":
+            return Volume(self.magnitude, self.units)
         else:
-            None
+            return Volume(self.magnitude/MLperOZ, "oz")
+        
+
+
         
     def __eq__(self, other): #this line is incomplete: parameters needed
         '''Docstring'''
-        if self.magnitude == other.magnitude:
+        if abs(self.magnitude - other.magnitude) < DELTA:
             if self.units == other.units:
                 return True
         return False
        
-    def add(self):  # this line is incomplete: parameters needed
+    def __add__(self,other):  # this line is incomplete: parameters needed
         '''Docstring'''
-        pass
+
+
+
     
     def sub(self): # this line is incomplete: parameters needed
         '''Docstring'''
         pass
+
+
+# D = Volume( 4.5678 )
