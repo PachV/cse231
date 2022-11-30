@@ -66,17 +66,23 @@ class Volume(object):
     def metric(self):      # this line is incomplete: parameters needed
         '''Docstring'''
         if self.units in UNITS:
-            return self.units
+            return self.magnitude
         else:
             return None
 
     def customary(self):    # this line is incomplete: parameters needed
         '''Docstring'''
-        if self.units 
+        if self.magnitude != None:
+            return f"{(self.magnitude/MLperOZ)}"
+        else:
+            None
         
-    def __eq__(self): #this line is incomplete: parameters needed
+    def __eq__(self, other): #this line is incomplete: parameters needed
         '''Docstring'''
-        pass
+        if self.magnitude == other.magnitude:
+            if self.units == other.units:
+                return True
+        return False
        
     def add(self):  # this line is incomplete: parameters needed
         '''Docstring'''
@@ -85,6 +91,3 @@ class Volume(object):
     def sub(self): # this line is incomplete: parameters needed
         '''Docstring'''
         pass
-
-G = Volume(10.123455123, "ml")
-print(G.__repr__())

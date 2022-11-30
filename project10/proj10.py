@@ -215,7 +215,6 @@ def tableau_to_tableau( tableau, t_num1, t_num2 ):
             return True
         return False
 
-
     n1 = tableau[t_num1][-1]
     n2 = tableau[t_num2][-1]
 
