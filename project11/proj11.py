@@ -1,5 +1,7 @@
-#https://www.cse.msu.edu/~cse231/Online/Projects/Project11/Project11.pdf
-
+#   Project11
+#   __init__ gets called when a class is being constructed
+#   methods will be called when the operants match, like "==", "-","+"
+#   and same with calling them manually
 
 UNITS = ["ml","oz"]
 MLperOZ = 29.5735295625  # ml per oz
@@ -23,8 +25,9 @@ class Volume(object):
             self.units = None
 
     def __str__(self): 
-        '''make a formatted string print of the instance
-            with 3 decimal places
+        '''make a formatted string for the instance
+            with 3 decimal places and return it
+            
         '''
         if self.magnitude == None or self.magnitude == 0:
             return ("Not a Volume")
@@ -32,8 +35,9 @@ class Volume(object):
             return (f"{self.magnitude:.3f} {self.units}")
         
     def __repr__(self): 
-        '''also make a formatted string print out but in more
+        '''also makes a formatted string but in more
             detail for debugging purposes
+            and return it
         '''
         if self.magnitude == None or self.magnitude == 0 :
             return ("Not a Volume")
@@ -41,7 +45,7 @@ class Volume(object):
             return (f"{round(self.magnitude,6):.6f} {self.units}")
         
     def is_valid(self):   
-        '''check if the magnitude is valid'''
+        '''check if the magnitude is valid then return the result'''
         if self.magnitude != None:
             return True
         else:
@@ -62,7 +66,7 @@ class Volume(object):
             return None
     
     def metric(self):      
-        '''change the unit to metric and make it a 
+        '''change the unit to metric and return a 
             new instance of the class
         '''
         if self.units == "ml":
@@ -71,7 +75,7 @@ class Volume(object):
             return Volume(self.magnitude*MLperOZ)
 
     def customary(self):    
-        '''change the unit to imperial units and make it a 
+        '''change the unit to imperial units and return a 
             new instance of the class
         '''
         if self.units == "oz":
@@ -90,11 +94,11 @@ class Volume(object):
        
     def add(self,other):
         '''the left operant will be the main one, if the right one is 
-            in the other unit, it will be converted into the left operant
+            the other unit, it will be converted to the left operant
             and add it together and return a new instance of the class
 
             if the other is just a int/flt, it will just be added
-            to the self.magnitude.
+            to the self.magnitude and return a new instance of the class
         '''
         if type(other) == float or type(other) == int:
             total = self.magnitude + other
